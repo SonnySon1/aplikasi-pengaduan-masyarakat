@@ -17,14 +17,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [UserController::class, 'index']);
+Route::get('/', [UserController::class, 'index'])->middleware('guest');
 
 // auth
-Route::get('/login', [LoginController::class, 'login_view'])->name('auth.login')->middleware('guest');
-Route::post('/login', [LoginController::class, 'login'])->name('auth.user.login');
-Route::get('/register', [RegisterController::class, 'register_view'])->name('auth.register');
-Route::post('/register', [RegisterController::class, 'register'])->name('auth.user.register');
-Route::post('/logout', [LoginController::class, 'logout']);
+Route::middleware('guest')->group(function(){
+    Route::get('/login', [LoginController::class, 'login_view'])->name('auth.login');
+    Route::post('/login', [LoginController::class, 'login'])->name('auth.user.login');
+    Route::get('/register', [RegisterController::class, 'register_view'])->name('auth.register');
+    Route::post('/register', [RegisterController::class, 'register'])->name('auth.user.register');
+    Route::post('/logout', [LoginController::class, 'logout']);
+});
 
 
 // masyarakat
@@ -39,8 +41,7 @@ Route::middleware('masyarakat')->group(function(){
 
 // admin  
     // dashboard Admin
-    Route::get('/dashboard', function(){
-        return view('admins.dashboard');
-    });
+    Route::view('/dashboard', 'admin.dashboard');
 
+    Route::view('/masyarakat', 'admin.masyarakat');
 

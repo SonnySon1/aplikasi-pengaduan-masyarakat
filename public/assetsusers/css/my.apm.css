@@ -51,3 +51,12 @@ input[type="number"] {
   /* Menghilangkan tampilan khusus pada Firefox */
   -moz-appearance: textfield;
 }
+
+.coment-fw{
+    background-color: #EDEDED;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+.coment-fw > p{
+    padding: 15px;
+}

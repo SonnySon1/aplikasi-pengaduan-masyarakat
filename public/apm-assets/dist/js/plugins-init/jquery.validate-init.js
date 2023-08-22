@@ -4,6 +4,9 @@ jQuery(".form-valide").validate({
             required: !0,
             minlength: 16
         },
+        "val-kategori": {
+            required: !0,
+        },
         "val-email": {
             required: !0,
             email: !0
@@ -25,9 +28,8 @@ jQuery(".form-valide").validate({
             required: !0,
             minlength: 2
         },
-        "val-suggestions": {
+        "val-deskripsi": {
             required: !0,
-            minlength: 5
         },
         "val-jeniskelamin": {
             required: !0
@@ -58,12 +60,39 @@ jQuery(".form-valide").validate({
         },
         "val-terms": {
             required: !0
-        }
+        },
+        "val-bulan": {
+            required: !0
+        },
+        "val-bulan2": {
+            required: !0
+        },
+        "val-tahun": {
+            required: !0
+        },
+        "val-status": {
+            required: !0
+        },
     },
     messages: {
         "val-nik": {
             required: "Mohon isi nik",
             minlength: "Panjang nik minimal 16 Karakter"
+        },
+        "val-kategori": {
+            required: "Mohon isi kategori",
+        },
+        "val-bulan": {
+            required: "Mohon pilih bulan",
+        },
+        "val-bulan2": {
+            required: "Mohon pilih bulan222",
+        },
+        "val-tahun": {
+            required: "Mohon pilih tahun",
+        },
+        "val-status": {
+            required: "Mohon pilih status",
         },
         "val-email": "mohon isi alamat email",
         "val-password": {
@@ -78,7 +107,7 @@ jQuery(".form-valide").validate({
         },
         "vx`al-select2": "Please select a value!",
         "val-select2-multiple": "Please select at least 2 values!",
-        "val-suggestions": "What can we do to become better?",
+        "val-deskripsi": "Mohon isi deskripsi kategori",
         "val-jeniskelamin": "Silahkan Pilih Jenis Kelamin!",
         "val-currency": "Please enter a price!",
         "val-notelepon": "Mohon masukan no telepon",
@@ -102,6 +131,38 @@ jQuery(".form-valide").validate({
         jQuery(e).closest(".form-group").removeClass("is-invalid"), jQuery(e).remove()
     },
 });
+
+jQuery(".form-valide-laporan-l-periode").validate({
+    rules:{
+        "val-bulan2": {
+            required: !0
+        },
+        "val-tahun2": {
+            required: !0
+        },
+    },
+    messages:{
+        "val-bulan2": {
+            required: "Mohon pilih bulan",
+        },
+        "val-tahun2": {
+            required: "Mohon pilih tahun",
+        },
+    },
+
+    ignore: [],
+    errorClass: "invalid-feedback animated fadeInUp",
+    errorElement: "div",
+    errorPlacement: function(e, a) {
+        jQuery(a).parents(".form-group > div").append(e)
+    },
+    highlight: function(e) {
+        jQuery(e).closest(".form-group").removeClass("is-invalid").addClass("is-invalid")
+    },
+    success: function(e) {
+        jQuery(e).closest(".form-group").removeClass("is-invalid"), jQuery(e).remove()
+    },
+})
 
 
 jQuery(".form-valide-with-icon").validate({

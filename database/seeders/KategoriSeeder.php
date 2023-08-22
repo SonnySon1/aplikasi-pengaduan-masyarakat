@@ -16,8 +16,8 @@ class KategoriSeeder extends Seeder
     public function run()
     {
         $data = [
-            'kategori'=>'Pencemaran',
-            'deskripsi'=>'Deskripsi Tentang Pencemaran'
+            'kategori'=>'Infrastruktur',
+            'deskripsi'=>'Deskripsi Tentang kategori yang berkaitan dengan infrastruktur'
         ];
         
         Kategori::create($data);

@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="assetsusers/css/my.apm.css">
+
 </head>
  
 <body>
@@ -155,7 +158,7 @@
                                         <i class="icon-envelope-open"></i>
                                         <span class="ml-2">Inbox </span>
                                     </a>
-                                    <a href="login.html" class="dropdown-item">
+                                    <a href="./page-login.html" class="dropdown-item">
                                         <i class="icon-key"></i>
                                         <span class="ml-2">Logout </span>
                                     </a>
@@ -212,6 +215,7 @@
             Sidebar end
         ***********************************-->
 
+
         <!--**********************************
             Content body start
         ***********************************-->
@@ -226,163 +230,133 @@
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Genearte Laporan</a></li>
                             <li class="breadcrumb-item active"><a href="javascript:void(0)">Index</a></li>
                         </ol>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card text-center">
-                                <div class="stat-icon d-inline-block">
-                                    <i class="bi bi-people-fill text-success"></i>
-                                </div>
-                                <div class="stat-content d-inline-block">
-                                    <div class="stat-text font-weight-bold">Masyarakat</div>
-                                    <div class="stat-digit">1,012</div>
-                                </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card text-center">
-                                <div class="stat-icon d-inline-block">
-                                    <i class="fa-solid fa-book text-warning"></i>
-                                </div>
-                                <div class="stat-content d-inline-block">
-                                    <div class="stat-text font-weight-bold">Kategoti</div>
-                                    <div class="stat-digit">112</div>
-                                </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card text-center">
-                                <div class="stat-icon d-inline-block">
-                                    <i class="bi bi-envelope-check text-danger"></i>
-                                </div>
-                                <div class="stat-content d-inline-block">
-                                    <div class="stat-text font-weight-bold">Laporan</div>
-                                    <div class="stat-digit">1,321</div>
-                                </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card text-center">
-                                <div class="stat-icon d-inline-block">
-                                    <i class="bi bi-envelope-exclamation text-success"></i>
-                                </div>
-                                <div class="stat-content d-inline-block">
-                                    <div class="stat-text font-weight-bold">Laporan Baru</div>
-                                    <div class="stat-digit">1,012</div>
-                                </div>
-                        </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Data Laporan Masuk</h4>
+                                <h4 class="card-title">Form Add Data Petugas</h4>
                             </div>
                             <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table student-data-table m-t-20">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Tgl Pengaduan</th>
-                                                <th>Judul Pengaduan</th>
-                                                <th>Kategori</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                 <td>20/04/2017</td>
-                                                <td>Limbah Pabrik ABCD</td>
-                                                <td>Pencemaran</td>
-                                                <td><a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                 <td>20/04/2017</td>
-                                                <td>Limbah Pabrik ABCD</td>
-                                                <td>Pencemaran</td>
-                                                <td><a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                 <td>20/04/2017</td>
-                                                <td>Banjir Karena Tanah Longsor</td>
-                                                <td>Bencana</td>
-                                                <td><a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                 <td>20/04/2017</td>
-                                                <td>Air Sungai Mampet Karena Sampah</td>
-                                                <td>Pencemaran</td>
-                                                <td><a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                 <td>20/04/2017</td>
-                                                <td>Limbah Pabrik ABCD</td>
-                                                <td>Pencemaran</td>
-                                                <td><a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                 <td>20/04/2017</td>
-                                                <td>Sampah</td>
-                                                <td>Pencemaran</td>
-                                                <td><a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                 <td>20/04/2017</td>
-                                                <td>Limbah Pabrik ABCD</td>
-                                                <td>Pencemaran</td>
-                                                <td><a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="form-validation">
+                                    <form class="form-valide" action="#" method="get">
+                                        <div class="row">
+                                            <div class="col-xl-6">
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-form-label" for="">Filter Berdasarkan Status</label>
+                                                    <div class="col-lg-12">
+                                                        <select class="form-control" id="" name="">
+                                                            <option value="">--Filter Status--</option>
+                                                            <option value="new">New</option>
+                                                            <option value="perocess">Process</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="">Filter Berdasarkan Kategor</label>
+                                                        <div class="col-lg-12">
+                                                            <select class="form-control" id="" name="">
+                                                                <option value="">--Pilih Kategori--</option>
+                                                                <option value="pencemaran">Pencemaran</option>
+                                                                <option value="bencanaalam">Bencana Alam</option>
+                                                            </select>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table-responsive mt-5">
+                                            <table class="table student-data-table m-t-20">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Tgl Pengaduan</th>
+                                                        <th>Nama Pengadu</th>
+                                                        <th>Kategori</th>
+                                                        <th>Status</th>
+                                                        <th>Aksi</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                            <td>20/04/2017</td>
+                                                        <td>Agus</td>
+                                                        <td>Pencemaran</td>
+                                                        <td><span class="btn btn-primary btn-sm">New</span></td>
+                                                        <td><a href="detail-pengaduan.html" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                            <td>20/04/2017</td>
+                                                        <td>Dimas</td>
+                                                        <td>Pencemaran</td>
+                                                        <td><span class="btn btn-warning btn-sm text-white">Process</span></td>
+                                                        <td><a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                            <td>20/04/2017</td>
+                                                        <td>Saipudin</td>
+                                                        <td>Bancana alam</td>
+                                                        <td><span class="btn btn-success btn-sm text-white">Selesai</span></td>
+                                                        <td><a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                            <td>20/04/2017</td>
+                                                        <td>Jamil</td>
+                                                        <td>Pencemaran</td>
+                                                        <td><span class="btn btn-primary btn-sm">New</span></td>
+                                                        <td><a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>5</td>
+                                                            <td>20/04/2017</td>
+                                                        <td>Bagas</td>
+                                                        <td>Pencemaran</td>
+                                                        <td><span class="btn btn-success btn-sm text-white">Selesai</span></td>
+                                                        <td><a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>5</td>
+                                                            <td>20/04/2017</td>
+                                                        <td>Rijal</td>
+                                                        <td>Pencemaran</td>
+                                                        <td><span class="btn btn-primary btn-sm">New</span></td>
+                                                        <td><a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6</td>
+                                                            <td>20/04/2017</td>
+                                                        <td>Riki</td>
+                                                        <td>Pencemaran</td>
+                                                        <td><span class="btn btn-primary btn-sm">New</span></td>
+                                                        <td><a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
-                  
-                </div>
+                </div>                  
             </div>
         </div>
-        <!--**********************************
-            Content body end
-        ***********************************-->
-
-
-        <!--**********************************
-            Footer start
-        ***********************************-->
+        </div>
         <div class="footer">
             <div class="copyright">
                 <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">Quixkit</a> 2019</p>
                 <p>Distributed by <a href="https://themewagon.com/" target="_blank">Themewagon</a></p>
             </div>
         </div>
-        <!--**********************************
-            Footer end
-        ***********************************-->
-
-        <!--**********************************
-           Support ticket button start
-        ***********************************-->
-
-        <!--**********************************
-           Support ticket button end
-        ***********************************-->
-
-
     </div>
     <!--**********************************
         Main wrapper end
@@ -404,6 +378,14 @@
 
     <script src="dist/js/dashboard/dashboard-2.js"></script>
     <!-- Circle progress -->
+
+
+     <!-- Jquery Validation -->
+     <script src="dist/vendor/jquery-validation/jquery.validate.min.js"></script>
+     <!-- -------- -->
+ 
+     <!-- Form validate init -->
+     <script src="dist/js/plugins-init/jquery.validate-init.js"></script>
 
 </body>
 
