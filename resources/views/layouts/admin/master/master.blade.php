@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="assetsusers/css/my.apm.css">
+    
+
 </head>
  <body>
 
@@ -27,19 +31,27 @@
   
   
 <!--Scripts-->
-<!-- Required vendors -->
-<script src="dist/vendor/global/global.min.js"></script>
-<script src="dist/js/quixnav-init.js"></script>
-<script src="dist/js/custom.min.js"></script>
+ <!-- Required vendors -->
+ <script src="dist/vendor/global/global.min.js"></script>
+ <script src="dist/js/quixnav-init.js"></script>
+ <script src="dist/js/custom.min.js"></script>
 
-<script src="dist/vendor/chartist/js/chartist.min.js"></script>
+ <script src="dist/vendor/chartist/js/chartist.min.js"></script>
 
-<script src="dist/vendor/moment/moment.min.js"></script>
-<script src="dist/vendor/pg-calendar/js/pignose.calendar.min.js"></script>
+ <script src="dist/vendor/moment/moment.min.js"></script>
+ <script src="dist/vendor/pg-calendar/js/pignose.calendar.min.js"></script>
 
 
-<script src="dist/js/dashboard/dashboard-2.js"></script>
-<!-- Circle progress -->
+ <script src="dist/js/dashboard/dashboard-2.js"></script>
+ <!-- Circle progress -->
+
+
+  <!-- Jquery Validation -->
+  <script src="dist/vendor/jquery-validation/jquery.validate.min.js"></script>
+  <!-- -------- -->
+
+  <!-- Form validate init -->
+  <script src="dist/js/plugins-init/jquery.validate-init.js"></script>
 
 </body>
 

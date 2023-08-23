@@ -42,6 +42,17 @@ Route::middleware('masyarakat')->group(function(){
 // admin  
     // dashboard Admin
     Route::view('/dashboard', 'admin.dashboard');
-
-    Route::view('/masyarakat', 'admin.masyarakat');
-
+    // masyarakat Admin
+    Route::view('/masyarakat', 'admin.masyarakat.masyarakat');
+    Route::view('/masyarakatadd', 'admin.masyarakat.masyarakat-add');
+    // petugas Admin
+    Route::view('/petugas', 'admin.petugas.petugas');
+    Route::view('/petugas-add', 'admin.petugas.petugas-add');
+    // kategori Admin
+    Route::view('/kategori', 'admin.kategori.kategori');
+    Route::view('/kategori-add', 'admin.kategori.kategori-add');
+    // laporan Admin
+    Route::view('/laporanmasuk', 'admin.laporan.laporanmasuk');
+    Route::view('/laporanmasuk-detail', 'admin.laporan.laporanmasuk-detail');
+    // report
+    Route::view('/generate-report', 'admin.report.generate-report');

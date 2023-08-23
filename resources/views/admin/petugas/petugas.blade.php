@@ -1,16 +1,18 @@
 @extends('layouts.admin.master.master')
 
+
 @section('content')    
     <!--Main wrapper start-->
     <div id="main-wrapper">
 
-       <!--Nav start-->
+        <!--Nav start-->
        @include('layouts.admin.navbar.navbar')
        <!--Nav end-->
 
        <!--Sidebar start-->
        @include('layouts.admin.sidebar.sidebar')
        <!--Sidebar end-->
+
 
         <!--Content body start-->
         <div class="content-body">
@@ -24,7 +26,7 @@
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Masyarakat</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Petugas</a></li>
                             <li class="breadcrumb-item active"><a href="javascript:void(0)">Index</a></li>
                         </ol>
                     </div>
@@ -33,7 +35,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Data Masyarakat</h4>
+                                <h4 class="card-title">Data Petugas</h4>
                                 <input class="search" type="text" name="search" id="seach" placeholder="search">
                             </div>
                             <div class="card-body">
@@ -44,7 +46,7 @@
                                                 <th>#</th>
                                                 <th>NIK</th>
                                                 <th>Nama</th>
-                                                <th>Alamat</th>
+                                                <th>Jabatan</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -53,7 +55,7 @@
                                                 <td>1</td>
                                                 <td>3207172222000000</td>
                                                 <td>Fery</td>
-                                                <td>Bandung</td>
+                                                <td>Petugas</td>
                                                 <td>
                                                     <a href="" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
                                                     <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
@@ -63,7 +65,7 @@
                                                 <td>2</td>
                                                 <td>3207172222000000</td>
                                                 <td>Dimas</td>
-                                                <td>Bandung</td>
+                                                <td>Admin</td>
                                                 <td>
                                                     <a href="" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
                                                     <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
@@ -73,7 +75,7 @@
                                                 <td>3</td>
                                                 <td>3207172222000000</td>
                                                 <td>Samsul</td>
-                                                <td>Bandung</td>
+                                                <td>Admin</td>
                                                 <td>
                                                     <a href="" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
                                                     <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
@@ -83,7 +85,7 @@
                                                 <td>4</td>
                                                 <td>3207172222000000</td>
                                                 <td>Diky</td>
-                                                <td>Bandung</td>
+                                                <td>Petugas</td>
                                                 <td>
                                                     <a href="" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
                                                     <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
@@ -93,7 +95,7 @@
                                                 <td>5</td>
                                                 <td>3207172222000000</td>
                                                 <td>Rizal</td>
-                                                <td>Bandung</td>
+                                                <td>Admin</td>
                                                 <td>
                                                     <a href="" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
                                                     <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
@@ -103,7 +105,7 @@
                                                 <td>6</td>
                                                 <td>3207172222000000</td>
                                                 <td>Reza</td>
-                                                <td>Bandung</td>
+                                                <td>Admin</td>
                                                 <td>
                                                     <a href="" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
                                                     <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
@@ -113,7 +115,7 @@
                                                 <td>7</td>
                                                 <td>3207172222000000</td>
                                                 <td>Danang</td>
-                                                <td>Bandung</td>
+                                                <td>Admin</td>
                                                 <td>
                                                     <a href="" style="z-index: 6;" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
                                                     <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
@@ -121,7 +123,7 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <a href="masyarakat-add.html" class="border border-secondary btn-block text-center p-2 btn-hover-primary btn-sm rounded"><i class="bi bi-plus"></i> Add data Masyarakat</a>
+                                    <a href="/petugas-add" class="border border-secondary btn-block text-center p-2 btn-hover-primary btn-sm rounded"><i class="bi bi-plus"></i>Add data Petugas</a>
                                 </div>
                             </div>
                         </div>
@@ -134,15 +136,8 @@
 
 
         <!--Footer start-->
-        <div class="footer">
-            <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">Quixkit</a> 2019</p>
-                <p>Distributed by <a href="https://themewagon.com/" target="_blank">Themewagon</a></p>
-            </div>
-        </div>
+        @include('layouts.admin.footer.footer')
         <!--Footer end-->
-
     </div>
 @endsection
-
-  
+ 
