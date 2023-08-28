@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PengaduankuController;
 use App\Http\Controllers\RegisterController;
@@ -43,22 +44,8 @@ Route::middleware('masyarakat')->group(function(){
 
 Route::middleware('admin')->group(function(){
     // dashboard Admin
-    Route::view('/dashboard', 'admin.dashboard');
-    Route::get('/signoput', [PengaduankuController::class, 'signout']);
-
-});
-
-
-
-
-
-
-
-
-
-
-
-
+    Route::get('/dashboard', [DashboardController::class, 'index']);
+    Route::get('/signout-staf', [DashboardController::class, 'signout_staf']);
     // masyarakat Admin
     Route::view('/masyarakat', 'admin.masyarakat.masyarakat');
     Route::view('/masyarakatadd', 'admin.masyarakat.masyarakat-add');
@@ -73,3 +60,4 @@ Route::middleware('admin')->group(function(){
     Route::view('/laporanmasuk-detail', 'admin.laporan.laporanmasuk-detail');
     // report
     Route::view('/generate-report', 'admin.report.generate-report');
+});

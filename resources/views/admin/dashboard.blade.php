@@ -39,7 +39,7 @@
                                     </div>
                                     <div class="stat-content d-inline-block">
                                         <div class="stat-text font-weight-bold">Masyarakat</div>
-                                        <div class="stat-digit">1,012</div>
+                                        <div class="stat-digit">{{ count($masyarakat) }}</div>
                                     </div>
                             </div>
                         </a>
@@ -52,7 +52,7 @@
                                     </div>
                                     <div class="stat-content d-inline-block">
                                         <div class="stat-text font-weight-bold">Kategoti</div>
-                                        <div class="stat-digit">112</div>
+                                        <div class="stat-digit">{{ count($kategori) }}</div>
                                     </div>
                             </div>
                         </a>
@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="stat-content d-inline-block">
                                     <div class="stat-text font-weight-bold">Laporan</div>
-                                    <div class="stat-digit">1,321</div>
+                                    <div class="stat-digit">{{ count($laporan) }}</div>
                                 </div>
                             </div>
                         </a>
@@ -78,7 +78,7 @@
                                 </div>
                                 <div class="stat-content d-inline-block">
                                     <div class="stat-text font-weight-bold">Laporan Baru</div>
-                                    <div class="stat-digit">1,012</div>
+                                    <div class="stat-digit">{{ count($laporanBaru) }}</div>
                                 </div>
                         </div>
                     </a>
@@ -103,55 +103,15 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                 <td>20/04/2017</td>
-                                                <td>Limbah Pabrik ABCD</td>
-                                                <td>Pencemaran</td>
-                                                <td><a href="detail-pengaduan.html" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                 <td>20/04/2017</td>
-                                                <td>Limbah Pabrik ABCD</td>
-                                                <td>Pencemaran</td>
-                                                <td><a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                 <td>20/04/2017</td>
-                                                <td>Banjir Karena Tanah Longsor</td>
-                                                <td>Bencana</td>
-                                                <td><a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                 <td>20/04/2017</td>
-                                                <td>Air Sungai Mampet Karena Sampah</td>
-                                                <td>Pencemaran</td>
-                                                <td><a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                 <td>20/04/2017</td>
-                                                <td>Limbah Pabrik ABCD</td>
-                                                <td>Pencemaran</td>
-                                                <td><a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                 <td>20/04/2017</td>
-                                                <td>Sampah</td>
-                                                <td>Pencemaran</td>
-                                                <td><a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                 <td>20/04/2017</td>
-                                                <td>Limbah Pabrik ABCD</td>
-                                                <td>Pencemaran</td>
-                                                <td><a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
-                                            </tr>
+                                            @foreach ($laporanMasuk as $laporan)                                                
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>{{ $laporan->tgl_pengaduan }}</td>
+                                                    <td>{{ $laporan->judul_pengaduan }}</td>
+                                                    <td>{{ $laporan->kategori->kategori }}</td>
+                                                    <td><a href="detail-pengaduan.html" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
