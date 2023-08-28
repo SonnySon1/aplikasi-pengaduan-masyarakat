@@ -55,11 +55,11 @@ class PengaduankuController extends Controller
         }
 
         // signout
-                public function signout(Request $request){
-                        $request->session()->invalidate(); 
-                        $request->session()->regenerate();
-                        return redirect('/');
-                }
+        public function signout(Request $request){
+                $request->session()->invalidate(); 
+                $request->session()->regenerate();
+                return redirect('/');
+        }
 
     
 

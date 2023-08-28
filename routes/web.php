@@ -40,6 +40,8 @@ Route::middleware('masyarakat')->group(function(){
 
 
 // admin  
+
+Route::middleware('admin')->group(function(){
     // dashboard Admin
     Route::view('/dashboard', 'admin.dashboard');
     // masyarakat Admin
@@ -56,3 +58,4 @@ Route::middleware('masyarakat')->group(function(){
     Route::view('/laporanmasuk-detail', 'admin.laporan.laporanmasuk-detail');
     // report
     Route::view('/generate-report', 'admin.report.generate-report');
+});

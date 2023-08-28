@@ -20,8 +20,12 @@ class LoginController extends Controller
             "password"=>"required",
         ]);
         if (Auth::attempt(['email'=>$request->email, 'password'=>$request->password])) {
-            $request->session()->regenerate(); 
-            return redirect('pengaduanku');
+            $request->session()->regenerate();
+            if( Auth::user()->role == "masyarakat" ){
+                return redirect('pengaduanku');
+            }else if(Auth::user()->role == "admin"){
+                return redirect('/dashboard');
+            }
         }else{
            session()->flash('error', 'Email / Password Salah');
            return back();
