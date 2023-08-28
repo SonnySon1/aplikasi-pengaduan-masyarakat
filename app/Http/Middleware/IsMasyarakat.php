@@ -17,7 +17,7 @@ class IsMasyarakat
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user() && Auth::user()->role = "masyarakat") {
+        if (Auth::user() && Auth::user()->role == "masyarakat") {
             return $next($request);
         }
         return redirect('/');
