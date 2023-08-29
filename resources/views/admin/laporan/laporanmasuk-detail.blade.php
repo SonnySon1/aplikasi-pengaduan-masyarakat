@@ -32,7 +32,6 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-validation">
-                                    <form class="form-valide" action="#" method="get">
                                         <div class="row">
                                             <div class="col-xl-6">
                                                 <div class="form-group row">
@@ -73,24 +72,26 @@
                                                         <label for="" class="text-dark">:{{ $dataLaporan->user->nama }}</label>
                                                     </div>
                                                 </div>
-                                                <form action="">
+                                                <form action="/laporan-update/{{ $dataLaporan->id }}" method="POST">
+                                                    @csrf
                                                     <div class="form-group row">
-                                                        <label class="col-lg-4 col-form-label text-dark font-weight-bold" for="val-bulan2">Status
+                                                        <label class="col-lg-4 col-form-label text-dark font-weight-bold" for="status">Status
                                                         </label>
                                                         <div class="col-lg-6">
-                                                            <select class="form-control" id="val-bulan2" name="val-bulan2">
-                                                                <option value="new">New</option>
-                                                                <option value="process">Process</option>
-                                                                <option value="Selesai">Selesai</option>
+                                                            <select class="form-control" id="status" name="status">
+                                                                <option value="new" @if ($dataLaporan->status == "new") selected  @endif value="new">New</option>
+                                                                <option value="accepted" @if ($dataLaporan->status == "accepted") selected  @endif value="Selesai">Accepted</option>
+                                                                <option value="process" @if ($dataLaporan->status == "proccess") selected  @endif value="process">Process</option>
+                                                                <option value="finished" @if ($dataLaporan->status == "finished") selected  @endif value="Selesai">Finished</option>
+                                                                <option value="rejected" @if ($dataLaporan->status == "rejected") selected  @endif value="Selesai">Rejected</option>
                                                             </select>
                                                         </div>
                                                     </div>
-                                                </form>
-                                            </div>
+                                                </div>
                                         </div>
-                                            <button type="submit" class="btn btn-primary w-100"><i class="bi bi-arrow-clockwise"></i> Update Status</button>
-                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100"><i class="bi bi-arrow-clockwise"></i> Update Status</button>
                                     </form>
+                                    </div>
                                     <div class="mt-5 d-flex flex-wrap">
                                         <div>
                                             <img src="{{ asset('assetsusers/img/img/air.jpg') }}" alt="" width="400">
@@ -107,12 +108,10 @@
                                                 </div>
                                                 <div class="ml-2">
                                                     <b>Jhon Doe</b><br>
-                                                    Di tanggapi pada tanggal 25 oktober 2024</p>
+                                                    <p>Di tanggapi pada tanggal 25 oktober 2024</p>
                                                 </div>
                                             </div>
-                                            <div>
-                                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error maxime autem ut quidem consequatur aliquid animi aut itaque dolor eius! Perferendis ea quis obcaecati? Illo temporibus ullam harum error perspiciatis!
-                                            </div>
+                                            <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error maxime autem ut quidem consequatur aliquid animi aut itaque dolor eius! Perferendis ea quis obcaecati? Illo temporibus ullam harum error perspiciatis!</div>
                                             <div class="mt-3">
                                                 <form action="" class="d-flex">
                                                     <input type="text" name="tanggapan" class="w-100 p-1" id="" placeholder="Isi Tanggapan">

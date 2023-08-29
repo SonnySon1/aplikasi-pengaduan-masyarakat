@@ -13,7 +13,7 @@ class DashboardController extends Controller
     public function index(){
         $laporanMasuk = Pengaduan::all();
         $laporanBaru = Pengaduan::where('status', 'new')->get();
-        $laporan = Pengaduan::where('status', 'process')->orWhere('status', 'denied')->get();
+        $laporan = Pengaduan::where('status', 'process')->orWhere('status', 'accepted')->orWhere('status', 'finished')->orWhere('status', 'rejected')->get();
         $kategori = Kategori::all();
         $masyarakat = User::where('role', 'masyarakat')->get();
 

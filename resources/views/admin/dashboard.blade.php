@@ -109,7 +109,10 @@
                                                     <td>{{ $laporan->tgl_pengaduan }}</td>
                                                     <td>{{ $laporan->judul_pengaduan }}</td>
                                                     <td>{{ $laporan->kategori->kategori }}</td>
-                                                    <td><a href="detail-pengaduan.html" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
+                                                    @php
+                                                        $laporan_i_crypt = Crypt::encrypt($laporan->id)
+                                                    @endphp
+                                                    <td><a href="/laporanmasuk-detail/{{ $laporan_i_crypt }}" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
                                                 </tr>
                                             @endforeach
                                         </tbody>

@@ -59,6 +59,7 @@ Route::middleware('admin')->group(function(){
     // laporan Admin
     Route::get('/laporanmasuk', [LaporanController::class, 'index']);
     Route::get('/laporanmasuk-detail/{laporan}', [LaporanController::class, 'show']);
+    Route::post('/laporan-update/{status}', [LaporanController::class, 'update']);
     // report
     Route::view('/generate-report', 'admin.report.generate-report');
 });

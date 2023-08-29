@@ -25,4 +25,14 @@ class LaporanController extends Controller
         $dataLaporan = Pengaduan::find($laporan_i_crypt);
         return view('admin.laporan.laporanmasuk-detail', compact('dataLaporan'));
     }
+
+
+    public function update(Request $request, $id){
+        $dataSatus = [
+            "status" => $request->status
+        ];
+        $dataPengaduan = Pengaduan::find($id);
+        $dataPengaduan->update($dataSatus);
+        return redirect('/laporanmasuk');
+    }
 }

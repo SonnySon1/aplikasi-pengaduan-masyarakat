@@ -87,10 +87,12 @@
                                                             <td>
                                                                 @if ($laporan->status == "new")
                                                                     <span class="btn btn-primary btn-sm">{{ $laporan->status }}</span>
+                                                                @elseif ($laporan->status == "accepted")
+                                                                    <span class="btn btn-success btn-sm">{{ $laporan->status }}</span>
                                                                 @elseif ($laporan->status == "process")
                                                                     <span class="btn btn-warning btn-sm">{{ $laporan->status }}</span>
-                                                                @elseif ($laporan->status == "success")
-                                                                    <span class="btn btn-success btn-sm">{{ $laporan->status }}</span>
+                                                                @elseif ($laporan->status == "finished")
+                                                                    <span class="btn btn-secondary btn-sm">{{ $laporan->status }}</span>
                                                                 @else
                                                                     <span class="btn btn-danger btn-sm">{{ $laporan->status }}</span>
                                                                 @endif
