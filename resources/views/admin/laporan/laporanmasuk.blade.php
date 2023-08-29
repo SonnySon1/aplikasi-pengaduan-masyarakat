@@ -78,67 +78,34 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                            <td>20/04/2017</td>
-                                                        <td>Agus</td>
-                                                        <td>Pencemaran</td>
-                                                        <td><span class="btn btn-primary btn-sm">New</span></td>
-                                                        <td><a href="/laporanmasuk-detail" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                            <td>20/04/2017</td>
-                                                        <td>Dimas</td>
-                                                        <td>Pencemaran</td>
-                                                        <td><span class="btn btn-warning btn-sm text-white">Process</span></td>
-                                                        <td><a href="/laporanmasuk-detail" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                            <td>20/04/2017</td>
-                                                        <td>Saipudin</td>
-                                                        <td>Bancana alam</td>
-                                                        <td><span class="btn btn-success btn-sm text-white">Selesai</span></td>
-                                                        <td><a href="/laporanmasuk-detail" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>4</td>
-                                                            <td>20/04/2017</td>
-                                                        <td>Jamil</td>
-                                                        <td>Pencemaran</td>
-                                                        <td><span class="btn btn-primary btn-sm">New</span></td>
-                                                        <td><a href="/laporanmasuk-detail" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>5</td>
-                                                            <td>20/04/2017</td>
-                                                        <td>Bagas</td>
-                                                        <td>Pencemaran</td>
-                                                        <td><span class="btn btn-success btn-sm text-white">Selesai</span></td>
-                                                        <td><a href="/laporanmasuk-detail" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>5</td>
-                                                            <td>20/04/2017</td>
-                                                        <td>Rijal</td>
-                                                        <td>Pencemaran</td>
-                                                        <td><span class="btn btn-primary btn-sm">New</span></td>
-                                                        <td><a href="/laporanmasuk-detail" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>6</td>
-                                                            <td>20/04/2017</td>
-                                                        <td>Riki</td>
-                                                        <td>Pencemaran</td>
-                                                        <td><span class="btn btn-primary btn-sm">New</span></td>
-                                                        <td><a href="/laporanmasuk" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
-                                                    </tr>
+                                                    @foreach ($dataLaporan as $laporan)                                                        
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>{{ $laporan->tgl_pengaduan }}</td>
+                                                            <td>{{ $laporan->user->nama }}</td>
+                                                            <td>{{ $laporan->kategori->kategori }}</td>
+                                                            <td>
+                                                                @if ($laporan->status == "new")
+                                                                    <span class="btn btn-primary btn-sm">{{ $laporan->status }}</span>
+                                                                @elseif ($laporan->status == "process")
+                                                                    <span class="btn btn-warning btn-sm">{{ $laporan->status }}</span>
+                                                                @elseif ($laporan->status == "success")
+                                                                    <span class="btn btn-success btn-sm">{{ $laporan->status }}</span>
+                                                                @else
+                                                                    <span class="btn btn-danger btn-sm">{{ $laporan->status }}</span>
+                                                                @endif
+                                                            </td>
+                                                            @php
+                                                                $laporan_i_crypt = Crypt::encrypt($laporan->id);
+                                                            @endphp
+                                                            <td><a href="/laporanmasuk-detail/{{ $laporan_i_crypt }}" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
+                                                        </tr>
+                                                    @endforeach
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
-                                </div>=
+                                </div>
                         </div>
                     </div>
                 </div>                  

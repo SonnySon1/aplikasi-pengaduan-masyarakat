@@ -15,15 +15,14 @@ return new class extends Migration
     {
         Schema::create('pengaduan', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_user');
-            $table->unsignedBigInteger('id_kategori');
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('kategori_id')->references('id')->on('kategori')->onDelete('cascade');
             $table->text('judul_pengaduan');
             $table->timestamp('tgl_pengaduan');
             $table->text('laporan_pengaduan');
             $table->text('foto')->nullable();
-            $table->enum('status', ['new', 'process', 'denied'])->default('new');
+            $table->enum('status', ['new',  'accepted', 'process', 'finished', 'rejected'])->default('new');
             $table->timestamps();
-            $table->index(['id_user', 'id_kategori']);
         });
     }
 

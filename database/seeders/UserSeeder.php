@@ -3,10 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class UsersSeeders extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,14 +15,13 @@ class UsersSeeders extends Seeder
      */
     public function run()
     {
-        $dataUser = [
+        User::create([
             "nama" => "soni",
             "nik"=>"123123123",
             "alamat"=>"Banjar",
             "email"=>"soni@gmail.com",
             "password"=> bcrypt("123"),
             "no_telepon"=>"089899587003",
-        ];
-        User::create($dataUser);
+        ]);
     }
 }

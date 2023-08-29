@@ -15,13 +15,12 @@ return new class extends Migration
     {
         Schema::create('tanggapan', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_user');
-            $table->unsignedBigInteger('id_pengaduan');
+            $table->foreignId('user_id');
+            $table->foreignId('pengaduan_id');
             $table->text('tanggapan');
             $table->timestamp('tgl_tanggapan');
             $table->string('foto'); 
             $table->timestamps();
-            $table->index(['id_user', 'id_pengaduan']);
         });
     }
 

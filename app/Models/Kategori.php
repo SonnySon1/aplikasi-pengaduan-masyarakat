@@ -15,6 +15,6 @@ class Kategori extends Model
 
     // relasi dari kategori ke pengaduan engan sifat relasi one to many
     public function kategori() {
-        return $this->hasMany(Pengaduan::class, 'id_kategori', 'id');
+        return $this->hasMany(Pengaduan::class);
     }
 }

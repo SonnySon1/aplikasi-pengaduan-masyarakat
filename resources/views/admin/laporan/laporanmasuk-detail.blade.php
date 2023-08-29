@@ -40,7 +40,7 @@
                                                         <span class="font-weight-bold">:</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <label for="" class="text-dark">:Limbah Pabrik ABCD</label>
+                                                        <label for="" class="text-dark">:{{ $dataLaporan->judul_pengaduan }}</label>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -48,7 +48,7 @@
                                                         <span class="font-weight-bold">:</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <label for="" class="text-dark">:Pencemaran</label>
+                                                        <label for="" class="text-dark">:{{ $dataLaporan->kategori->kategori }}</label>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -56,7 +56,7 @@
                                                         <!-- <span class="font-weight-bold">:</span> -->
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <label for="" class="text-dark">:22 Oktober 2024</label>
+                                                        <label for="" class="text-dark">:{{ $dataLaporan->tgl_pengaduan }}</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -64,13 +64,13 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label text-dark font-weight-bold" for="val-alamat">Nik Pelapor</label>
                                                     <div class="col-lg-6">
-                                                        <label for="" class="text-dark">:3207172222000000</label>
+                                                        <label for="" class="text-dark">:{{ $dataLaporan->user->nik }}</label>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label text-dark font-weight-bold" for="val-alamat">Nama Pelapor</label>
                                                     <div class="col-lg-6">
-                                                        <label for="" class="text-dark">:Lukman</label>
+                                                        <label for="" class="text-dark">:{{ $dataLaporan->user->nama }}</label>
                                                     </div>
                                                 </div>
                                                 <form action="">
@@ -93,17 +93,17 @@
                                     </form>
                                     <div class="mt-5 d-flex flex-wrap">
                                         <div>
-                                            <img src="assetsusers/img/img/air.jpg" alt="" width="400">
+                                            <img src="{{ asset('assetsusers/img/img/air.jpg') }}" alt="" width="400">
                                         </div>
                                         <div style="width: 600px;" class="ml-5 mt-3 mt-md-0">
-                                            Ipsum dolor sit amet consectetur adipiscing elit ut. Libero justo laoreet sit amet cursus. Massa vitae tortor condimentum lacinia quis vel eros donec. Auctor augue mauris augue neque gravida. Pharetra et ultrices neque ornare aenean euismod elementum. Mattis aliquam faucibus purus in massa tempor. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Nulla aliquet porttitor lacus luctus accumsan tortor posuere ac ut. Nisl condimentum id venenatis a condimentum vitae sapien. Magna ac placerat vestibulum lectus mauris ultrices eros in.
+                                            {{ $dataLaporan->laporan_pengaduan }}
                                         </div>
                                     </div>
                                     <div class="mt-5">
                                         <div>
                                             <div class="d-flex">
                                                 <div>
-                                                    <img src="assetsusers/img/blog/comments-2.jpg" class="rounded-circle" width="50" alt="">
+                                                    <img src="{{ asset('assetsusers/img/blog/comments-2.jpg') }}" class="rounded-circle" width="50" alt="">
                                                 </div>
                                                 <div class="ml-2">
                                                     <b>Jhon Doe</b><br>

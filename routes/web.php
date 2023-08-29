@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PengaduankuController;
 use App\Http\Controllers\RegisterController;
@@ -56,8 +57,8 @@ Route::middleware('admin')->group(function(){
     Route::view('/kategori', 'admin.kategori.kategori');
     Route::view('/kategori-add', 'admin.kategori.kategori-add');
     // laporan Admin
-    Route::view('/laporanmasuk', 'admin.laporan.laporanmasuk');
-    Route::view('/laporanmasuk-detail', 'admin.laporan.laporanmasuk-detail');
+    Route::get('/laporanmasuk', [LaporanController::class, 'index']);
+    Route::get('/laporanmasuk-detail/{laporan}', [LaporanController::class, 'show']);
     // report
     Route::view('/generate-report', 'admin.report.generate-report');
 });

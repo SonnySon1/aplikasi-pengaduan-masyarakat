@@ -47,6 +47,6 @@ class User extends Authenticatable
 
     // relasi dari table user ke table pengaduan dengan sifat one to many 
     public function pengaduan(){
-        return $this->hasMany(Pengaduan::class, 'id_user', 'id');
+        return $this->hasMany(Pengaduan::class);
     }
 }

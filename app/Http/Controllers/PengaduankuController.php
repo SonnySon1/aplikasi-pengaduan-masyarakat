@@ -12,7 +12,7 @@ class PengaduankuController extends Controller
 {
         // halaman index
                 public function index(){
-                        $dataPengaduan = Pengaduan::with(['kategori', 'user'])->where('id_user', auth()->user()->id)->get();
+                        $dataPengaduan = Pengaduan::with(['kategori', 'user'])->where('user_id', auth()->user()->id)->get();
                         return view('user.user-pengaduan', compact('dataPengaduan'));
                 }
 
@@ -39,7 +39,7 @@ class PengaduankuController extends Controller
 
                         $dataPengaduan = [
                                 'judul_pengaduan'       =>  $request->input('judul_pengaduan'),
-                                'id_user'               =>  auth()->user()->id,   
+                                'user_id'               =>  auth()->user()->id,   
                                 'id_kategori'           =>  $request->input('kategori'),
                                 'laporan_pengaduan'     =>  $request->input('isi_pengaduan'),
                                 'foto'                  =>  $nama_foto
