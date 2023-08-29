@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PengaduankuController;
@@ -44,22 +45,29 @@ Route::middleware('masyarakat')->group(function(){
 // admin  
 
 Route::middleware('admin')->group(function(){
+    
     // dashboard Admin
     Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::get('/signout-staf', [DashboardController::class, 'signout_staf']);
+    
     // masyarakat Admin
     Route::view('/masyarakat', 'admin.masyarakat.masyarakat');
     Route::view('/masyarakatadd', 'admin.masyarakat.masyarakat-add');
+
     // petugas Admin
     Route::view('/petugas', 'admin.petugas.petugas');
     Route::view('/petugas-add', 'admin.petugas.petugas-add');
+
     // kategori Admin
-    Route::view('/kategori', 'admin.kategori.kategori');
-    Route::view('/kategori-add', 'admin.kategori.kategori-add');
+    Route::get('/kategori', [KategoriController::class, 'index']);
+    Route::get('/kategori-add', [KategoriController::class, 'kategori_add']);
+    Route::post('/kategori-store', [KategoriController::class, 'store']);
+
     // laporan Admin
     Route::get('/laporanmasuk', [LaporanController::class, 'index']);
     Route::get('/laporanmasuk-detail/{laporan}', [LaporanController::class, 'show']);
     Route::post('/laporan-update/{status}', [LaporanController::class, 'update']);
+
     // report
     Route::view('/generate-report', 'admin.report.generate-report');
 });

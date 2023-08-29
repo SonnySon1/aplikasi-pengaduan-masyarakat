@@ -40,27 +40,27 @@
                         </div>
                         <div class="card-body">
                             <div class="form-validation">
-                                <form class="form-valide" action="#" method="get">
+                                <form class="form-valide" action="/kategori-store" method="post">
+                                    @csrf
                                     <div class="row">
                                         <div class="w-100">
                                             <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="val-kategori">Kategori
+                                                <label class="col-lg-4 col-form-label" for="val_kategori">Kategori
                                                     <span class="text-danger">*</span>
                                                 </label>
                                                     <div class="col-lg-12">
-                                                    <input type="text" class="form-control" id="val-kategori" name="val-kategori" placeholder="Masukan Kategori" style="width: 100%;">
+                                                    <input type="text" class="form-control" id="val_kategori" name="val_kategori" placeholder="Masukan Kategori" style="width: 100%;">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-lg-4 col-form-label" for="val-deskripsi">Deskripsi <span
-                                                        class="text-danger">*</span>
+                                                <label class="col-lg-4 col-form-label" for="val_deskripsi">Deskripsi
+                                                    <span class="text-danger">*</span>
                                                 </label>
-                                                <div class="col-lg-12">
-                                                    <textarea class="form-control" id="val-deskripsi" name="val-deskripsi" rows="10" cols="20" placeholder="Deskripsi tentang kategori yang di magsud"></textarea>
+                                                    <div class="col-lg-12">
+                                                    <textarea class="form-control" id="val_deskripsi" name="val_deskripsi" placeholder="Masukan deskripsi" style="width: 100%;"></textarea>
                                                 </div>
                                             </div>
                                         </div>
-                                        
                                     </div>
                                         <a href="/kategori" class="btn btn-outline-warning text-warning"><i class="bi bi-backspace"></i>Kembali</a>
                                         <button type="submit" class="btn btn-primary">Submit</button>

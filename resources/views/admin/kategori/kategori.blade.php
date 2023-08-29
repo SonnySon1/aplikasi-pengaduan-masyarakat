@@ -25,7 +25,7 @@
                 </div>
                 <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Masyarakat</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Kategori</a></li>
                         <li class="breadcrumb-item active"><a href="javascript:void(0)">Index</a></li>
                     </ol>
                 </div>
@@ -34,7 +34,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Data Masyarakat</h4>
+                            <h4 class="card-title">Data Kategori</h4>
                             <input class="search" type="text" name="search" id="seach" placeholder="search">
                         </div>
                         <div class="card-body">
@@ -49,24 +49,21 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Kekerasan</td>
-                                            <td>Deskripsi tentang kekerasan</td>
-                                            <td>
-                                                <a href="" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
-                                                <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Pencemaran</td>
-                                            <td>Fery</td>
-                                            <td>
-                                                <a href="" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
-                                                <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                                            </td>
-                                        </tr>
+                                        @foreach ($dataKategori as $no=>$kategori)                                            
+                                            <tr>
+                                                <td>{{ $no+1 }}</td>
+                                                <td>{{ $kategori->kategori }}</td>
+                                                <td>{!! Str::limit($kategori->deskripsi, 50) !!}</td>
+                                                <td>
+                                                    @php
+                                                         $data_i_encrypt = Crypt::encrypt($kategori->id);
+                                                    @endphp
+                                                    <a href="/edit-kategori/{{ $data_i_encrypt }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
+                                                    <a href="/detail-kategori/{{ $data_i_encrypt }}" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
+                                                    <a href="/delete-kategori/{{ $data_i_encrypt }}" class="btn btn-danger btn-sm"><i class="bi bi-trash3"></i></i></a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                                 <a href="/kategori-add" class="border border-secondary btn-block text-center p-2 btn-hover-primary btn-sm rounded"><i class="bi bi-plus"></i>Add data kategori</a>

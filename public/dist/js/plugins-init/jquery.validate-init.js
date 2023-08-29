@@ -21,14 +21,14 @@ jQuery(".form-valide").validate({
         "val-nama": {
             required: !0,
         },
-        "val-kategori": {
+        "val_kategori": {
             required: !0
         },
         "val-select2-multiple": {
             required: !0,
             minlength: 2
         },
-        "val-deskripsi": {
+        "val_deskripsi": {
             required: !0,
         },
         "val-jeniskelamin": {
@@ -79,7 +79,7 @@ jQuery(".form-valide").validate({
             required: "Mohon isi nik",
             minlength: "Panjang nik minimal 16 Karakter"
         },
-        "val-kategori": {
+        "val_kategori": {
             required: "Mohon isi kategori",
         },
         "val-bulan": {
@@ -107,7 +107,7 @@ jQuery(".form-valide").validate({
         },
         "vx`al-select2": "Please select a value!",
         "val-select2-multiple": "Please select at least 2 values!",
-        "val-deskripsi": "Mohon isi deskripsi kategori",
+        "val_deskripsi": "Mohon isi deskripsi kategori",
         "val-jeniskelamin": "Silahkan Pilih Jenis Kelamin!",
         "val-currency": "Please enter a price!",
         "val-notelepon": "Mohon masukan no telepon",
