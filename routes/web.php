@@ -62,6 +62,10 @@ Route::middleware('admin')->group(function(){
     Route::get('/kategori', [KategoriController::class, 'index']);
     Route::get('/kategori-add', [KategoriController::class, 'kategori_add']);
     Route::post('/kategori-store', [KategoriController::class, 'store']);
+    Route::get('/kategori-delete/{kategori}',[KategoriController::class, 'destroy']);
+    Route::get('/kategori-edit/{kategori}', [KategoriController::class, 'kategori_edit']);
+    Route::post('/kategori-update/{kategori}', [KategoriController::class, 'update']);
+    Route::get('/kategori-detail/{kategori}', [KategoriController::class, 'show']);
 
     // laporan Admin
     Route::get('/laporanmasuk', [LaporanController::class, 'index']);

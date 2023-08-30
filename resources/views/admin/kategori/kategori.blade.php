@@ -58,9 +58,9 @@
                                                     @php
                                                          $data_i_encrypt = Crypt::encrypt($kategori->id);
                                                     @endphp
-                                                    <a href="/edit-kategori/{{ $data_i_encrypt }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
-                                                    <a href="/detail-kategori/{{ $data_i_encrypt }}" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                                                    <a href="/delete-kategori/{{ $data_i_encrypt }}" class="btn btn-danger btn-sm"><i class="bi bi-trash3"></i></i></a>
+                                                    <a href="/kategori-edit/{{ $data_i_encrypt }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
+                                                    <a href="/kategori-detail/{{ $data_i_encrypt }}" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
+                                                    <a href="/kategori-delete/{{ $data_i_encrypt }}" class="btn btn-danger btn-sm"><i class="bi bi-trash3"></i></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -71,7 +71,6 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
     </div>
