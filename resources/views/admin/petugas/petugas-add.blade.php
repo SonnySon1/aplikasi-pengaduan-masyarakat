@@ -37,31 +37,31 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-validation">
-                                    <form class="form-valide" action="#" method="get">
+                                    <form class="form-valide" action="/petugas-add" method="get">
                                         <div class="row">
                                             <div class="col-xl-6">
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-nik">NIK
+                                                    <label class="col-lg-4 col-form-label" for="val_nik">NIK
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                      <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val-nik" name="val-nik" placeholder="Masukan NIK..">
+                                                        <input type="text" class="form-control" id="val_nik" name="val_nik" placeholder="Masukan NIK..">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-nama">Nama <span
+                                                    <label class="col-lg-4 col-form-label" for="val_nama">Nama <span
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val-nama" name="val-nama" placeholder="Masukan Nama..">
+                                                        <input type="text" class="form-control" id="val_nama" name="val_nama" placeholder="Masukan Nama..">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-jeniskelamin">Jenis Kelamin
+                                                    <label class="col-lg-4 col-form-label" for="val_jeniskelamin">Jenis Kelamin
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <select class="form-control" id="val-jeniskelamin" name="val-jeniskelamin">
+                                                        <select class="form-control" id="val_jeniskelamin" name="val_jeniskelamin">
                                                             <option value="">--Pilih Jenis Kelamin--</option>
                                                             <option value="L">Laki-Laki</option>
                                                             <option value="P">Perempuan</option>
@@ -69,46 +69,46 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-notelepon">No Telepon
+                                                    <label class="col-lg-4 col-form-label" for="val_notelepon">No Telepon
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="tel" class="form-control" id="val-notelepon" name="val-notelepon" placeholder="Masukan No Telepon..">
+                                                        <input type="tel" class="form-control" id="val_notelepon" name="val_notelepon" placeholder="Masukan No Telepon..">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-xl-6">
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-alamat">Alamat <span
+                                                    <label class="col-lg-4 col-form-label" for="val_alamat">Alamat <span
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val-alamat" name="val-alamat" placeholder="Masukan Alamat..">
+                                                        <input type="text" class="form-control" id="val_alamat" name="val_alamat" placeholder="Masukan Alamat..">
                                                     </div>
                                                 </div>
                                                 
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-email">Email <span
+                                                    <label class="col-lg-4 col-form-label" for="val_email">Email <span
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val-email" name="val-email" placeholder="Masukan Email">
+                                                        <input type="text" class="form-control" id="val_email" name="val_email" placeholder="Masukan Email">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-password">Password <span
+                                                    <label class="col-lg-4 col-form-label" for="val_password">Password <span
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val-password" name="val-password" placeholder="Masukan Password">
+                                                        <input type="text" class="form-control" id="val_password" name="val_password" placeholder="Masukan Password">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-jabatan">Jabatan
+                                                    <label class="col-lg-4 col-form-label" for="val_jabatan">Jabatan
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <select class="form-control" id="val-jabatan" name="val-jabatan">
+                                                        <select class="form-control" id="val_jabatan" name="val_jabatan">
                                                             <option value="">--Pilih Jabatan--</option>
                                                             <option value="petugas">Petugas</option>
                                                             <option value="admin">Admin</option>

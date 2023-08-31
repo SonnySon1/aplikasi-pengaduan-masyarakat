@@ -51,76 +51,25 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach ($dataPetugas as $petugas)                                                
                                             <tr>
                                                 <td>1</td>
-                                                <td>3207172222000000</td>
-                                                <td>Fery</td>
-                                                <td>Petugas</td>
+                                                <td>{{ $petugas->nik }}</td>
+                                                <td>{{ $petugas->nama }}</td>
+                                                @if ($petugas->role == "masyarakat")
+                                                    <td><span class="bg-success text-white p-1" style="border-radius: 50px">{{ $petugas->role }}</span></td>
+                                                @elseif($petugas->role == "admin")
+                                                    <td><span class="bg-danger text-white p-1" style="border-radius: 50px">{{ $petugas->role }}</span></td>
+                                                @elseif($petugas->role == "petugas")
+                                                    <td><span class="bg-warning text-white p-1" style="border-radius: 50px">{{ $petugas->role }}</span></td>
+                                                @endif
                                                 <td>
                                                     <a href="" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
                                                     <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>3207172222000000</td>
-                                                <td>Dimas</td>
-                                                <td>Admin</td>
-                                                <td>
-                                                    <a href="" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
-                                                    <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>3207172222000000</td>
-                                                <td>Samsul</td>
-                                                <td>Admin</td>
-                                                <td>
-                                                    <a href="" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
-                                                    <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>3207172222000000</td>
-                                                <td>Diky</td>
-                                                <td>Petugas</td>
-                                                <td>
-                                                    <a href="" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
-                                                    <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>3207172222000000</td>
-                                                <td>Rizal</td>
-                                                <td>Admin</td>
-                                                <td>
-                                                    <a href="" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
-                                                    <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>3207172222000000</td>
-                                                <td>Reza</td>
-                                                <td>Admin</td>
-                                                <td>
-                                                    <a href="" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
-                                                    <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>7</td>
-                                                <td>3207172222000000</td>
-                                                <td>Danang</td>
-                                                <td>Admin</td>
-                                                <td>
-                                                    <a href="" style="z-index: 6;" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
-                                                    <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                                                </td>
-                                            </tr>
+                                            @endforeach
+
                                         </tbody>
                                     </table>
                                     <a href="/petugas-add" class="border border-secondary btn-block text-center p-2 btn-hover-primary btn-sm rounded"><i class="bi bi-plus"></i>Add data Petugas</a>

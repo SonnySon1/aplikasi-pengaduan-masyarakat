@@ -1,24 +1,24 @@
 jQuery(".form-valide").validate({
     rules: {
-        "val-nik": {
+        "val_nik": {
             required: !0,
             minlength: 16
         },
         "val-kategori": {
             required: !0,
         },
-        "val-email": {
+        "val_email": {
             required: !0,
             email: !0
         },
-        "val-alamat": {
+        "val_alamat": {
             required: !0,
         },
-        "val-password": {
+        "val_password": {
             required: !0,
             minlength: 5
         },
-        "val-nama": {
+        "val_nama": {
             required: !0,
         },
         "val_kategori": {
@@ -31,18 +31,18 @@ jQuery(".form-valide").validate({
         "val_deskripsi": {
             required: !0,
         },
-        "val-jeniskelamin": {
+        "val_jeniskelamin": {
             required: !0
         },
         "val-currency": {
             required: !0,
             currency: ["$", !0]
         },
-        "val-notelepon": {
+        "val_notelepon": {
             required: !0,
             url: !0
         },
-        "val-jabatan": {
+        "val_jabatan": {
             required: !0,
             phoneUS: !0
         },
@@ -75,7 +75,7 @@ jQuery(".form-valide").validate({
         },
     },
     messages: {
-        "val-nik": {
+        "val_nik": {
             required: "Mohon isi nik",
             minlength: "Panjang nik minimal 16 Karakter"
         },
@@ -94,24 +94,24 @@ jQuery(".form-valide").validate({
         "val-status": {
             required: "Mohon pilih status",
         },
-        "val-email": "mohon isi alamat email",
-        "val-password": {
+        "val_email": "mohon isi alamat email",
+        "val_password": {
             required: "Mohon Masukan Password",
             minlength: "Panjang Password Minimal 8 Karakter"
         },
-        "val-alamat":{
+        "val_alamat":{
             required: "Mohon isi alamat",
         },
-        "val-nama": {
+        "val_nama": {
             required: "Mohon isi nama",
         },
         "vx`al-select2": "Please select a value!",
         "val-select2-multiple": "Please select at least 2 values!",
         "val_deskripsi": "Mohon isi deskripsi kategori",
-        "val-jeniskelamin": "Silahkan Pilih Jenis Kelamin!",
+        "val_jeniskelamin": "Silahkan Pilih Jenis Kelamin!",
         "val-currency": "Please enter a price!",
-        "val-notelepon": "Mohon masukan no telepon",
-        "val-jabatan": "Mohon Pilih Jabatan!",
+        "val_notelepon": "Mohon masukan no telepon",
+        "val_jabatan": "Mohon Pilih Jabatan!",
         "val-digits": "Please enter only digits!",
         "val-number": "Please enter a number!",
         "val-range": "Please enter a number between 1 and 5!",

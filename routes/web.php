@@ -5,6 +5,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PengaduankuController;
+use App\Http\Controllers\PetugasController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -55,8 +56,8 @@ Route::middleware('admin')->group(function(){
     Route::view('/masyarakatadd', 'admin.masyarakat.masyarakat-add');
 
     // petugas Admin
-    Route::view('/petugas', 'admin.petugas.petugas');
-    Route::view('/petugas-add', 'admin.petugas.petugas-add');
+    Route::get('/petugas', [PetugasController::class, 'index']);
+    Route::get('/petugas-add', [PetugasController::class, 'petugas_add']);
 
     // kategori Admin
     Route::get('/kategori', [KategoriController::class, 'index']);
