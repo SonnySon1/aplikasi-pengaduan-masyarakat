@@ -47,4 +47,27 @@ class PetugasController extends Controller
     
         return view('admin.petugas.petugas-edit', compact('dataPetugas'));
     }
+
+    public function update(Request $request, $petugas){
+        try {
+            $petugas_i_decrypt = Crypt::decrypt($petugas);
+        } catch (DecryptException $e) {
+            abort(404);
+        }
+
+        $data = [
+            "nama"          => $request ->val_nama,
+            "nik"           => $request ->val_nik,
+            "alamat"        => $request ->val_alamat,
+            "jenis_kelamin" => $request ->val_jeniskelamin,
+            "email"         => $request ->val_email,
+            "password"      => bcrypt($request->val_password),
+            "no_telepon"    =>$request  ->val_notelepon,
+            "role"          =>$request  ->val_jabatan,
+        ];
+
+        $dataPetugas = User::find($petugas_i_decrypt);
+        $dataPetugas->update($data);
+        return redirect('/petugas');
+    }
 }

@@ -37,7 +37,10 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-validation">
-                                    <form class="form-valide" action="/petugas-store" method="post" autocomplete="off">
+                                    @php
+                                        $petugas_i_cryprt = Crypt::encrypt($dataPetugas->id)
+                                    @endphp
+                                    <form class="form-valide" action="/petugas-update/{{ $petugas_i_cryprt }}" method="post" autocomplete="off">
                                         @csrf
                                         <div class="row">
                                             <div class="col-xl-6">
@@ -120,7 +123,7 @@
                                             </div>
                                         </div>
                                             <a href="/petugas" class="btn btn-outline-warning text-warning"><i class="bi bi-backspace"></i>Kembali</a>
-                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                            <button type="submit" class="btn btn-primary">Update</button>
                                         </div>
                                     </form>
                                 </div>
