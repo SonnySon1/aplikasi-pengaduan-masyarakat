@@ -58,6 +58,8 @@ Route::middleware('admin')->group(function(){
     // petugas Admin
     Route::get('/petugas', [PetugasController::class, 'index']);
     Route::get('/petugas-add', [PetugasController::class, 'petugas_add']);
+    Route::post('/petugas-store', [PetugasController::class, 'store']);
+    Route::get('/petugas-edit/{petugas}', [PetugasController::class, 'petugas_edit']);
 
     // kategori Admin
     Route::get('/kategori', [KategoriController::class, 'index']);

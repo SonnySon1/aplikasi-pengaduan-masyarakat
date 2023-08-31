@@ -64,8 +64,11 @@
                                                     <td><span class="bg-warning text-white p-1" style="border-radius: 50px">{{ $petugas->role }}</span></td>
                                                 @endif
                                                 <td>
-                                                    <a href="" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
-                                                    <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
+                                                    @php
+                                                        $petugas_i_encrypt = Crypt::encrypt($petugas->id)
+                                                    @endphp
+                                                    <a href="/petugas-edit/{{ $petugas_i_encrypt }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
+                                                    <a href="/petugas-detail/{{ $petugas_i_encrypt }}" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
                                                 </td>
                                             </tr>
                                             @endforeach

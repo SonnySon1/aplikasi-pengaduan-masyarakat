@@ -25,7 +25,7 @@
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Petugas</a></li>
-                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Add Pata Petugas</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Edit Pata Petugas</a></li>
                         </ol>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Form Add Data Petugas</h4>
+                                <h4 class="card-title">Form Edit Data Petugas</h4>
                             </div>
                             <div class="card-body">
                                 <div class="form-validation">
@@ -46,7 +46,7 @@
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                      <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val_nik" name="val_nik" placeholder="Masukan NIK.." autofocus>
+                                                        <input type="text" class="form-control" id="val_nik" name="val_nik" placeholder="Masukan NIK.." autofocus value="{{ $dataPetugas->nik }}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -54,7 +54,7 @@
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val_nama" name="val_nama" placeholder="Masukan Nama..">
+                                                        <input type="text" class="form-control" id="val_nama" name="val_nama" placeholder="Masukan Nama.." value="{{ $dataPetugas->nama }}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -64,8 +64,8 @@
                                                     <div class="col-lg-12">
                                                         <select class="form-control" id="val_jeniskelamin" name="val_jeniskelamin">
                                                             <option value="">--Pilih Jenis Kelamin--</option>
-                                                            <option value="L">Laki-Laki</option>
-                                                            <option value="P">Perempuan</option>
+                                                            <option value="L" @if ($dataPetugas->jenis_kelamin == "L") selected @endif>Laki-Laki</option>
+                                                            <option value="P" @if ($dataPetugas->jenis_kelamin == "P") selected @endif>Perempuan</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -74,7 +74,7 @@
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="tel" class="form-control" id="val_notelepon" name="val_notelepon" placeholder="Masukan No Telepon..">
+                                                        <input type="tel" class="form-control" id="val_notelepon" name="val_notelepon" placeholder="Masukan No Telepon.." value="{{ $dataPetugas->no_telepon }}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -84,7 +84,7 @@
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val_alamat" name="val_alamat" placeholder="Masukan Alamat..">
+                                                        <input type="text" class="form-control" id="val_alamat" name="val_alamat" placeholder="Masukan Alamat.." value="{{ $dataPetugas->alamat }}">
                                                     </div>
                                                 </div>
                                                 
@@ -93,7 +93,7 @@
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val_email" name="val_email" placeholder="Masukan Email">
+                                                        <input type="text" class="form-control" id="val_email" name="val_email" placeholder="Masukan Email" value="{{ $dataPetugas->email }}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -111,9 +111,9 @@
                                                     <div class="col-lg-12">
                                                         <select class="form-control" id="val_jabatan" name="val_jabatan">
                                                             <option value="">--Pilih Jabatan--</option>
-                                                            <option value="masyarakat">Masyarakat</option>
-                                                            <option value="petugas">Petugas</option>
-                                                            <option value="admin">Admin</option>
+                                                            <option value="masyarakat" @if ($dataPetugas->role == "masyarakat") selected @endif>Masyarakat</option>
+                                                            <option value="petugas" @if ($dataPetugas->role == "petugas") selected @endif>Petugas</option>
+                                                            <option value="admin" @if ($dataPetugas->role == "admin") selected @endif>Admin</option>
                                                         </select>
                                                     </div>
                                                 </div>

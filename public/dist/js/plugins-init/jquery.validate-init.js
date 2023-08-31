@@ -39,9 +39,7 @@ jQuery(".form-valide").validate({
             currency: ["$", !0]
         },
         "val_notelepon": {
-            required: !0,
-            url: !0
-        },
+            required: !0,        },
         "val_jabatan": {
             required: !0,
             phoneUS: !0
@@ -111,8 +109,7 @@ jQuery(".form-valide").validate({
         "val_jeniskelamin": "Silahkan Pilih Jenis Kelamin!",
         "val-currency": "Please enter a price!",
         "val_notelepon": "Mohon masukan no telepon",
-        "val_jabatan": "Mohon Pilih Jabatan!",
-        "val-digits": "Please enter only digits!",
+        "val_jabatan": "Mohon Pili,Please enter only digits!",
         "val-number": "Please enter a number!",
         "val-range": "Please enter a number between 1 and 5!",
         "val-terms": "You must agree to the service terms!"
