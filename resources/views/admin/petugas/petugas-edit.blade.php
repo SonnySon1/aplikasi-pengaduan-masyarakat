@@ -50,6 +50,7 @@
                                                     </label>
                                                      <div class="col-lg-12">
                                                         <input type="text" class="form-control" id="val_nik" name="val_nik" placeholder="Masukan NIK.." autofocus value="{{ $dataPetugas->nik }}">
+                                                        <small class="text-danger">@error('val_nik') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -58,6 +59,7 @@
                                                     </label>
                                                     <div class="col-lg-12">
                                                         <input type="text" class="form-control" id="val_nama" name="val_nama" placeholder="Masukan Nama.." value="{{ $dataPetugas->nama }}">
+                                                        <small class="text-danger">@error('val_nama') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -70,6 +72,7 @@
                                                             <option value="L" @if ($dataPetugas->jenis_kelamin == "L") selected @endif>Laki-Laki</option>
                                                             <option value="P" @if ($dataPetugas->jenis_kelamin == "P") selected @endif>Perempuan</option>
                                                         </select>
+                                                        <small class="text-danger">@error('val_jeniskelamin') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -78,6 +81,7 @@
                                                     </label>
                                                     <div class="col-lg-12">
                                                         <input type="tel" class="form-control" id="val_notelepon" name="val_notelepon" placeholder="Masukan No Telepon.." value="{{ $dataPetugas->no_telepon }}">
+                                                        <small class="text-danger">@error('val_notelepon') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>
                                             </div>
@@ -88,6 +92,7 @@
                                                     </label>
                                                     <div class="col-lg-12">
                                                         <input type="text" class="form-control" id="val_alamat" name="val_alamat" placeholder="Masukan Alamat.." value="{{ $dataPetugas->alamat }}">
+                                                        <small class="text-danger">@error('val_alamat') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>
                                                 
@@ -97,6 +102,7 @@
                                                     </label>
                                                     <div class="col-lg-12">
                                                         <input type="text" class="form-control" id="val_email" name="val_email" placeholder="Masukan Email" value="{{ $dataPetugas->email }}">
+                                                        <small class="text-danger">@error('val_email') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -104,7 +110,8 @@
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val_password" name="val_password" placeholder="Masukan Password">
+                                                        <input type="text" class="form-control" id="val_password" name="val_password" placeholder="Masukan Password" value="{{ $dataPetugas->password }}" >
+                                                        <small class="text-danger">@error('val_password') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -118,6 +125,7 @@
                                                             <option value="petugas" @if ($dataPetugas->role == "petugas") selected @endif>Petugas</option>
                                                             <option value="admin" @if ($dataPetugas->role == "admin") selected @endif>Admin</option>
                                                         </select>
+                                                        <small class="text-danger">@error('val_jabatan') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>
                                             </div>

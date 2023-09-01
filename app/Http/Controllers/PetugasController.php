@@ -19,7 +19,17 @@ class PetugasController extends Controller
     }
 
     public function store(Request $request){
-
+        $request->validate([
+            "val_nama"          => "required",
+            "val_nik"           => "required|unique:users,nik",
+            "val_alamat"        => "required",
+            "val_jeniskelamin"  => "required",
+            "val_email"         => "required|unique:users,email",
+            "val_password"      => "required",
+            "val_notelepon"     => "required|unique:users,no_telepon",
+            "val_jabatan"       => "required"
+        ]);
+        
         $data = [
             "nama"          => $request ->val_nama,
             "nik"           => $request ->val_nik,
@@ -54,6 +64,17 @@ class PetugasController extends Controller
         } catch (DecryptException $e) {
             abort(404);
         }
+
+        $request->validate([
+            "val_nama"          => "required",
+            "val_nik"           => "required",
+            "val_alamat"        => "required",
+            "val_jeniskelamin"  => "required",
+            "val_email"         => "required",
+            "val_password"      => "required",
+            "val_notelepon"     => "required",
+            "val_jabatan"       => "required"
+        ]);
 
         $data = [
             "nama"          => $request ->val_nama,

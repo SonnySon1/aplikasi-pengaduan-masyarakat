@@ -57,16 +57,16 @@
  <script src="{{ asset('dist/vendor/pg-calendar/js/pignose.calendar.min.js') }}"></script>
 
 
- <script src="dist/js/dashboard/dashboard-2.js"></script>
+ <script src="{{ asset('dist/js/dashboard/dashboard-2.js') }}"></script>
  <!-- Circle progress -->
 
 
   <!-- Jquery Validation -->
-  <script src="dist/vendor/jquery-validation/jquery.validate.min.js"></script>
+  <script src="{{ asset('dist/vendor/jquery-validation/jquery.validate.min.js') }}"></script>
   <!-- -------- -->
 
   <!-- Form validate init -->
-  <script src="dist/js/plugins-init/jquery.validate-init.js"></script>
+  <script src="{{ asset('dist/js/plugins-init/jquery.validate-init.js') }}"></script>
 
 </body>
 
