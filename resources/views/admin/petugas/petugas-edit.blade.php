@@ -121,7 +121,6 @@
                                                     <div class="col-lg-12">
                                                         <select class="form-control" id="val_jabatan" name="val_jabatan">
                                                             <option value="">--Pilih Jabatan--</option>
-                                                            <option value="masyarakat" @if ($dataPetugas->role == "masyarakat") selected @endif>Masyarakat</option>
                                                             <option value="petugas" @if ($dataPetugas->role == "petugas") selected @endif>Petugas</option>
                                                             <option value="admin" @if ($dataPetugas->role == "admin") selected @endif>Admin</option>
                                                         </select>

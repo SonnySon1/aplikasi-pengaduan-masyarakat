@@ -111,7 +111,6 @@
                                                     <div class="col-lg-12">
                                                         <select class="form-control" id="val_jabatan" name="val_jabatan">
                                                             <option value="">--Pilih Jabatan--</option>
-                                                            <option value="masyarakat">Masyarakat</option>
                                                             <option value="petugas">Petugas</option>
                                                             <option value="admin">Admin</option>
                                                         </select>

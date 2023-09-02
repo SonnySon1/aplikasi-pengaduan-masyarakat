@@ -56,9 +56,7 @@
                                                 <td>1</td>
                                                 <td>{{ $petugas->nik }}</td>
                                                 <td>{{ $petugas->nama }}</td>
-                                                @if ($petugas->role == "masyarakat")
-                                                    <td><span class="bg-success text-white p-1" style="border-radius: 50px">{{ $petugas->role }}</span></td>
-                                                @elseif($petugas->role == "admin")
+                                                @if($petugas->role == "admin")
                                                     <td><span class="bg-danger text-white p-1" style="border-radius: 50px">{{ $petugas->role }}</span></td>
                                                 @elseif($petugas->role == "petugas")
                                                     <td><span class="bg-warning text-white p-1" style="border-radius: 50px">{{ $petugas->role }}</span></td>

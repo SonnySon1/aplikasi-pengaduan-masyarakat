@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Crypt;
 class PetugasController extends Controller
 {
     public function index(){
-        $dataPetugas = User::all();
+        $dataPetugas = User::whereIn('role', ['petugas', 'admin'])->get();
         return view('admin.petugas.petugas', compact('dataPetugas'));
     }
 
