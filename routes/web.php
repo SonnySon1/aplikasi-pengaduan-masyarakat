@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MasyarakatController;
 use App\Http\Controllers\PengaduankuController;
 use App\Http\Controllers\PetugasController;
 use App\Http\Controllers\RegisterController;
@@ -52,8 +53,11 @@ Route::middleware('admin')->group(function(){
     Route::get('/signout-staf', [DashboardController::class, 'signout_staf']);
     
     // masyarakat Admin
-    Route::view('/masyarakat', 'admin.masyarakat.masyarakat');
-    Route::view('/masyarakatadd', 'admin.masyarakat.masyarakat-add');
+    Route::get('/masyarakat', [MasyarakatController::class, 'index']);
+    Route::get('/masyarakat-add', [MasyarakatController::class, 'masyarakat_add']);
+    Route::post('/masyarakat/store', [MasyarakatController::class, 'store']);
+    Route::get('/masyarakat-edit/{masyarakat}', [MasyarakatController::class, 'masyarakat_edit']);
+    Route::post('/masyarakat-update/{masyarakat}', [MasyarakatController::class, 'update']);
 
     // petugas Admin
     Route::get('/petugas', [PetugasController::class, 'index']);

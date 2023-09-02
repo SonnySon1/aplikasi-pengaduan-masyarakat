@@ -27,7 +27,7 @@
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Masyarakat</a></li>
-                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Add Data Masyarakat</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Edit Data Masyarakat</a></li>
                         </ol>
                     </div>
                 </div>
@@ -39,7 +39,10 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-validation">
-                                    <form class="form-valide" action="/masyarakat/store" method="post">
+                                    @php
+                                        $masyarakat_i_cryprt = Crypt::encrypt($dataMasyarakat->id)
+                                    @endphp
+                                    <form class="form-valide" action="/masyarakat-update/{{ $masyarakat_i_cryprt }}" method="post">
                                         @csrf
                                         <div class="row">
                                             <div class="col-xl-6">
@@ -48,7 +51,7 @@
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val_nik" name="val_nik" placeholder="Masukan NIK..">
+                                                        <input type="text" class="form-control" id="val_nik" name="val_nik" placeholder="Masukan NIK.." value="{{ $dataMasyarakat->nik }}">
                                                         <small class="text-danger">@error('val_nik') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>
@@ -57,7 +60,7 @@
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val_nama" name="val_nama" placeholder="Masukan Nama..">
+                                                        <input type="text" class="form-control" id="val_nama" name="val_nama" placeholder="Masukan Nama.." value="{{ $dataMasyarakat->nama }}">
                                                         <small class="text-danger">@error('val_nama') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>
@@ -67,9 +70,8 @@
                                                     </label>
                                                     <div class="col-lg-12">
                                                         <select class="form-control" id="val_jeniskelamin" name="val_jeniskelamin">
-                                                            <option value="">--Pilih Jenis Kelamin--</option>
-                                                            <option value="L">Laki-Laki</option>
-                                                            <option value="P">Perempuan</option>
+                                                            <option @if ($dataMasyarakat->jenis_kelamin == "L") selected @endif value="L">Laki-Laki</option>
+                                                            <option @if ($dataMasyarakat->jenis_kelamin == "P") selected @endif value="P">Perempuan</option>
                                                         </select>
                                                         <small class="text-danger">@error('val_jeniskelamin') {{$message}} @enderror</small>
                                                     </div>
@@ -79,7 +81,7 @@
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="tel" class="form-control" id="val_notelepon" name="val_notelepon" placeholder="Masukan No Telepon..">
+                                                        <input type="tel" class="form-control" id="val_notelepon" name="val_notelepon" placeholder="Masukan No Telepon.." value="{{ $dataMasyarakat->no_telepon }}">
                                                         <small class="text-danger">@error('val_notelepon') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>
@@ -90,7 +92,7 @@
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val_alamat" name="val_alamat" placeholder="Masukan Alamat..">
+                                                        <input type="text" class="form-control" id="val_alamat" name="val_alamat" placeholder="Masukan Alamat.." value="{{ $dataMasyarakat->alamat }}">
                                                         <small class="text-danger">@error('val_alamat') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>
@@ -100,7 +102,7 @@
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val_email" name="val_email" placeholder="Masukan Email">
+                                                        <input type="text" class="form-control" id="val_email" name="val_email" placeholder="Masukan Email" value="{{ $dataMasyarakat->email }}">
                                                         <small class="text-danger">@error('val_email') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>
@@ -109,8 +111,7 @@
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val_password" name="val_password" placeholder="Masukan Password">
-                                                        <small class="text-danger">@error('val_password') {{$message}} @enderror</small>
+                                                        <input type="text" class="form-control" id="val_password" name="val_password" placeholder="Masukan Password" value="{{ $dataMasyarakat->password }}" disabled>
                                                     </div>
                                                 </div>
                                             </div>

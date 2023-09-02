@@ -47,6 +47,7 @@
                                                     </label>
                                                      <div class="col-lg-12">
                                                         <input type="text" class="form-control" id="val_nik" name="val_nik" placeholder="Masukan NIK.." autofocus>
+                                                        <small class="text-danger">@error('val_nik') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -55,6 +56,7 @@
                                                     </label>
                                                     <div class="col-lg-12">
                                                         <input type="text" class="form-control" id="val_nama" name="val_nama" placeholder="Masukan Nama..">
+                                                        <small class="text-danger">@error('val_nama') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -67,6 +69,7 @@
                                                             <option value="L">Laki-Laki</option>
                                                             <option value="P">Perempuan</option>
                                                         </select>
+                                                        <small class="text-danger">@error('val_jeniskelamin') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -75,6 +78,7 @@
                                                     </label>
                                                     <div class="col-lg-12">
                                                         <input type="tel" class="form-control" id="val_notelepon" name="val_notelepon" placeholder="Masukan No Telepon..">
+                                                        <small class="text-danger">@error('val_notelepon') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>
                                             </div>
@@ -85,6 +89,7 @@
                                                     </label>
                                                     <div class="col-lg-12">
                                                         <input type="text" class="form-control" id="val_alamat" name="val_alamat" placeholder="Masukan Alamat..">
+                                                        <small class="text-danger">@error('val_alamat') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>
                                                 
@@ -94,6 +99,7 @@
                                                     </label>
                                                     <div class="col-lg-12">
                                                         <input type="text" class="form-control" id="val_email" name="val_email" placeholder="Masukan Email">
+                                                        <small class="text-danger">@error('val_email') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -102,6 +108,7 @@
                                                     </label>
                                                     <div class="col-lg-12">
                                                         <input type="text" class="form-control" id="val_password" name="val_password" placeholder="Masukan Password">
+                                                        <small class="text-danger">@error('val_password') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -114,6 +121,7 @@
                                                             <option value="petugas">Petugas</option>
                                                             <option value="admin">Admin</option>
                                                         </select>
+                                                        <small class="text-danger">@error('val_jabatan') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>
                                             </div>

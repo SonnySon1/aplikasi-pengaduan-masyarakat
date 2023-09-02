@@ -49,79 +49,24 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>3207172222000000</td>
-                                                <td>Fery</td>
-                                                <td>Bandung</td>
-                                                <td>
-                                                    <a href="" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
-                                                    <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>3207172222000000</td>
-                                                <td>Dimas</td>
-                                                <td>Bandung</td>
-                                                <td>
-                                                    <a href="" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
-                                                    <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>3207172222000000</td>
-                                                <td>Samsul</td>
-                                                <td>Bandung</td>
-                                                <td>
-                                                    <a href="" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
-                                                    <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>3207172222000000</td>
-                                                <td>Diky</td>
-                                                <td>Bandung</td>
-                                                <td>
-                                                    <a href="" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
-                                                    <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>3207172222000000</td>
-                                                <td>Rizal</td>
-                                                <td>Bandung</td>
-                                                <td>
-                                                    <a href="" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
-                                                    <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>3207172222000000</td>
-                                                <td>Reza</td>
-                                                <td>Bandung</td>
-                                                <td>
-                                                    <a href="" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
-                                                    <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>7</td>
-                                                <td>3207172222000000</td>
-                                                <td>Danang</td>
-                                                <td>Bandung</td>
-                                                <td>
-                                                    <a href="" style="z-index: 6;" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
-                                                    <a href="" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                                                </td>
-                                            </tr>
+                                            @foreach ($dataMasyarakat as $no=>$masyarakat)                                                
+                                                <tr>
+                                                    <td>{{ $no+1 }}</td>
+                                                    <td>{{ $masyarakat->nik }}</td>
+                                                    <td>{{ $masyarakat->nama }}</td>
+                                                    <td>{{ $masyarakat->alamat }}</td>
+                                                    <td>
+                                                        @php
+                                                            $masyarakat_i_encrypt = Crypt::encrypt($masyarakat->id);
+                                                        @endphp
+                                                        <a href="/masyarakat-edit/{{ $masyarakat_i_encrypt }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
+                                                        <a href="/masyarakat-detail/{{ $masyarakat_i_encrypt }}" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
-                                    <a href="/masyarakatadd" class="border border-secondary btn-block text-center p-2 btn-hover-primary btn-sm rounded"><i class="bi bi-plus"></i> Add data Masyarakat</a>
+                                    <a href="/masyarakat-add" class="border border-secondary btn-block text-center p-2 btn-hover-primary btn-sm rounded"><i class="bi bi-plus"></i> Add data Masyarakat</a>
                                 </div>
                             </div>
                         </div>
