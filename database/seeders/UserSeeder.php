@@ -16,6 +16,15 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
+            "nama"  => "eko",
+            "nik"   => "123123",
+            "alamat"    => "Bandung",
+            "email" => "eko@gmail.com",
+            "password" => bcrypt('123'),
+            "no_telepon"    => "1231231",
+            "role" => "admin"
+        ]);
+        User::create([
             "nama" => "soni",
             "nik"=>"123123123",
             "alamat"=>"Banjar",
@@ -23,5 +32,6 @@ class UserSeeder extends Seeder
             "password"=> bcrypt("123"),
             "no_telepon"=>"089899587003",
         ]);
+
     }
 }
