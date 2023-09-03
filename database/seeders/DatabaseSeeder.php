@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
             KategoriSeeder::class,
             PengaduanSeeder::class
         ]);
-        Pengaduan::factory(10)->create();
+        Pengaduan::factory(200)->create();
 
     }
 }

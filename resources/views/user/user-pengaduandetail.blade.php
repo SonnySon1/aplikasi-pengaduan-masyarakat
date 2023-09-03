@@ -53,7 +53,7 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto" href="#pengaduanku">Pengaduanku</a></li>
+                    <li><a class="nav-link scrollto" href="/pengaduanku#pengaduanku">Pengaduanku</a></li>
                     <li><a class="nav-link scrollto" href="/buat-pengaduan#buatpengaduan">Buat Pengaduan</a></li>
                     <li><a class="nav-link scrollto" href="index.html#contact">Profile</a></li>
                 </ul>

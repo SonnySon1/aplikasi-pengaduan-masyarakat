@@ -40,7 +40,7 @@ class PengaduankuController extends Controller
                         $dataPengaduan = [
                                 'judul_pengaduan'       =>  $request->input('judul_pengaduan'),
                                 'user_id'               =>  auth()->user()->id,   
-                                'id_kategori'           =>  $request->input('kategori'),
+                                'kategori_id'           =>  $request->input('kategori'),
                                 'laporan_pengaduan'     =>  $request->input('isi_pengaduan'),
                                 'foto'                  =>  $nama_foto
                         ];      
