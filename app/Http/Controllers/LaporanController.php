@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Crypt;
 class LaporanController extends Controller
 {
     public function index(){
-        $dataLaporan = Pengaduan::all();
+        $dataLaporan = Pengaduan::with(['user', 'kategori'])->get();
         $kategori = Kategori::all();
         return view('admin.laporan.laporanmasuk', compact('dataLaporan', 'kategori'));
     }
