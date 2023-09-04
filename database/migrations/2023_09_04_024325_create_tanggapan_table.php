@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('tanggapan', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('pengaduan_id');
+            $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('pengaduan_id')->references('id')->on('pengaduan')->onUpdate('cascade')->onDelete('cascade');
             $table->text('tanggapan');
             $table->timestamp('tgl_tanggapan');
             $table->string('foto'); 
