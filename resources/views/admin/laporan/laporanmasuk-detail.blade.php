@@ -113,7 +113,10 @@
                                             </div>
                                             <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error maxime autem ut quidem consequatur aliquid animi aut itaque dolor eius! Perferendis ea quis obcaecati? Illo temporibus ullam harum error perspiciatis!</div>
                                             <div class="mt-3">
-                                                <form action="" class="d-flex">
+                                                @php
+                                                    $laporan_i_encrypt = Crypt::encrypt($dataLaporan->id)
+                                                @endphp
+                                                <form action="/tanggapan-store/{{ $laporan_i_encrypt }}" class="d-flex">
                                                     <input type="text" name="tanggapan" class="w-100 p-1" id="" placeholder="Isi Tanggapan">
                                                     <button class="btn btn-danger p-1 w-15 rounded-0">Kirm Tanggapan</button>
                                                 </form>

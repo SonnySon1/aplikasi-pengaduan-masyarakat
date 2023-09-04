@@ -78,9 +78,9 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach ($dataLaporan as $laporan)                                                        
+                                                    @foreach ($dataLaporan as $no=>$laporan)                                                        
                                                         <tr>
-                                                            <td>1</td>
+                                                            <td>{{ $no+1 }}</td>
                                                             <td>{{ $laporan->tgl_pengaduan }}</td>
                                                             <td>{{ $laporan->user->nama }}</td>
                                                             <td>{{ $laporan->kategori->kategori }}</td>
