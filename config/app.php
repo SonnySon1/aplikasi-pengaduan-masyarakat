@@ -69,7 +69,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' =>  env('APP_TIMEZONE', 'UTC') ,
 
     /*
     |--------------------------------------------------------------------------
@@ -155,7 +155,7 @@ return [
     */
 
     'providers' => [
-
+        
         /*
          * Laravel Framework Service Providers...
          */

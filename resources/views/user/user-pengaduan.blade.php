@@ -92,8 +92,11 @@
                                 <td>{{ $pengaduan->judul_pengaduan }}</td>
                                 <td>{{ $pengaduan->kategori->kategori }}</td>
                                 <td>{{ $pengaduan->status }}</td>
+                                @php
+                                    $pengaduan_i_encrypt = Crypt::encrypt($pengaduan->id)
+                                @endphp
                                 <td>
-                                    <a href="/show/{{ $pengaduan->id }}" class="btn bg-primary btn-sm"><i class="bi bi-eye"></i></a>
+                                    <a href="show/{{ $pengaduan_i_encrypt }}" class="btn bg-primary btn-sm"><i class="bi bi-eye"></i></a>
                                 </td>
                             </tr>
                         @endforeach

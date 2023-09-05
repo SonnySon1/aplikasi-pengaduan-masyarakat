@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use auth;
 use App\Models\Kategori;
 use App\Models\Pengaduan;
-use Illuminate\Contracts\Encryption\DecryptException;
+use App\Models\Tanggapan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Contracts\Encryption\DecryptException;
+use PhpParser\Node\Expr\New_;
 
 class LaporanController extends Controller
 {
@@ -23,7 +26,8 @@ class LaporanController extends Controller
             abort(404);
         }   
         $dataLaporan = Pengaduan::find($laporan_i_crypt);
-        return view('admin.laporan.laporanmasuk-detail', compact('dataLaporan'));
+        $dataTanggapan = Tanggapan::with(['user'])->where('pengaduan_id', $dataLaporan->id)->get();
+        return view('admin.laporan.laporanmasuk-detail', compact('dataLaporan', 'dataTanggapan'));
     }
 
 
@@ -34,5 +38,25 @@ class LaporanController extends Controller
         $dataPengaduan = Pengaduan::find($id);
         $dataPengaduan->update($dataSatus);
         return redirect('/laporanmasuk');
+    }
+
+    public function store(Request $request, $laporan){
+            try {
+                $laporan_i_crypt = Crypt::decrypt($laporan); 
+            } catch (\Throwable $th) {
+                abort(404);
+            }
+
+            $dataPengaduan = Pengaduan::find($laporan_i_crypt);
+
+            $data = [
+                'user_id'   => auth()->user()->id,
+                'pengaduan_id'  => $dataPengaduan->id,
+                'tanggapan' => $request->tanggapan,
+                'foto' => 'foto.jpg',
+            ];
+            
+            Tanggapan::create($data);
+            return redirect('/laporanmasuk');
     }
 }

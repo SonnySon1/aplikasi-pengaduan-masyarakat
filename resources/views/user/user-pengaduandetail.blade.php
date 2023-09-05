@@ -80,19 +80,19 @@
                 <div><span class="text-primary">Pengaduanku</span> / Buat Pengaduan</div>
                 <div class="mt-5 d-flex">
                     <div>
-                        <img src="{{ asset('foto/'.$pengaduan->foto) }}" width="800" class="rounded-4">
+                        <img src="{{ asset('foto/'.$dataPengaduan->foto) }}" width="800" class="rounded-4">
                     </div>
                     <div>
                         <div class="card ms-5 w-100" style="border: 1px solid rgba(0, 0, 0, .1); height: 350px;">
-                            <div class="card-header" style="background-color: white;">{{ $pengaduan->judul_pengaduan }}</div>
+                            <div class="card-header" style="background-color: white;">{{ $dataPengaduan->judul_pengaduan }}</div>
                                 <div class="card-body">
-                                    <p><b>Category:</b> {{ $pengaduan->kategori->kategori }}</p>
-                                    <p><b>Tanggal Pengaduan:</b> {{ $pengaduan->tgl_pengaduan }}</p>
-                                    <p><b>Status:</b> <span class="btn bg-primary btn-sm color-white rounded-5 ">{{ $pengaduan->status }}</span></p>
+                                    <p><b>Category:</b> {{ $dataPengaduan->kategori->kategori }}</p>
+                                    <p><b>Tanggal Pengaduan:</b> {{ $dataPengaduan->tgl_pengaduan }}</p>
+                                    <p><b>Status:</b> <span class="btn bg-primary btn-sm color-white rounded-5 ">{{ $dataPengaduan->status }}</span></p>
                                 </div>
                           </div>
                           <div class="ms-5 mt-3">
-                                {{ $pengaduan->laporan_pengaduan }}
+                                {{ $dataPengaduan->laporan_pengaduan }}
                           </div>
                     </div>
                 </div>
@@ -100,21 +100,28 @@
                     <div class="card-body">
                       <h5 class="card-title"><b>Tanggapan</b></h5>
                       <div class="mt-5">
-                        <div class="d-flex">
-                            <div>
-                                <img src="{{ asset('assetsusers/img/team/team-1.jpg') }}" width="40" class="rounded-5" alt="">
+                        @foreach ($dataTanggapan as $tanggapan)                            
+                            <div class="d-flex">
+                                <div>
+                                    <img src="{{ asset('assetsusers/img/team/team-1.jpg') }}" width="40" class="rounded-5" alt="">
+                                </div>
+                                <div class="ms-2">
+                                <h6 class="card-subtitle mb-2 text-body-secondary">{{ $tanggapan->user->nama }}</h6>
+                                <div class="">
+                                    <p>{{ $tanggapan->tanggapan }}</p>
+                                </div>
+                                </div>
                             </div>
-                            <div class="ms-2">
-                              <h6 class="card-subtitle mb-2 text-body-secondary">Petugas 1</h6>
-                              <div class="coment-fw">
-                                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam suscipit, quaerat quia modi mollitia nisi est quae, ipsum facere dignissimos, quasi eaque nam. Odit iusto sit incidunt animi laboriosam. In!</p>
-                              </div>
-                            </div>
-                        </div>
+                        @endforeach
                       </div>
-                      <form action="">
+                        @php
+                            $laporan_i_encrypt = Crypt::encrypt($dataPengaduan->id)
+                        @endphp
+                      <form action="/tanggapi-pengaduan/{{ $laporan_i_encrypt }}" method="POST">
+                        @csrf
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control rounded-5" placeholder="reply">
+                            <input type="text" name="tanggapan" class="form-control " placeholder="reply">
+                            <button class="btn bg-primary text-white"><i class="bi bi-send-fill "></i></button>
                         </div>
                       </form>
                     </div>

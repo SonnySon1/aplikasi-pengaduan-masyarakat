@@ -103,9 +103,9 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($laporanMasuk as $laporan)                                                
+                                            @foreach ($laporanMasuk as $no=>$laporan)                                                
                                                 <tr>
-                                                    <td>1</td>
+                                                    <td>{{ $no+1 }}</td>
                                                     <td>{{ $laporan->tgl_pengaduan }}</td>
                                                     <td>{{ $laporan->judul_pengaduan }}</td>
                                                     <td>{{ $laporan->kategori->kategori }}</td>

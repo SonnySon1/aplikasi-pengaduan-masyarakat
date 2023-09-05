@@ -38,9 +38,10 @@ Route::middleware('guest')->group(function(){
 Route::middleware('masyarakat')->group(function(){
     Route::get('/pengaduanku', [PengaduankuController::class, 'index']);
     Route::get('/buat-pengaduan', [PengaduankuController::class, 'buatpengaduan']);
-    Route::get('/show/{pengaduan}', [PengaduankuController::class, 'show']);
+    Route::get('show/{pengaduan}', [PengaduankuController::class, 'show']);
     Route::post('/storepengaduan', [PengaduankuController::class, 'storepengaduan']);
     Route::get('/signoput', [PengaduankuController::class, 'signout']);
+    Route::post('/tanggapi-pengaduan/{pengaduan}', [ PengaduankuController::class, 'store_tanggapan']);
 });
 
 
@@ -79,6 +80,7 @@ Route::middleware('admin')->group(function(){
     Route::get('/laporanmasuk', [LaporanController::class, 'index']);
     Route::get('/laporanmasuk-detail/{laporan}', [LaporanController::class, 'show']);
     Route::post('/laporan-update/{status}', [LaporanController::class, 'update']);
+    Route::post('/tanggapan-store/{tanggapan}', [LaporanController::class, 'store']);
 
     // report
     Route::view('/generate-report', 'admin.report.generate-report');

@@ -18,7 +18,13 @@ class Pengaduan extends Model
             return $this->belongsTo(Kategori::class);
         }
 
+        // nilai balik dari user
         public function user(){
             return $this->belongsTo(User::class);
+        }
+
+        // relasi ke table tanggapan
+        public function tanggapan(){
+            return $this->hasMany(Tanggapan::class);
         }
 }

@@ -100,27 +100,32 @@
                                             {{ $dataLaporan->laporan_pengaduan }}
                                         </div>
                                     </div>
+                                     
                                     <div class="mt-5">
-                                        <div>
-                                            <div class="d-flex">
-                                                <div>
-                                                    <img src="{{ asset('assetsusers/img/blog/comments-2.jpg') }}" class="rounded-circle" width="50" alt="">
-                                                </div>
-                                                <div class="ml-2">
-                                                    <b>Jhon Doe</b><br>
-                                                    <p>Di tanggapi pada tanggal 25 oktober 2024</p>
+                                        <h2 class="mb-3">Tanggapan</h2>
+                                        <hr>
+                                        <div class="mt-1">
+                                            @foreach ($dataTanggapan as $tanggapan)
+                                            <div class="d-flex mt-2">
+                                                <img src="{{ asset('assetsusers/img/about.jpg') }}" class="rounded-circle" style="min-width: 35px; max-width: 35px; min-height: 35px; max-height: 35px;" alt="">  
+                                                <div class="d-block">
+                                                    <p class="ml-2 text-black"><b style="color: black">{{ $tanggapan->user->nama }}</b></p>
+                                                    <hr class="ml-2">
+                                                    <p class="ml-2 mt-2" style="margin-top: -15px;">{{ $tanggapan->tanggapan }}</p>     
+                                                    <hr class="ml-2">
                                                 </div>
                                             </div>
-                                            <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error maxime autem ut quidem consequatur aliquid animi aut itaque dolor eius! Perferendis ea quis obcaecati? Illo temporibus ullam harum error perspiciatis!</div>
-                                            <div class="mt-3">
-                                                @php
-                                                    $laporan_i_encrypt = Crypt::encrypt($dataLaporan->id)
-                                                @endphp
-                                                <form action="/tanggapan-store/{{ $laporan_i_encrypt }}" class="d-flex">
-                                                    <input type="text" name="tanggapan" class="w-100 p-1" id="" placeholder="Isi Tanggapan">
-                                                    <button class="btn btn-danger p-1 w-15 rounded-0">Kirm Tanggapan</button>
-                                                </form>
-                                            </div>
+                                            @endforeach
+                                            @php
+                                                $datalaporan_i_encrypt = Crypt::encrypt($dataLaporan->id)
+                                            @endphp
+                                            <form action="/tanggapan-store/{{ $datalaporan_i_encrypt }}" method="POST" class="mt-2">
+                                                @csrf
+                                                <div class="d-flex">
+                                                    <input type="text" name="tanggapan" class="w-100">
+                                                    <button class="btn btn-danger">Submit</button>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
