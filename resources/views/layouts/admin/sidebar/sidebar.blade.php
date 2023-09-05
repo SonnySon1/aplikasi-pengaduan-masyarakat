@@ -17,7 +17,13 @@
             </li>
             <li class="nav-label first">Laporan</li>
                 <li>
-                    <a  href="/laporanmasuk"><i class="bi bi-envelope"></i><span class="nav-text">Laporan Masuk</span></a>
+                    <a  href="/laporanmasuk"><i class="bi bi-envelope-exclamation-fill"></i><span class="nav-text">Laporan Masuk</span></a>
+                </li>
+                <li>
+                    <a  href="/laporan-dalam-proses"><i class="bi bi-envelope-fill"></i><span class="nav-text">Laporan Dalam Proses</span></a>
+                </li>
+                <li>
+                    <a  href="/laporan-selsai"><i class="bi bi-envelope-check-fill"></i><span class="nav-text">Laporan Selesai</span></a>
                 </li>
             </li>
             <li class="nav-label first">Report</li>

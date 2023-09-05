@@ -14,9 +14,13 @@ use PhpParser\Node\Expr\New_;
 class LaporanController extends Controller
 {
     public function index(){
-        $dataLaporan = Pengaduan::with(['user', 'kategori'])->get();
+        $dataLaporan = Pengaduan::with(['user', 'kategori'])->where('status', 'new')->get();
         $kategori = Kategori::all();
-        return view('admin.laporan.laporanmasuk', compact('dataLaporan', 'kategori'));
+        $dataShow = [
+            'title' => 'Laporan Masuk',
+            'page'  => 'index', 
+        ];
+        return view('admin.laporan.laporanmasuk', compact('dataLaporan', 'kategori', 'dataShow'));
     }
 
     public function show($laporan){
