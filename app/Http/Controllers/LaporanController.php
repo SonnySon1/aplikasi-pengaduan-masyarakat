@@ -63,4 +63,10 @@ class LaporanController extends Controller
             Tanggapan::create($data);
             return redirect('/laporanmasuk');
     }
+
+
+    public function filter_by_status(Request $request){
+        $dataLaporan = Pengaduan::where('status', $request->filter)->get();
+        return view('admin.laporan.laporanmasuk', compact('dataLaporan'));
+    }
 }

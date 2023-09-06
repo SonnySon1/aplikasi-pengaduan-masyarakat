@@ -38,20 +38,25 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-validation">
-                                    <form class="form-valide" action="#" method="get">
+                                    <form class="form-valide" action="filter-by-status" method="post">
+                                        @csrf
                                         <div class="row">
                                             <div class="col-xl-6">
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label" for="">Filter Berdasarkan Status</label>
                                                     <div class="col-lg-12">
-                                                        <select class="form-control" id="" name="">
+                                                    
+                                                        <select class="form-control" id="" name="filter">
                                                             <option value="">--Filter Status--</option>
                                                             <option value="new">New</option>
-                                                            <option value="perocess">Process</option>
+                                                            <option value="accepted">Accepted</option>
+                                                            <option value="rejected">Rejected</option>
                                                         </select>
                                                     </div>
+                                                    {{-- <button type="submit">Submit</button> --}}
                                                 </div>
                                             </div>
+                                        </form>
                                             <div class="col-xl-6">
                                                     <div class="form-group row">
                                                         <label class="col-lg-4 col-form-label" for="">Filter Berdasarkan Kategor</label>

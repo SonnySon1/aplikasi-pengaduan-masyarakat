@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LaporanprosesController;
+use App\Http\Controllers\LaporanselesaiController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MasyarakatController;
 use App\Http\Controllers\PengaduankuController;
@@ -82,9 +83,13 @@ Route::middleware('admin')->group(function(){
     Route::get('/laporanmasuk-detail/{laporan}', [LaporanController::class, 'show']);
     Route::post('/laporan-update/{status}', [LaporanController::class, 'update']);
     Route::post('/tanggapan-store/{tanggapan}', [LaporanController::class, 'store']);
+    Route::post('filter-by-status', [LaporanController::class, 'filter_by_status']);
 
     // laporan dalam proses
-    rOUTE::get('/laporan-dalam-proses', [LaporanprosesController::class, 'index']);
+    Route::get('/laporan-dalam-proses', [LaporanprosesController::class, 'index']);
+
+    // Laporan selesai
+    Route::get('/laporan-selesai', [LaporanselesaiController::class, 'index']);
 
     // report
     Route::view('/generate-report', 'admin.report.generate-report');

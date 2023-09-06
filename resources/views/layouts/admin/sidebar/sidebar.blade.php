@@ -23,7 +23,7 @@
                     <a  href="/laporan-dalam-proses"><i class="bi bi-envelope-fill"></i><span class="nav-text">Laporan Dalam Proses</span></a>
                 </li>
                 <li>
-                    <a  href="/laporan-selsai"><i class="bi bi-envelope-check-fill"></i><span class="nav-text">Laporan Selesai</span></a>
+                    <a  href="/laporan-selesai"><i class="bi bi-envelope-check-fill"></i><span class="nav-text">Laporan Selesai</span></a>
                 </li>
             </li>
             <li class="nav-label first">Report</li>
