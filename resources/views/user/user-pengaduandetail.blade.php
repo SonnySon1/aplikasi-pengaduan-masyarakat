@@ -80,7 +80,7 @@
                 <div><span class="text-primary">Pengaduanku</span> / Buat Pengaduan</div>
                 <div class="mt-5 d-flex">
                     <div>
-                        <img src="{{ asset('foto/'.$dataPengaduan->foto) }}" width="800" class="rounded-4">
+                        <img src='{{ asset("photos/pengaduan-photo/$dataPengaduan->foto") }}' width="800" class="rounded-4">
                     </div>
                     <div>
                         <div class="card ms-5 w-100" style="border: 1px solid rgba(0, 0, 0, .1); height: 350px;">
@@ -101,15 +101,23 @@
                       <h5 class="card-title"><b>Tanggapan</b></h5>
                       <div class="mt-5">
                         @foreach ($dataTanggapan as $tanggapan)                            
-                            <div class="d-flex">
+                            <div class="d-flex mt-3">
                                 <div>
-                                    <img src="{{ asset('assetsusers/img/team/team-1.jpg') }}" width="40" class="rounded-5" alt="">
+                                    <img src='{{ asset("photos/profile-photo/".$tanggapan->user->foto) }}' width="40" class="rounded-5" alt="">
                                 </div>
                                 <div class="ms-2">
-                                <h6 class="card-subtitle mb-2 text-body-secondary">{{ $tanggapan->user->nama }}</h6>
-                                <div class="">
-                                    <p>{{ $tanggapan->tanggapan }}</p>
-                                </div>
+                                    @if ($tanggapan->user->role == "admin")
+                                        <p style="font-size: 12px" class="ml-2"><b class="text-danger">Admin </b><b class="text-dark">|</b> {{ $tanggapan->user->nama }}</p>
+                                    @elseif ($tanggapan->user->role == "petugas")
+                                        <p style="font-size: 12px" class="ml-2"><b class="text-warning">Petugas </b><b class="text-dark">|</b> {{ $tanggapan->user->nama }}</p>
+                                    @elseIf( $tanggapan->user->role == "masyarakat"  )
+                                        <p style="font-size: 12px" class="ml-2"><b class="text-success">Masyarakat </b><b class="text-dark">|</b> {{ $tanggapan->user->nama }}</p>
+                                    @endif
+                                    <div class="">
+                                            <hr>
+                                                <p style="font-size: 12px">{{ $tanggapan->tanggapan }}</p>
+                                            <hr>
+                                    </div>
                                 </div>
                             </div>
                         @endforeach
@@ -117,13 +125,17 @@
                         @php
                             $laporan_i_encrypt = Crypt::encrypt($dataPengaduan->id)
                         @endphp
-                      <form action="/tanggapi-pengaduan/{{ $laporan_i_encrypt }}" method="POST">
-                        @csrf
-                        <div class="input-group mb-3">
-                            <input type="text" name="tanggapan" class="form-control " placeholder="reply">
-                            <button class="btn bg-primary text-white"><i class="bi bi-send-fill "></i></button>
-                        </div>
-                      </form>
+                        @if ($dataPengaduan->status == "new")
+                            <p>Tidak dapat melakukan tanggapan sebelum laporan kamu di lihat <b><i class="text-danger">admin</i></b> atau <b><i class="text-warning">petugas</i></b></p>
+                        @else
+                            <form action="/tanggapi-pengaduan/{{ $laporan_i_encrypt }}" method="POST">
+                                @csrf
+                                <div class="input-group mb-3">
+                                    <input type="text" name="tanggapan" class="form-control " placeholder="reply">
+                                    <button class="btn bg-primary text-white"><i class="bi bi-send-fill "></i></button>
+                                </div>
+                            </form>
+                        @endif
                     </div>
                   </div>
             </div>

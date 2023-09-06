@@ -15,6 +15,24 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        // photo profile default 
+        $photoProfile = [
+            'profile1.png',
+            'profile2.png',
+            'profile3.png',
+            'profile4.png',
+            'profile5.png',
+            'profile6.png',
+            'profile7.png',
+            'profile8.png',
+            'profile9.png',
+            'profile10.png',
+       ];
+
+       // mix photo
+       $photoRandom = rand(0, 9);
+       $photo = $photoProfile[$photoRandom];
+
         User::create([
             "nama"  => "eko",
             "nik"   => "123123",
@@ -22,6 +40,7 @@ class UserSeeder extends Seeder
             "email" => "eko@gmail.com",
             "password" => bcrypt('123'),
             "no_telepon"    => "1231231",
+            "foto"    => $photo,
             "role" => "admin"
         ]);
         User::create([
@@ -30,6 +49,7 @@ class UserSeeder extends Seeder
             "alamat"=>"Banjar",
             "email"=>"soni@gmail.com",
             "password"=> bcrypt("123"),
+            "foto"=> $photo,
             "no_telepon"=>"089899587003",
         ]);
 

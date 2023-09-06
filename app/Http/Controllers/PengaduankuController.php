@@ -38,7 +38,7 @@ class PengaduankuController extends Controller
                         $file_foto = $request->file('foto');
                         $foto_extensi = $file_foto->extension();
                         $nama_foto = date('dmyhis').'.'. $foto_extensi;
-                        $file_foto->move(public_path('foto'), $nama_foto);
+                        $file_foto->move(public_path('photos/pengaduan-photo'), $nama_foto);
 
                         $dataPengaduan = [
                                 'judul_pengaduan'       =>  $request->input('judul_pengaduan'),

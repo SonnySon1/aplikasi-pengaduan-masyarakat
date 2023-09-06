@@ -17,6 +17,24 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        // photo profile default 
+        $photoProfile = [
+            'profile1.png',
+            'profile2.png',
+            'profile3.png',
+            'profile4.png',
+            'profile5.png',
+            'profile6.png',
+            'profile7.png',
+            'profile8.png',
+            'profile9.png',
+            'profile10.png',
+       ];
+
+       // mix photo
+       $photoRandom = rand(0, 9);
+       $photo = $photoProfile[$photoRandom];
+
         return [
             'nama' => fake()->name(),
             "nik"  => fake()->unique()->nik(),
@@ -26,6 +44,7 @@ class UserFactory extends Factory
             'password' => bcrypt('123'), 
             'no_telepon' => fake()->unique()->phoneNumber(),
             'role' => fake()->randomElement(['masyarakat', 'petugas', 'admin']),
+            'foto' => $photo
         ];
     }
 

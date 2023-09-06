@@ -28,7 +28,6 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             KategoriSeeder::class,
-            PengaduanSeeder::class
         ]);
         Pengaduan::factory(200)->create();
 

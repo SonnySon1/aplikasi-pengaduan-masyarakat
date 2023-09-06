@@ -39,9 +39,16 @@ class LaporanController extends Controller
         $dataSatus = [
             "status" => $request->status
         ];
+
         $dataPengaduan = Pengaduan::find($id);
         $dataPengaduan->update($dataSatus);
-        return redirect('/laporanmasuk');
+
+        if ($request->status == "accepted" || "process") {
+            return redirect('/laporan-dalam-proses');
+        }
+        elseif ($request->status == "rejected" || "finished") {
+            return redirect('/laporan-selesai');
+        }
     }
 
     public function store(Request $request, $laporan){

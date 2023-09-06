@@ -94,7 +94,7 @@
                                     </div>
                                     <div class="mt-5 d-flex flex-wrap">
                                         <div>
-                                            <img src="{{ asset('assetsusers/img/img/air.jpg') }}" alt="" width="400">
+                                            <img src='{{ asset("photos/pengaduan-photo/$dataLaporan->foto") }}' alt="" width="400">
                                         </div>
                                         <div style="width: 600px;" class="ml-5 mt-3 mt-md-0">
                                             {{ $dataLaporan->laporan_pengaduan }}
@@ -107,17 +107,17 @@
                                         <div class="mt-1">
                                             @foreach ($dataTanggapan as $tanggapan)
                                             <div class="d-flex mt-2">
-                                                <img src="{{ asset('assetsusers/img/about.jpg') }}" class="rounded-circle" style="min-width: 35px; max-width: 35px; min-height: 35px; max-height: 35px;" alt="">  
+                                                <img src='{{ asset("photos/profile-photo/".$tanggapan->user->foto) }}' class="rounded-circle" style="min-width: 35px; max-width: 35px; min-height: 35px; max-height: 35px;" alt="">  
                                                 <div class="d-block">
                                                     @if ($tanggapan->user->role == "admin")
-                                                        <p class="ml-2"><b class="text-danger">{{ $tanggapan->user->nama }}</b></p>
+                                                        <p class="ml-2"><b class="text-danger">Admin </b><b class="text-dark">|</b> {{ $tanggapan->user->nama }}</p>
                                                     @elseif ($tanggapan->user->role == "petugas")
-                                                        <p class="ml-2"><b class="text-warning">{{ $tanggapan->user->nama }}</b></p>
+                                                        <p class="ml-2"><b class="text-warning">Petugas </b><b class="text-dark">|</b> {{ $tanggapan->user->nama }}</p>
                                                     @elseIf( $tanggapan->user->role == "masyarakat"  )
-                                                        <p class="ml-2"><b class="text-success">{{ $tanggapan->user->nama }}</b></p>
+                                                        <p class="ml-2"><b class="text-success">Masyarakat </b><b class="text-dark">|</b> {{ $tanggapan->user->nama }}</p>
                                                     @endif
                                                     <hr class="ml-2">
-                                                    <p class="ml-2 mt-2" style="margin-top: -15px;">{{ $tanggapan->tanggapan }}</p>     
+                                                        <p class="ml-2 mt-2" style="margin-top: -15px;">{{ $tanggapan->tanggapan }}</p>     
                                                     <hr class="ml-2">
                                                 </div>
                                             </div>
@@ -125,13 +125,18 @@
                                             @php
                                                 $datalaporan_i_encrypt = Crypt::encrypt($dataLaporan->id)
                                             @endphp
-                                            <form action="/tanggapan-store/{{ $datalaporan_i_encrypt }}" method="POST" class="mt-2">
-                                                @csrf
-                                                <div class="d-flex">
-                                                    <input type="text" name="tanggapan" class="w-100">
-                                                    <button class="btn btn-danger">Submit</button>
-                                                </div>
-                                            </form>
+                                            @if ($dataLaporan->status == "new")
+                                                <p><i class="text-danger">Update Status Untuk Membuat Tanggapan</i></p>
+                                                <p>Setelah melakukan sebuah <i class="text-danger">update status</i>,  kamu dapat memberikan tanggapan terkait laporan yang di kirim. Jika laporan di <i class="text-danger">accepted</i>  atau <i class="text-danger">process</i>, akan masuk ke halaman <b class="text-dark">Laporan Proses</b>. Akan tetapi jika laporan <i class="text-danger">finished</i> atau di <i class="text-danger">rejected</i> akan masuk ke halaman<b class="text-dark"> Laporan Selesai</b></p>
+                                            @else
+                                                <form action="/tanggapan-store/{{ $datalaporan_i_encrypt }}" method="POST" class="mt-2">
+                                                    @csrf
+                                                    <div class="d-flex">
+                                                        <input type="text" name="tanggapan" class="w-100">
+                                                        <button class="btn btn-danger">Submit</button>
+                                                    </div>
+                                                </form>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
