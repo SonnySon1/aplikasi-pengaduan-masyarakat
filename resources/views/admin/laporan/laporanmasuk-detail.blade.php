@@ -19,7 +19,7 @@
                 <div class="">
                     <div class="col-sm-6 p-md-0">
                         <div class="d-flex">
-                            <h4 class="text-dark">Laporan Masuk /</h4>
+                            <h4 class="text-dark">Laporan Detail /</h4>
                             <h4 class="text-dark font-weight-bold">Detail</h4>
                         </div>
                     </div>
@@ -28,7 +28,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Form Add Data Masyarakat</h4>
+                                <h4 class="card-title">Detail Data Laporan</h4>
                             </div>
                             <div class="card-body">
                                 <div class="form-validation">
@@ -109,7 +109,13 @@
                                             <div class="d-flex mt-2">
                                                 <img src="{{ asset('assetsusers/img/about.jpg') }}" class="rounded-circle" style="min-width: 35px; max-width: 35px; min-height: 35px; max-height: 35px;" alt="">  
                                                 <div class="d-block">
-                                                    <p class="ml-2 text-black"><b style="color: black">{{ $tanggapan->user->nama }}</b></p>
+                                                    @if ($tanggapan->user->role == "admin")
+                                                        <p class="ml-2"><b class="text-danger">{{ $tanggapan->user->nama }}</b></p>
+                                                    @elseif ($tanggapan->user->role == "petugas")
+                                                        <p class="ml-2"><b class="text-warning">{{ $tanggapan->user->nama }}</b></p>
+                                                    @elseIf( $tanggapan->user->role == "masyarakat"  )
+                                                        <p class="ml-2"><b class="text-success">{{ $tanggapan->user->nama }}</b></p>
+                                                    @endif
                                                     <hr class="ml-2">
                                                     <p class="ml-2 mt-2" style="margin-top: -15px;">{{ $tanggapan->tanggapan }}</p>     
                                                     <hr class="ml-2">

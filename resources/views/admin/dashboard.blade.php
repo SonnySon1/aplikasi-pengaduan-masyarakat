@@ -112,7 +112,7 @@
                                                     @php
                                                         $laporan_i_crypt = Crypt::encrypt($laporan->id)
                                                     @endphp
-                                                    <td><a href="/laporanmasuk-detail/{{ $laporan_i_crypt }}" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
+                                                    <td><a href="/laporan-detail/{{ $laporan_i_crypt }}" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
                                                 </tr>
                                             @endforeach
                                         </tbody>

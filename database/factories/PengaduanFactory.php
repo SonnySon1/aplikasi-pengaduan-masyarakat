@@ -24,6 +24,7 @@ class PengaduanFactory extends Factory
             "judul_pengaduan"   => fake()->text(50),
             "tgl_pengaduan" => now(),
             "laporan_pengaduan" => fake()->text(100),
+            // "status" => fake()->randomElement(['new', 'rejected', 'accepted', 'process', 'finished']),
             "foto"  => "030923040636.jpg",
         ];  
     }

@@ -80,7 +80,7 @@ Route::middleware('admin')->group(function(){
 
     // laporan Admin
     Route::get('/laporanmasuk', [LaporanController::class, 'index']);
-    Route::get('/laporanmasuk-detail/{laporan}', [LaporanController::class, 'show']);
+    Route::get('/laporan-detail/{laporan}', [LaporanController::class, 'show']);
     Route::post('/laporan-update/{status}', [LaporanController::class, 'update']);
     Route::post('/tanggapan-store/{tanggapan}', [LaporanController::class, 'store']);
     Route::post('filter-by-status', [LaporanController::class, 'filter_by_status']);

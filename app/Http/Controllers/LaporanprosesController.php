@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class LaporanprosesController extends Controller
 {
     public function  index(){
-        $dataLaporan = Pengaduan::whereIn('status', ['accepted', 'process'])->get();
+        $dataLaporan = Pengaduan::with(['user', 'kategori'])->whereIn('status', ['accepted', 'process'])->get();
         $dataShow = [
             'title' => 'Laporan Dalam Proses',
             'page'  => 'index', 
