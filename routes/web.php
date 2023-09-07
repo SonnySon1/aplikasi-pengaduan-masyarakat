@@ -9,6 +9,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MasyarakatController;
 use App\Http\Controllers\PengaduankuController;
 use App\Http\Controllers\PetugasController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -93,4 +94,8 @@ Route::middleware('admin')->group(function(){
 
     // report
     Route::view('/generate-report', 'admin.report.generate-report');
+
+    // profile 
+    Route::get('/profile', [ProfileController::class, 'index']);
+    Route::post('/update-profile', [ProfileController::class, 'update']);
 });

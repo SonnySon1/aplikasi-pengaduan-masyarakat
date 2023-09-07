@@ -116,9 +116,9 @@
                                                     @elseIf( $tanggapan->user->role == "masyarakat"  )
                                                         <p class="ml-2"><b class="text-success">Masyarakat </b><b class="text-dark">|</b> {{ $tanggapan->user->nama }}</p>
                                                     @endif
-                                                    <hr class="ml-2">
-                                                        <p class="ml-2 mt-2" style="margin-top: -15px;">{{ $tanggapan->tanggapan }}</p>     
-                                                    <hr class="ml-2">
+                                                    <hr style="font-size: 11px" class="ml-2">
+                                                        <p style="font-size: 11px" class="ml-2 mt-2" style="margin-top: -15px;">{{ $tanggapan->tanggapan }}</p>     
+                                                    <hr style="font-size: 11px" class="ml-2">
                                                 </div>
                                             </div>
                                             @endforeach
@@ -126,8 +126,8 @@
                                                 $datalaporan_i_encrypt = Crypt::encrypt($dataLaporan->id)
                                             @endphp
                                             @if ($dataLaporan->status == "new")
-                                                <p><i class="text-danger">Update Status Untuk Membuat Tanggapan</i></p>
-                                                <p>Setelah melakukan sebuah <i class="text-danger">update status</i>,  kamu dapat memberikan tanggapan terkait laporan yang di kirim. Jika laporan di <i class="text-danger">accepted</i>  atau <i class="text-danger">process</i>, akan masuk ke halaman <b class="text-dark">Laporan Proses</b>. Akan tetapi jika laporan <i class="text-danger">finished</i> atau di <i class="text-danger">rejected</i> akan masuk ke halaman<b class="text-dark"> Laporan Selesai</b></p>
+                                                <p><i class="text-danger" style="font-size: 12px">Update Status Untuk Membuat Tanggapan</i></p>
+                                                <p style="font-size: 12px">Setelah melakukan sebuah <i class="text-danger">update status</i>,  kamu dapat memberikan tanggapan terkait laporan yang di kirim. Jika laporan di <i class="text-danger">accepted</i>  atau <i class="text-danger">process</i>, akan masuk ke halaman <b class="text-dark">Laporan Proses</b>. Akan tetapi jika laporan <i class="text-danger">finished</i> atau di <i class="text-danger">rejected</i> akan masuk ke halaman<b class="text-dark"> Laporan Selesai</b></p>
                                             @else
                                                 <form action="/tanggapan-store/{{ $datalaporan_i_encrypt }}" method="POST" class="mt-2">
                                                     @csrf

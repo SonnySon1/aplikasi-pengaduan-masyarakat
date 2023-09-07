@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Focus - Bootstrap Admin Dashboard </title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="dist/images/favicon.png">
+    <link href="dist/css/style.css" rel="stylesheet">
+
+    
+    <!-- bs icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="index.html" class="brand-logo">
+                <img class="logo-abbr" src="dist/images/logo.png" alt="">
+                <img class="logo-compact" src="dist/images/logo-text.png" alt="">
+                <img class="brand-title" src="dist/images/logo-text.png" alt="">
+            </a>
+
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+                            <div class="search_bar dropdown">
+                                <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
+                                    <i class="mdi mdi-magnify"></i>
+                                </span>
+                                <div class="dropdown-menu p-0 m-0">
+                                    <form>
+                                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="navbar-nav header-right">
+                            <li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link" href="#" role="button" data-toggle="dropdown">
+                                    <i class="mdi mdi-bell"></i>
+                                    <div class="pulse-css"></div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <ul class="list-unstyled">
+                                        <li class="media dropdown-item">
+                                            <span class="success"><i class="ti-user"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong>Martin</strong> has added a <strong>customer</strong> Successfully
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="primary"><i class="ti-shopping-cart"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong>Jennifer</strong> purchased Light Dashboard 2.0.</p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="danger"><i class="ti-bookmark"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong>Robin</strong> marked a <strong>ticket</strong> as unsolved.
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="primary"><i class="ti-heart"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong>David</strong> purchased Light Dashboard 1.0.</p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="success"><i class="ti-image"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong> James.</strong> has added a<strong>customer</strong> Successfully
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                    </ul>
+                                    <a class="all-notification" href="#">See all notifications <i
+                                            class="ti-arrow-right"></i></a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown header-profile">
+                                <a class="nav-link" href="#" role="button" data-toggle="dropdown">
+                                    <i class="mdi mdi-account"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="dist/app-profile.html" class="dropdown-item">
+                                        <i class="icon-user"></i>
+                                        <span class="ml-2">Profile </span>
+                                    </a>
+                                    <a href="dist/email-inbox.html" class="dropdown-item">
+                                        <i class="icon-envelope-open"></i>
+                                        <span class="ml-2">Inbox </span>
+                                    </a>
+                                    <a href="dist/page-login.html" class="dropdown-item">
+                                        <i class="icon-key"></i>
+                                        <span class="ml-2">Logout </span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="quixnav">
+            <div class="quixnav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label first">Master Data</li>
+                        <li>
+                            <a  href="dashboard.html"><i class="bi bi-display"></i><span class="nav-text">Dashboard</span></a>
+                        </li>    
+                        <li>
+                            <a href="masyarakat.html"><i class="bi bi-people-fill"></i></i><span class="nav-text active">Masyarakat</span></a>
+                        </li>
+                        <li>
+                            <a href="petugas.html"><i class="bi bi-person"></i><span class="nav-text">Petugas</span></a>
+                        </li>
+                        <li>
+                            <a href="kategori.html"><i class="fa-solid fa-book"></i><span class="nav-text">Kategori</span></a>
+                        </li>
+                    </li>
+                    <li class="nav-label first">Laporan</li>
+                        <li>
+                            <a  href="laporanmasuk.html"><i class="bi bi-envelope"></i><span class="nav-text">Laporan Masuk</span></a>
+                        </li>
+                    </li>
+                    <li class="nav-label first">Report</li>
+                        <li>
+                            <a  href="report.html"><i class="bi bi-printer"></i><span class="nav-text">Generate Report</span></a>
+                        </li>
+                    </li>
+                    <li class="nav-label first">Account</li>
+                        <li>
+                            <a  href="profile.html"><i class="bi bi-person-circle"></i><span class="nav-text">Profile</span></a>
+                        </li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row page-titles mx-0">
+                    <div class="col-sm-6 p-md-0">
+                        <div class="welcome-text">
+                            <h4>Hi, welcome back!</h4>
+                            <p class="mb-0">Selamat datang kembali di Aplikai APM</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">App</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Profile</a></li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- row -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="profile">
+                            <div class="profile-head">
+                                <div class="photo-content">
+                                    <div class="cover-photo"></div>
+                                    <div class="profile-photo">
+                                        <img src="dist/images/profile/profile.png" class="img-fluid rounded-circle" alt="">
+                                    </div>
+                                </div>
+                                <div class="profile-info">
+                                    <div class="row justify-content-center">
+                                        <div class="col-xl-8">
+                                            <div class="row">
+                                                <div class="col-xl-4 col-sm-4 border-right-1 prf-col">
+                                                    <div class="profile-name">
+                                                        <h4 class="text-primary">Mitchell C. Shay</h4>
+                                                        <p>UX / UI Designer</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4 col-sm-4 border-right-1 prf-col">
+                                                    <div class="profile-email">
+                                                        <h4 class="text-muted">hello@email.com</h4>
+                                                        <p>Email</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4 col-sm-4 prf-col">
+                                                    <div class="profile-call">
+                                                        <h4 class="text-muted">(+1) 321-837-1030</h4>
+                                                        <p>Phone No.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="profile-statistics">
+                                    <div class="text-center mt-4 border-bottom-1 pb-3">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h3 class="m-b-0">150</h3><span>Laporan di tanggapi</span>
+                                            </div>
+                                            <div class="col">
+                                                <h3 class="m-b-0">140</h3><span>Peringkat admin</span>
+                                            </div>
+                                            <div class="col">
+                                                <h3 class="m-b-0">45</h3><span>Reviews</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="profile-tab">
+                                    <div class="custom-tab-1">
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item"><a href="#about-us" data-toggle="tab" class="nav-link active show"><i class="bi bi-people-fill"></i></a>
+                                            </li>
+                                            <li class="nav-item"><a href="#profile-settings" data-toggle="tab" class="nav-link"><i class="bi bi-gear-fill"></i></i></a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div id="about-us" class="tab-pane fade active show">
+                                                <div class="profile-about-us">
+                                                    <div class="pt-4 border-bottom-1 pb-4">
+                                                        <h4 class="text-primary">Tentang Kami</h4>
+                                                        <p>Selamat datang di APM, aplikasi yang berdedikasi untuk memberdayakan suara masyarakat dalam mencari solusi atas permasalahan sekitar. Kami hadir sebagai jembatan antara Anda dan pihak berwenang, bertujuan untuk menciptakan perubahan positif dan lingkungan yang lebih baik.</p>
+                                                       
+                                                    </div>
+                                                </div>
+                                                <div class="profile-contactus pt-2 border-bottom-1 pb-2">
+                                                    <h4 class="text-primary mb-4">Hubungi Kami</h4>
+                                                    <a href="javascript:void()" class="btn btn-outline-dark btn-rounded pl-4 my-3 my-sm-0 pr-4 mr-3 m-b-10"><i class="bi bi-whatsapp"></i> Whatsapp</a>
+                                                    <a href="javascript:void()" class="btn btn-outline-dark btn-rounded pl-4 my-3 my-sm-0 pr-4 mr-3 m-b-10"><i class="bi bi-instagram"></i> Instagram</a>
+                                                    
+                                                </div>
+                                                <div class="profile-personal-info pt-5">
+                                                    <h4 class="text-primary mb-4">Informasi Pribadi</h4>
+                                                    <div class="row mb-4">
+                                                        <div class="col-3">
+                                                            <h5 class="f-w-500">Nama <span class="pull-right">:</span>
+                                                            </h5>
+                                                        </div>
+                                                        <div class="col-9"><span>Mitchell C.Shay</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-4">
+                                                        <div class="col-3">
+                                                            <h5 class="f-w-500">Nik <span class="pull-right">:</span>
+                                                            </h5>
+                                                        </div>
+                                                        <div class="col-9"><span>12322222222332</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-4">
+                                                        <div class="col-3">
+                                                            <h5 class="f-w-500">Alamat <span class="pull-right">:</span></h5>
+                                                        </div>
+                                                        <div class="col-9"><span>Banjar</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-4">
+                                                        <div class="col-3">
+                                                            <h5 class="f-w-500">Jenis Kelamin <span class="pull-right">:</span>
+                                                            </h5>
+                                                        </div>
+                                                        <div class="col-9"><span>Laki Laki</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-4">
+                                                        <div class="col-3">
+                                                            <h5 class="f-w-500">No Telepon <span class="pull-right">:</span>
+                                                            </h5>
+                                                        </div>
+                                                        <div class="col-9"><span>22123123</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-4">
+                                                        <div class="col-3">
+                                                            <h5 class="f-w-500">Email <span class="pull-right">:</span></h5>
+                                                        </div>
+                                                        <div class="col-9"><span>example@examplel.com</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-4">
+                                                        <div class="col-3">
+                                                            <h5 class="f-w-500">Year Experience <span class="pull-right">:</span></h5>
+                                                        </div>
+                                                        <div class="col-9"><span>07 Year Experiences</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="profile-settings" class="tab-pane fade">
+                                                <div class="pt-3">
+                                                    <div class="settings-form">
+                                                        <h4 class="text-primary">Pengaturan Akun</h4>
+                                                        <form>
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label>Nama</label>
+                                                                    <input name="nama" type="text" placeholder="nama kamu" class="form-control">
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label>Nik</label>
+                                                                    <input name="nik" type="number" placeholder="masukan nik" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-12">
+                                                                    <label>Jenis Kelamin</label>
+                                                                    <select class="form-control" id="inputState">
+                                                                        <option>Laki-Laki</option>
+                                                                        <option>Perempuan</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label>Email</label>
+                                                                    <input name="email" type="text" placeholder="email kamu" class="form-control">
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label>No telepon</label>
+                                                                    <input name="no_telepon" type="tel" placeholder="no telepon kamu" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <button class="btn btn-primary" type="submit"><i class="bi bi-arrow-clockwise"></i> Update</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">Quixkit</a> 2019</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+        
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="dist/vendor/global/global.min.js"></script>
+    <script src="dist/js/quixnav-init.js"></script>
+    <script src="dist/js/custom.min.js"></script>
+    
+
+</body>
+
+</html>

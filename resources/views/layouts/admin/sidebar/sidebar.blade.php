@@ -33,7 +33,7 @@
             </li>
             <li class="nav-label first">Account</li>
                 <li>
-                    <a  href="profile.html"><i class="bi bi-person-circle"></i><span class="nav-text">Profile</span></a>
+                    <a  href="/profile"><i class="bi bi-person-circle"></i><span class="nav-text">Profile</span></a>
                 </li>
             </li>
         </ul>
