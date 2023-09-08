@@ -51,7 +51,7 @@
                                                             <option value="accepted">Accepted</option>
                                                             <option value="rejected">Rejected</option>
                                                             <option value="rejected">Process</option>
-                                                            <option value="rejected">Finished</option>
+                                                            <option value="finished">Finished</option>
                                                         </select>
                                                     </div>
                                                     {{-- <button type="submit">Submit</button> --}}
@@ -93,15 +93,15 @@
                                                             <td>{{ $laporan->kategori->kategori }}</td>
                                                             <td id="status">
                                                                 @if ($laporan->status == "new")
-                                                                    <span class="btn btn-primary btn-sm">{{ $laporan->status }}</span>
+                                                                    <span class="btn btn-primary btn-sm" style="border-radius: 50px;">{{ $laporan->status }}</span>
                                                                 @elseif ($laporan->status == "accepted")
-                                                                    <span class="btn btn-success btn-sm">{{ $laporan->status }}</span>
+                                                                    <span class="btn btn-success btn-sm" style="border-radius: 50px;">{{ $laporan->status }}</span>
                                                                 @elseif ($laporan->status == "process")
-                                                                    <span class="btn btn-warning btn-sm">{{ $laporan->status }}</span>
+                                                                    <span class="btn btn-warning btn-sm" style="border-radius: 50px;">{{ $laporan->status }}</span>
                                                                 @elseif ($laporan->status == "finished")
-                                                                    <span class="btn btn-secondary btn-sm">{{ $laporan->status }}</span>
+                                                                    <span class="btn btn-secondary btn-sm" style="border-radius: 50px;">{{ $laporan->status }}</span>
                                                                 @else
-                                                                    <span class="btn btn-danger btn-sm">{{ $laporan->status }}</span>
+                                                                    <span class="btn btn-danger btn-sm" style="border-radius: 50px;">{{ $laporan->status }}</span>
                                                                 @endif
                                                             </td>
                                                             @php

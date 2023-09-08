@@ -28,7 +28,40 @@
 @yield('content')
   
   
+<!--search data-->
+<script>
+  // Ambil elemen input pencarian dan tabel
+  var searchInput = document.getElementById('search');
+  var table = document.getElementById('data-table');
 
+  // Tambahkan event listener untuk input pencarian
+  searchInput.addEventListener('input', function() {
+      var searchTerm = searchInput.value.toLowerCase();
+      var rows = table.querySelectorAll('tbody tr');
+
+      rows.forEach(function(row) {
+          var cells = row.querySelectorAll('td');
+          var found = false;
+
+          cells.forEach(function(cell) {
+              var text = cell.textContent.toLowerCase();
+
+              if (text.includes(searchTerm)) {
+                  found = true;
+              }
+          });
+
+          if (found) {
+              row.style.display = ''; // Tampilkan baris jika ditemukan
+          } else {
+              row.style.display = 'none'; // Sembunyikan baris jika tidak ditemukan
+          }
+      });
+  });
+</script>
+
+
+<!--Filter by category and by status-->
 <script>
   // Ambil elemen select filter status dan filter kategori
   const filterStatus = document.getElementById('filter-by-status');

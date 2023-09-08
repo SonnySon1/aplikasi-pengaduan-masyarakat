@@ -68,7 +68,7 @@ class LaporanController extends Controller
             ];
             
             Tanggapan::create($data);
-            return redirect('/laporanmasuk');
+            return redirect()->back();
     }
 
 

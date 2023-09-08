@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [UserController::class, 'index'])->middleware('guest');
+Route::get('/', [UserController::class, 'index']);
 
 // auth
 Route::middleware('guest')->group(function(){
@@ -54,7 +54,7 @@ Route::middleware('masyarakat')->group(function(){
 Route::middleware(['adminandpetugas'])->group(function(){
         // dashboard Admin and petugas
         Route::get('/dashboard', [DashboardController::class, 'index']);
-        Route::get('/signout-staf', [DashboardController::class, 'signout_staf']);
+        Route::post('/signoput', [PengaduankuController::class, 'signout']);
 
         // profile 
         Route::get('/profile', [ProfileController::class, 'index']);
@@ -73,6 +73,9 @@ Route::middleware(['adminandpetugas'])->group(function(){
         // Laporan selesai
         Route::get('/laporan-selesai', [LaporanselesaiController::class, 'index']);
 });
+
+
+
 
 // admin  
 Route::middleware('admin')->group(function(){

@@ -19,7 +19,7 @@
         <ul class="list-unstyled">
             <li>
                 @auth
-                    <form action="/logout" method="POST">
+                    <form action="/signoput" method="POST">
                         @csrf
                         <button  class="btn-getstarted scrollto rounded-5">Logout</button>
                     </form>

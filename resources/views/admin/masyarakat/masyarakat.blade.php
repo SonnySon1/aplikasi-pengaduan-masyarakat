@@ -34,11 +34,11 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Data Masyarakat</h4>
-                                <input class="search" type="text" name="search" id="seach" placeholder="search">
+                                <input class="search" type="text" name="search" id="search" placeholder="search">
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table student-data-table m-t-20">
+                                    <table class="table student-data-table m-t-20" id="data-table">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
