@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class RegisterController extends Controller
 {
@@ -42,6 +43,15 @@ class RegisterController extends Controller
         // mix photo
         $photoRandom = rand(0, 9);
         $photo = $photoProfile[$photoRandom];
+
+        // cek nik berdasarkan kode nik kota banjar
+        $nik = $request->nik;
+        $digit = substr($nik, 0, 6);
+        if ($digit != 327902) {
+            Session::flash('error', 'Kamu bukan masyarakat desa mulyasari dusun margaluyu rt-06 rw-08 | kota banjar');
+            return back();
+        }
+
 
         // siapkan data user untuk di store ke da;am databas 
         $data = [

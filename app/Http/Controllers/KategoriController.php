@@ -13,7 +13,7 @@ use Symfony\Component\VarDumper\VarDumper;
 class KategoriController extends Controller
 {
     public function index(){
-        $dataKategori = Kategori::all();
+        $dataKategori = Kategori::latest('created_at')->get();
         return view('admin.kategori.kategori', compact('dataKategori'));
     }
     

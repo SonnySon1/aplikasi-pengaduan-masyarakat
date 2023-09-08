@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class LaporanselesaiController extends Controller
 {
     public function index(){
-        $dataLaporan = Pengaduan::with(['user', 'kategori'])->whereIn('status', ['finished', 'rejected'])->get();
+        $dataLaporan = Pengaduan::with(['user', 'kategori'])->whereIn('status', ['finished', 'rejected'])->latest('tgl_pengaduan')->get();
         $dataKategori = Kategori::all();;
         $dataShow = [
             'title' => 'Laporan Selesai',

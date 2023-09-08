@@ -10,7 +10,7 @@ use Illuminate\Contracts\Encryption\DecryptException;
 class MasyarakatController extends Controller
 {
     public function index(){
-        $dataMasyarakat = User::where('role', 'masyarakat')->get();
+        $dataMasyarakat = User::where('role', 'masyarakat')->latest('created_at')->get();
         return view('admin.masyarakat.masyarakat', compact('dataMasyarakat'));
     }
 

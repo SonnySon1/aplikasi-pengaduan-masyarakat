@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -19,6 +20,10 @@ class LoginController extends Controller
             "email"=>"required",
             "password"=>"required",
         ]);
+        
+        Session::flash('email', $request->email);
+        Session::flash('password', $request->password);
+
         if (Auth::attempt(['email'=>$request->email, 'password'=>$request->password])) {
             $request->session()->regenerate();
 

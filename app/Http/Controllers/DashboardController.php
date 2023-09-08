@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class DashboardController extends Controller
 {
     public function index(){
-        $laporanMasuk = Pengaduan::with('kategori')->where('status', 'new')->get();
+        $laporanMasuk = Pengaduan::with('kategori')->where('status', 'new')->latest('tgl_pengaduan')->get();
         $laporanBaru = Pengaduan::where('status', 'new')->get();
         $laporan = Pengaduan::whereIn('status', ['process', 'accepted', 'finished', 'rejected'])->get();
         $kategori = Kategori::all();

@@ -14,7 +14,7 @@ use PhpParser\Node\Expr\New_;
 class LaporanController extends Controller
 {
     public function index(){
-        $dataLaporan = Pengaduan::with(['user', 'kategori'])->where('status', 'new')->get();
+        $dataLaporan = Pengaduan::with(['user', 'kategori'])->where('status', 'new')->latest('tgl_pengaduan')->get();
         $dataKategori = Kategori::all();
         $dataShow = [
             'title' => 'Laporan Masuk',
@@ -43,10 +43,10 @@ class LaporanController extends Controller
         $dataPengaduan = Pengaduan::find($id);
         $dataPengaduan->update($dataSatus);
 
-        if ($request->status == "accepted" || "process") {
+        if ($dataPengaduan->status == "accepted" || $dataPengaduan->status == "process") {
             return redirect('/laporan-dalam-proses');
         }
-        elseif ($request->status == "rejected" || "finished") {
+        elseif ($dataPengaduan->status == "rejected" || $dataPengaduan->status == "finished") {
             return redirect('/laporan-selesai');
         }
     }

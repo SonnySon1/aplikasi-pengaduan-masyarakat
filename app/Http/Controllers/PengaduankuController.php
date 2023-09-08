@@ -63,8 +63,11 @@ class PengaduankuController extends Controller
                 }
 
                 $dataPengaduan = Pengaduan::find($pengaduan_i_decrypt);
+                $dataShow = [
+                        'title' => 'Detail-pengaduan '.$dataPengaduan->judul_pengaduan,
+                ];
                 $dataTanggapan = Tanggapan::where('pengaduan_id', $dataPengaduan->id)->get();
-                return view('user.user-pengaduandetail', compact('dataPengaduan', 'dataTanggapan'));
+                return view('user.user-pengaduandetail', compact('dataPengaduan', 'dataTanggapan', 'dataShow'));
         }
 
         public function store_tanggapan(Request $request, $laporan){
@@ -87,7 +90,10 @@ class PengaduankuController extends Controller
         }
 
         public function profile(){
-                return view('user.user-profile');
+                $dataShow = [
+                        'title' => 'Profile By '.auth()->user()->nama,
+                ];
+                return view('user.user-profile', compact('dataShow'));
         }
 
         public function update_profile(Request $request){

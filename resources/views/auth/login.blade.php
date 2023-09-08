@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>APM</title>
+  <title>APM | Login</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -53,11 +53,11 @@
                     <form action="{{route('auth.user.login')}}" method="post" >
                         @csrf
                         <div class="mb-4">
-                            <input name="email" type="email" class="w-100 text-field-shadow" placeholder="Email" value="{{old('email')}}">
+                            <input name="email" type="email" class="w-100 text-field-shadow" placeholder="Email" value="{{ Session('email') }}">
                             <small class="text-danger">@error('email') {{$message}} @enderror</small>
                         </div>
                         <div class="mb-4">
-                            <input name="password" type="password" class="w-100 text-field-shadow" placeholder="Password" value="{{old('password')}}">
+                            <input name="password" type="password" class="w-100 text-field-shadow" placeholder="Password" value="{{ Session('password') }}">
                             <small class="text-danger">@error('password') {{$message}} @enderror</small>
                         </div>
                         <div class="mb-3">

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>APM</title>
+  <title>APM | Register</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -48,29 +48,32 @@
                     <form action="{{route('auth.user.register')}}" method="POST">
                         @csrf
                         <div class="mb-4">
-                            <input name="nama" id="nama" type="text" class="w-100 text-field-shadow" autocomplete="off" placeholder="Nama">
+                            <input name="nama" id="nama" type="text" class="w-100 text-field-shadow" autocomplete="off" placeholder="Nama" value="{{ old('nama') }}">
                             <small class="text-danger text-small">@error('nama'){{$message}}@enderror</small>
                         </div>
                         <div class="mb-4">
-                            <input name="nik" id="nik" type="number" class="w-100 text-field-shadow" autocomplete="off" placeholder="Nik" inputmode="numeric" min="1">
+                            <input name="nik" id="nik" type="number" class="w-100 text-field-shadow" autocomplete="off" placeholder="Nik" inputmode="numeric" min="1" value="{{ old('nik') }}">
                             <small class="text-danger text-small">@error('nik'){{$message}}@enderror</small>
                         </div>
                         <div class="mb-4">
-                            <input name="alamat" id="alamat" type="text" class="w-100 text-field-shadow" autocomplete="off" placeholder="Alamat">
+                            <input name="alamat" id="alamat" type="text" class="w-100 text-field-shadow" autocomplete="off" placeholder="Alamat" value="{{ old('alamat') }}">
                             <small class="text-danger text-small">@error('alamat'){{$message}}@enderror</small>
                         </div>
                         <div class="mb-4">
-                            <input name="no_telepon" id="no_telepon" type="text" class="w-100 text-field-shadow" autocomplete="off" placeholder="No Telepon">
+                            <input name="no_telepon" id="no_telepon" type="tel" class="w-100 text-field-shadow" autocomplete="off" placeholder="No Telepon" value="{{ old('no_telepon') }}">
                             <small class="text-danger text-small">@error('no_telepon'){{$message}}@enderror</small>
                         </div>
                         <div class="mb-4">
                             <div class="d-flex">
-                                <input name="email" id="email" type="text" class="w-100 flex-grow-1 text-field-shadow mr-5" autocomplete="off" placeholder="Email">
+                                <input name="email" id="email" type="text" class="w-100 flex-grow-1 text-field-shadow mr-5" autocomplete="off" placeholder="Email" value="{{ old('email') }}">
                                 <div class="distance-em-p"></div>
-                                <input name="password" id="password" type="password" class="w-100 flex-grow-1 text-field-shadow " autocomplete="off" placeholder="Password">
+                                <input name="password" id="password" type="password" class="w-100 flex-grow-1 text-field-shadow " autocomplete="off" placeholder="Password" value="{{ old('password') }}">
                             </div>
                             <small class="text-danger text-small">@error('email'){{$message}}@enderror</small>
                             <small class="text-danger text-small">@error('password'){{$message}}@enderror</small>
+                            @if (Session('error'))
+                                <small class="text-danger text-small mt-4">{{ Session('error') }}</small>
+                            @endif
                         </div>
                         <div class="form-check mb-5">
                             <input class="form-check-input" name="" type="checkbox" value="" id="menyetujui" required>
