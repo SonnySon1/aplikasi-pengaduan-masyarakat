@@ -66,7 +66,7 @@
                             @endif
                         </div>
                         <div class="mb-4">
-                            <button type="text" class="w-100 btn bg-primary fw-bold  text-white">Sigin</button>
+                            <button type="text" class="w-100 btn bg-primary fw-bold  text-white">Login</button>
                         </div>
                     </form>
                     <div>
