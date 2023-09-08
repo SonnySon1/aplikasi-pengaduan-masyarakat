@@ -23,9 +23,13 @@ class LoginController extends Controller
             $request->session()->regenerate();
 
             if( Auth::user()->role == "masyarakat" ){
+
                 return redirect()->intended('pengaduanku');
+
             }else if(Auth::user()->role == "admin"){
+
                 return redirect()->intended('dashboard');
+
             }
         }else{
            session()->flash('error', 'Email / Password Salah');
