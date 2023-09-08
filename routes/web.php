@@ -62,6 +62,7 @@ Route::middleware('admin')->group(function(){
     Route::post('/masyarakat/store', [MasyarakatController::class, 'store']);
     Route::get('/masyarakat-edit/{masyarakat}', [MasyarakatController::class, 'masyarakat_edit']);
     Route::post('/masyarakat-update/{masyarakat}', [MasyarakatController::class, 'update']);
+    Route::get('/masyarakat-detail/{masyarakat}', [MasyarakatController::class, 'show']);
 
     // petugas Admin
     Route::get('/petugas', [PetugasController::class, 'index']);
@@ -69,6 +70,7 @@ Route::middleware('admin')->group(function(){
     Route::post('/petugas-store', [PetugasController::class, 'store']);
     Route::get('/petugas-edit/{petugas}', [PetugasController::class, 'petugas_edit']);
     Route::post('/petugas-update/{petugas}', [PetugasController::class, 'update']);
+    Route::get('/petugas-detail/{petugas}', [PetugasController::class, 'show']);
 
     // kategori Admin
     Route::get('/kategori', [KategoriController::class, 'index']);
