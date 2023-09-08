@@ -45,12 +45,13 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label" for="">Filter Berdasarkan Status</label>
                                                     <div class="col-lg-12">
-                                                    
-                                                        <select class="form-control" id="" name="filter">
+                                                        <select class="form-control" id="filter-by-status" name="filter">
                                                             <option value="">--Filter Status--</option>
                                                             <option value="new">New</option>
                                                             <option value="accepted">Accepted</option>
                                                             <option value="rejected">Rejected</option>
+                                                            <option value="rejected">Process</option>
+                                                            <option value="rejected">Finished</option>
                                                         </select>
                                                     </div>
                                                     {{-- <button type="submit">Submit</button> --}}
@@ -61,17 +62,18 @@
                                                     <div class="form-group row">
                                                         <label class="col-lg-4 col-form-label" for="">Filter Berdasarkan Kategor</label>
                                                         <div class="col-lg-12">
-                                                            <select class="form-control" id="" name="">
+                                                            <select class="form-control" id="filter-by-category" name="">
                                                                 <option value="">--Pilih Kategori--</option>
-                                                                <option value="pencemaran">Pencemaran</option>
-                                                                <option value="bencanaalam">Bencana Alam</option>
+                                                                @foreach ($dataKategori as $kategori)
+                                                                    <option value="{{ $kategori->kategori }}">{{ $kategori->kategori }}</option> 
+                                                                @endforeach
                                                             </select>
                                                         </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="table-responsive mt-5">
-                                            <table class="table student-data-table m-t-20">
+                                            <table class="table student-data-table m-t-20" id="laporan-table">
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
@@ -89,7 +91,7 @@
                                                             <td>{{ $laporan->tgl_pengaduan }}</td>
                                                             <td>{{ $laporan->user->nama }}</td>
                                                             <td>{{ $laporan->kategori->kategori }}</td>
-                                                            <td>
+                                                            <td id="status">
                                                                 @if ($laporan->status == "new")
                                                                     <span class="btn btn-primary btn-sm">{{ $laporan->status }}</span>
                                                                 @elseif ($laporan->status == "accepted")

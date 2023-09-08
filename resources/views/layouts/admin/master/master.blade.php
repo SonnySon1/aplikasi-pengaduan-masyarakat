@@ -28,6 +28,48 @@
 @yield('content')
   
   
+
+<script>
+  // Ambil elemen select filter status dan filter kategori
+  const filterStatus = document.getElementById('filter-by-status');
+  const filterCategory = document.getElementById('filter-by-category');
+
+  // Ambil tabel dan semua baris dalam tabel
+  const table = document.getElementById('laporan-table');
+  const rows = table.querySelectorAll('tbody tr');
+
+  // Simpan data asli tabel
+  const originalData = Array.from(rows).map(row => ({
+      row: row,
+      display: row.style.display,
+  }));
+
+  // Tambahkan event listener untuk perubahan pada filter status dan filter kategori
+  filterStatus.addEventListener('change', filterTable);
+  filterCategory.addEventListener('change', filterTable);
+
+  function filterTable() {
+      const selectedStatus = filterStatus.value;
+      const selectedCategory = filterCategory.value;
+
+      // Loop melalui semua baris dalam tabel
+      originalData.forEach(data => {
+          const statusCell = data.row.querySelector('#status');
+          const categoryCell = data.row.querySelector('td:nth-child(4)'); // Ganti dengan indeks kolom kategori yang sesuai
+
+          // Jika tidak ada yang dipilih atau status dan kategori cocok dengan yang dipilih, tampilkan baris
+          if (
+              (selectedStatus === '' || statusCell.textContent.includes(selectedStatus)) &&
+              (selectedCategory === '' || categoryCell.textContent === selectedCategory)
+          ) {
+              data.row.style.display = data.display;
+          } else {
+              data.row.style.display = 'none';
+          }
+      });
+  }
+</script>
+
   
 
 <!-- wsi-->
@@ -45,6 +87,7 @@
     ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant"))
   });
 </script>
+
 <!--Scripts-->
  <!-- Required vendors -->
  <script src="{{ asset('dist/vendor/global/global.min.js') }}"></script>

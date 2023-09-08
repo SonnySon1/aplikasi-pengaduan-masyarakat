@@ -15,12 +15,12 @@ class LaporanController extends Controller
 {
     public function index(){
         $dataLaporan = Pengaduan::with(['user', 'kategori'])->where('status', 'new')->get();
-        $kategori = Kategori::all();
+        $dataKategori = Kategori::all();
         $dataShow = [
             'title' => 'Laporan Masuk',
             'page'  => 'index', 
         ];
-        return view('admin.laporan.laporanmasuk', compact('dataLaporan', 'kategori', 'dataShow'));
+        return view('admin.laporan.laporanmasuk', compact('dataLaporan', 'dataKategori', 'dataShow'));
     }
 
     public function show($laporan){
