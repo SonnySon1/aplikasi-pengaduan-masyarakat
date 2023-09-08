@@ -47,9 +47,9 @@
                                             <div class="row">
                                                 <div class="col-xl-4 col-sm-4 border-right-1 prf-col">
                                                     <div class="profile-name">
-                                                        @if (auth()->user()->role = "admin")
+                                                        @if (auth()->user()->role == "admin")
                                                             <h4 class="text-primary"><b class="text-danger">Admin</b><b class="text-dark"> | </b>{{ auth()->user()->nama }}</h4>
-                                                        @elseif (auth()->user()->role = "petugas")
+                                                        @elseif (auth()->user()->role == "petugas")
                                                             <h4 class="text-primary"><b class="text-warning">Petugas</b><b class="text-dark"> | </b>{{ auth()->user()->nama }}</h4>
                                                         @endif
                                                         <p>Nama</p>
@@ -99,7 +99,6 @@
                                                     <h4 class="text-primary mb-4">Hubungi Kami</h4>
                                                     <a href="" class="btn btn-outline-dark btn-rounded pl-4 my-3 my-sm-0 pr-4 mr-3 m-b-10"><i class="bi bi-whatsapp"></i> Whatsapp</a>
                                                     <a href="" class="btn btn-outline-dark btn-rounded pl-4 my-3 my-sm-0 pr-4 mr-3 m-b-10"><i class="bi bi-instagram"></i> Instagram</a>
-                                                    
                                                 </div>
                                                 <div class="profile-personal-info pt-5">
                                                     <h4 class="text-primary mb-4">Informasi Pribadi</h4>
@@ -165,7 +164,7 @@
                                                             @if (auth()->user()->role == "admin")
                                                                 <div class="col-9"><span class="text-danger">Admin</span>
                                                             @elseif (auth()->user()->role == "petugas")
-                                                                <div class="col-9"><span class="text-danger">Petugas</span>
+                                                                <div class="col-9"><span class="text-warning">Petugas</span>
                                                             @endif
                                                         </div>
                                                     </div>

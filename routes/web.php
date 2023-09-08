@@ -50,14 +50,32 @@ Route::middleware('masyarakat')->group(function(){
 });
 
 
-// admin  
+// admin and petugas
+Route::middleware(['adminandpetugas'])->group(function(){
+        // dashboard Admin and petugas
+        Route::get('/dashboard', [DashboardController::class, 'index']);
+        Route::get('/signout-staf', [DashboardController::class, 'signout_staf']);
 
+        // profile 
+        Route::get('/profile', [ProfileController::class, 'index']);
+        Route::post('/update-profile', [ProfileController::class, 'update']);
+
+        // laporan Admin
+        Route::get('/laporanmasuk', [LaporanController::class, 'index']);
+        Route::get('/laporan-detail/{laporan}', [LaporanController::class, 'show']);
+        Route::post('/laporan-update/{status}', [LaporanController::class, 'update']);
+        Route::post('/tanggapan-store/{tanggapan}', [LaporanController::class, 'store']);
+        Route::post('filter-by-status', [LaporanController::class, 'filter_by_status']);
+
+        // laporan dalam proses
+        Route::get('/laporan-dalam-proses', [LaporanprosesController::class, 'index']);
+
+        // Laporan selesai
+        Route::get('/laporan-selesai', [LaporanselesaiController::class, 'index']);
+});
+
+// admin  
 Route::middleware('admin')->group(function(){
-    
-    // dashboard Admin
-    Route::get('/dashboard', [DashboardController::class, 'index']);
-    Route::get('/signout-staf', [DashboardController::class, 'signout_staf']);
-    
     // masyarakat Admin
     Route::get('/masyarakat', [MasyarakatController::class, 'index']);
     Route::get('/masyarakat-add', [MasyarakatController::class, 'masyarakat_add']);
@@ -83,23 +101,8 @@ Route::middleware('admin')->group(function(){
     Route::post('/kategori-update/{kategori}', [KategoriController::class, 'update']);
     Route::get('/kategori-detail/{kategori}', [KategoriController::class, 'show']);
 
-    // laporan Admin
-    Route::get('/laporanmasuk', [LaporanController::class, 'index']);
-    Route::get('/laporan-detail/{laporan}', [LaporanController::class, 'show']);
-    Route::post('/laporan-update/{status}', [LaporanController::class, 'update']);
-    Route::post('/tanggapan-store/{tanggapan}', [LaporanController::class, 'store']);
-    Route::post('filter-by-status', [LaporanController::class, 'filter_by_status']);
-
-    // laporan dalam proses
-    Route::get('/laporan-dalam-proses', [LaporanprosesController::class, 'index']);
-
-    // Laporan selesai
-    Route::get('/laporan-selesai', [LaporanselesaiController::class, 'index']);
-
     // report
     Route::view('/generate-report', 'admin.report.generate-report');
 
-    // profile 
-    Route::get('/profile', [ProfileController::class, 'index']);
-    Route::post('/update-profile', [ProfileController::class, 'update']);
+    
 });

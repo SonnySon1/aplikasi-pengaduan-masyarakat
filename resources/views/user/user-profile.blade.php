@@ -70,7 +70,6 @@
 
     <!-- ======== main ======== -->
     <main id="main">
-
         <!-- ======= Featured Services Section ======= -->
         <section id="profile" class="featured-services">
             <div class="container mt-5">
@@ -202,7 +201,7 @@
                                                         <div class="col-3">
                                                             <h5 class="f-w-500">Peran<span class="pull-right">:</span></h5>
                                                         </div>
-                                                        <div class="col-9"><span class="text-success">Masyarakat</span>
+                                                        <div class="col-9"><span class="text-success"><b>Masyarakat</b></span>
                                                         </div>
                                                     </div>
                                                 </div>

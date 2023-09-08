@@ -30,10 +30,14 @@ class LoginController extends Controller
 
                 return redirect()->intended('dashboard');
 
+            }else if(Auth::user()->role == "petugas"){
+
+                return redirect()->intended('dashboard');
             }
+          
         }else{
-           session()->flash('error', 'Email / Password Salah');
-           return back();
+            session()->flash('error', 'Email / Password Salah');
+            return back();
         }
     }
 
