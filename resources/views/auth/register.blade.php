@@ -73,7 +73,7 @@
                             <small class="text-danger text-small">@error('password'){{$message}}@enderror</small>
                         </div>
                         <div class="form-check mb-5">
-                            <input class="form-check-input" name="" type="checkbox" value="" id="menyetujui">
+                            <input class="form-check-input" name="" type="checkbox" value="" id="menyetujui" required>
                             <label class="form-check-label " style="font-size: 12px;" for="menyetujui">
                                 Saya setuju dengan syarat dan kebijakan privasi
                             </label>

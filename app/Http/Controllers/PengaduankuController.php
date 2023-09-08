@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Kategori;
 use App\Models\Pengaduan;
 use App\Models\Tanggapan;
-use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\Crypt;
 use Symfony\Component\VarDumper\VarDumper;
+use Illuminate\Contracts\Encryption\DecryptException;
 
 class PengaduankuController extends Controller
 {
@@ -82,6 +84,32 @@ class PengaduankuController extends Controller
                 
                 Tanggapan::create($data);
                 return redirect('/pengaduanku');
+        }
+
+        public function profile(){
+                return view('user.user-profile');
+        }
+
+        public function update_profile(Request $request){
+                $request->validate([
+                        'nama'  => 'required',
+                        'nik'  => 'required',
+                        'alamat'  => 'required',
+                        'jenis_kelamin'  => 'required',
+                        'no_telepon'  => 'required',
+                    ]);
+            
+                    $data = [
+                        'nama'=>$request->input('nama'),
+                         'nik'=>$request->input('nik'),
+                         'alamat'=>$request->input('alamat'),
+                         'jenis_kelamin'=>$request->input('jenis_kelamin'),
+                         'no_telepon'=>$request->input('no_telepon'),
+                     ];
+            
+                    $dataUser = User::find(Auth::user()->id);
+                    $dataUser->update($data);
+                     return redirect('/profile-user');
         }
 
         // signout

@@ -154,9 +154,6 @@
                                                         @elseif ($dataPetugas->role == "petugas")
                                                             <div class="col-9"><span class="text-warning">Petugas</span>
                                                             </div>
-                                                        @else
-                                                            <div class="col-9"><span class="text-success">Masyarakat</span>
-                                                            </div>
                                                         @endif
                                                     </div>
                                                 </div>

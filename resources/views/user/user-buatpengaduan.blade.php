@@ -50,14 +50,14 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto" href="/pengaduanku#pengaduanku">Pengaduanku</a></li>
-                    <li><a class="nav-link scrollto" href="index.html#buatpengaduan">Buat Pengaduan</a></li>
-                    <li><a class="nav-link scrollto" href="index.html#contact">Profile</a></li>
+                    <li><a class="nav-link scrollto" href="/buat-pengaduan#buatpengaduan">Buat Pengaduan</a></li>
+                    <li><a class="nav-link scrollto" href="/profile-user#profile">Profile</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle d-none"></i>
             </nav><!-- .navbar -->
             <ul class="list-unstyled">
                 <li>
-                    <a class="btn-getstarted scrollto rounded-5" href="register.html">Sign-out</a>
+                    <a class="btn-getstarted scrollto rounded-5" href="/signoput">Sign-out</a>
                 </li>
             </ul>
 

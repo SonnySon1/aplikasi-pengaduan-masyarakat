@@ -151,16 +151,8 @@
                                                         <div class="col-3">
                                                             <h5 class="f-w-500">Peran<span class="pull-right">:</span></h5>
                                                         </div>
-                                                        @if ($dataMasyarakat->role == "admin")
-                                                            <div class="col-9"><span class="text-danger">Admin</span>
-                                                            </div>
-                                                        @elseif ($dataMasyarakat->role == "petugas")
-                                                            <div class="col-9"><span class="text-warning">Petugas</span>
-                                                            </div>
-                                                        @else
                                                             <div class="col-9"><span class="text-success">Masyarakat</span>
                                                             </div>
-                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>

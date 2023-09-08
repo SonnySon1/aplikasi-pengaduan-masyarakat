@@ -60,3 +60,10 @@ input[type="number"] {
 .coment-fw > p{
     padding: 15px;
 }
+
+
+.profile-img-user{
+    position: relative; 
+    top: 60px;
+    margin-left: 100px;
+}

@@ -52,7 +52,7 @@
                 <ul>
                     <li><a class="nav-link scrollto" href="#pengaduanku">Pengaduanku</a></li>
                     <li><a class="nav-link scrollto" href="/buat-pengaduan#buatpengaduan">Buat Pengaduan</a></li>
-                    <li><a class="nav-link scrollto" href="index.html#contact">Profile</a></li>
+                    <li><a class="nav-link scrollto" href="/profile-user#contact">Profile</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle d-none"></i>
             </nav><!-- .navbar -->

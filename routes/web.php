@@ -45,6 +45,8 @@ Route::middleware('masyarakat')->group(function(){
     Route::post('/storepengaduan', [PengaduankuController::class, 'storepengaduan']);
     Route::get('/signoput', [PengaduankuController::class, 'signout']);
     Route::post('/tanggapi-pengaduan/{pengaduan}', [ PengaduankuController::class, 'store_tanggapan']);
+    Route::get('/profile-user', [ PengaduankuController::class, 'profile']);
+    Route::post('/user-update-profile', [ PengaduankuController::class, 'update_profile']);
 });
 
 
