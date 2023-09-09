@@ -86,7 +86,7 @@ class PengaduankuController extends Controller
                 ];
                 
                 Tanggapan::create($data);
-                return redirect('/pengaduanku');
+                return redirect()->back();
         }
 
         public function profile(){
@@ -114,6 +114,24 @@ class PengaduankuController extends Controller
                      ];
             
                     $dataUser = User::find(Auth::user()->id);
+
+                    if ($request->hasFile('foto')) {
+                        $request->validate([
+                            'foto' => 'mimes:png,jpg,webp,pdf,png,jpeg'
+                        ], [
+                            'foto.mimes' => "foto harus berekstensi png,jpg,webp,pdf,png,jpeg",
+                        ]);
+            
+                        $file_foto = $request->file('foto');
+                        $ekstensi_foto = $file_foto->extension();
+                        $nama_foto = date('dmyhis').'.'.$ekstensi_foto;
+                        $file_foto->move(public_path('photos/profile-photo'), $nama_foto);
+            
+                        $data = [
+                            'foto' => $nama_foto
+                        ];
+                    }
+
                     $dataUser->update($data);
                      return redirect('/profile-user');
         }

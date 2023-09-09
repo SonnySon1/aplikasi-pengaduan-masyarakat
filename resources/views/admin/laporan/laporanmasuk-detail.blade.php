@@ -81,7 +81,7 @@
                                                             <select class="form-control" id="status" name="status">
                                                                 <option value="new" @if ($dataLaporan->status == "new") selected  @endif value="new">New</option>
                                                                 <option value="accepted" @if ($dataLaporan->status == "accepted") selected  @endif value="Selesai">Accepted</option>
-                                                                <option value="process" @if ($dataLaporan->status == "proccess") selected  @endif value="process">Process</option>
+                                                                <option value="process" @if ($dataLaporan->status == "process") selected  @endif value="process">Process</option>
                                                                 <option value="finished" @if ($dataLaporan->status == "finished") selected  @endif value="Selesai">Finished</option>
                                                                 <option value="rejected" @if ($dataLaporan->status == "rejected") selected  @endif value="Selesai">Rejected</option>
                                                             </select>

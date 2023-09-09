@@ -27,6 +27,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [UserController::class, 'index']);
+Route::post('/signout', [LoginController::class, 'signout']);
 
 // auth
 Route::middleware('guest')->group(function(){
@@ -34,7 +35,6 @@ Route::middleware('guest')->group(function(){
     Route::post('/login', [LoginController::class, 'login'])->name('auth.user.login');
     Route::get('/register', [RegisterController::class, 'register_view'])->name('auth.register');
     Route::post('/register', [RegisterController::class, 'register'])->name('auth.user.register');
-    Route::post('/logout', [LoginController::class, 'logout']);
 });
 
 

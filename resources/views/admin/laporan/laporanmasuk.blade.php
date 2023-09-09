@@ -43,78 +43,76 @@
                                         <div class="row">
                                             <div class="col-xl-6">
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="">Filter Berdasarkan Status</label>
+                                                    <label class="col-lg-4 col-form-label" for="filter-by-status">Filter Berdasarkan Status</label>
                                                     <div class="col-lg-12">
                                                         <select class="form-control" id="filter-by-status" name="filter">
                                                             <option value="">--Filter Status--</option>
                                                             <option value="new">New</option>
                                                             <option value="accepted">Accepted</option>
-                                                            <option value="rejected">Rejected</option>
-                                                            <option value="rejected">Process</option>
+                                                            <option value="process">Process</option>
                                                             <option value="finished">Finished</option>
                                                         </select>
                                                     </div>
-                                                    {{-- <button type="submit">Submit</button> --}}
                                                 </div>
                                             </div>
-                                        </form>
                                             <div class="col-xl-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-4 col-form-label" for="">Filter Berdasarkan Kategor</label>
-                                                        <div class="col-lg-12">
-                                                            <select class="form-control" id="filter-by-category" name="">
-                                                                <option value="">--Pilih Kategori--</option>
-                                                                @foreach ($dataKategori as $kategori)
-                                                                    <option value="{{ $kategori->kategori }}">{{ $kategori->kategori }}</option> 
-                                                                @endforeach
-                                                            </select>
-                                                        </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-form-label" for="filter-by-category">Filter Berdasarkan Kategori</label>
+                                                    <div class="col-lg-12">
+                                                        <select class="form-control" id="filter-by-category" name="filter-category">
+                                                            <option value="">--Pilih Kategori--</option>
+                                                            @foreach ($dataKategori as $kategori)
+                                                                <option value="{{ $kategori->kategori }}">{{ $kategori->kategori }}</option> 
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="table-responsive mt-5">
-                                            <table class="table student-data-table m-t-20" id="laporan-table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>#</th>
-                                                        <th>Tgl Pengaduan</th>
-                                                        <th>Nama Pengadu</th>
-                                                        <th>Kategori</th>
-                                                        <th>Status</th>
-                                                        <th>Aksi</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @foreach ($dataLaporan as $no=>$laporan)                                                        
-                                                        <tr>
-                                                            <td>{{ $no+1 }}</td>
-                                                            <td>{{ $laporan->tgl_pengaduan }}</td>
-                                                            <td>{{ $laporan->user->nama }}</td>
-                                                            <td>{{ $laporan->kategori->kategori }}</td>
-                                                            <td id="status">
-                                                                @if ($laporan->status == "new")
-                                                                    <span class="btn btn-primary btn-sm" style="border-radius: 50px;">{{ $laporan->status }}</span>
-                                                                @elseif ($laporan->status == "accepted")
-                                                                    <span class="btn btn-success btn-sm" style="border-radius: 50px;">{{ $laporan->status }}</span>
-                                                                @elseif ($laporan->status == "process")
-                                                                    <span class="btn btn-warning btn-sm" style="border-radius: 50px;">{{ $laporan->status }}</span>
-                                                                @elseif ($laporan->status == "finished")
-                                                                    <span class="btn btn-secondary btn-sm" style="border-radius: 50px;">{{ $laporan->status }}</span>
-                                                                @else
-                                                                    <span class="btn btn-danger btn-sm" style="border-radius: 50px;">{{ $laporan->status }}</span>
-                                                                @endif
-                                                            </td>
-                                                            @php
-                                                                $laporan_i_crypt = Crypt::encrypt($laporan->id);
-                                                            @endphp
-                                                            <td><a href="/laporan-detail/{{ $laporan_i_crypt }}" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
-                                                        </tr>
-                                                    @endforeach
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
+                                    </form>
                                 </div>
+                                <div class="table-responsive mt-5">
+                                    <table class="table student-data-table m-t-20" id="laporan-table">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Tgl Pengaduan</th>
+                                                <th>Nama Pengadu</th>
+                                                <th>Kategori</th>
+                                                <th>Status</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($dataLaporan as $no => $laporan)                                                        
+                                                <tr>
+                                                    <td>{{ $no + 1 }}</td>
+                                                    <td>{{ $laporan->tgl_pengaduan }}</td>
+                                                    <td>{{ $laporan->user->nama }}</td>
+                                                    <td id="kategori">{{ $laporan->kategori->kategori }}</td>
+                                                    <td id="status">
+                                                        @if ($laporan->status == "new")
+                                                            <span class="btn btn-primary btn-sm" style="border-radius: 50px;">{{ $laporan->status }}</span>
+                                                        @elseif ($laporan->status == "accepted")
+                                                            <span class="btn btn-success btn-sm" style="border-radius: 50px;">{{ $laporan->status }}</span>
+                                                        @elseif ($laporan->status == "process")
+                                                            <span class="btn btn-warning btn-sm" style="border-radius: 50px;">{{ $laporan->status }}</span>
+                                                        @elseif ($laporan->status == "finished")
+                                                            <span class="btn btn-secondary btn-sm" style="border-radius: 50px;">{{ $laporan->status }}</span>
+                                                        @else
+                                                            <span class="btn btn-danger btn-sm" style="border-radius: 50px;">{{ $laporan->status }}</span>
+                                                        @endif
+                                                    </td>
+                                                    @php
+                                                        $laporan_i_crypt = Crypt::encrypt($laporan->id);
+                                                    @endphp
+                                                    <td><a href="/laporan-detail/{{ $laporan_i_crypt }}" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a></td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>                  
@@ -127,4 +125,5 @@
         @include('layouts.admin.footer.footer')
         <!--footer end-->
     </div>
+    
 @endsection

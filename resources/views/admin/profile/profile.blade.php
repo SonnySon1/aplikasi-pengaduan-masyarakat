@@ -38,7 +38,7 @@
                                 <div class="photo-content">
                                     <div class="cover-photo"></div>
                                     <div class="profile-photo">
-                                        <img src="{{ asset('photos/profile-photo/'.auth()->user()->foto ) }}" class="img-fluid rounded-circle" alt="">
+                                        <img src="{{ asset('photos/profile-photo/'.auth()->user()->foto ) }}" class="img-fluid" style="min-width: 150px; min-height: 150px; max-width: 150px; max-height: 150px; border-radius: 100px" alt="">
                                     </div>
                                 </div>
                                 <div class="profile-info">
@@ -174,7 +174,7 @@
                                                 <div class="pt-3">
                                                     <div class="settings-form">
                                                         <h4 class="text-primary">Pengaturan Akun</h4>
-                                                        <form action="/update-profile" method="POST">
+                                                        <form action="/update-profile" method="POST" enctype="multipart/form-data">
                                                             @csrf
                                                             <div class="form-row">
                                                                 <div class="form-group col-md-6">
@@ -211,6 +211,11 @@
                                                                     <label>Alamat</label>
                                                                     <input name="alamat" type="tel" placeholder="no telepon kamu" class="form-control" value="{{ auth()->user()->alamat }}">
                                                                     <small class="text-danger">@error('alamat') {{$message}} @enderror</small>
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <label>Foto Profile</label>
+                                                                    <input name="foto" type="file" class="form-control">
+                                                                    <small class="text-danger">@error('foto') {{$message}} @enderror</small>
                                                                 </div>
                                                             </div>
                                                             <button class="btn btn-primary" type="submit"><i class="bi bi-arrow-clockwise"></i> Update</button>

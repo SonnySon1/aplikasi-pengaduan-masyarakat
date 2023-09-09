@@ -82,7 +82,7 @@
                                 <div class="photo-content">
                                     <div class="cover-photo"></div>
                                     <div class="profile-photo">
-                                        <img src="{{ asset('photos/profile-photo/'.auth()->user()->foto ) }}" style="width: 100px" class="img-fluid rounded-circle profile-img-user" alt="">
+                                        <img src="{{ asset('photos/profile-photo/'.auth()->user()->foto ) }}"  class="img-fluid rounded-circle profile-img-user" class="img-fluid" style="min-width: 150px; min-height: 150px; max-width: 150px; max-height: 150px; border-radius: 100px"  alt="">
                                     </div>
                                 </div>
                                 <div class="profile-info">
@@ -210,9 +210,9 @@
                                                 <div class="pt-3">
                                                     <div class="settings-form">
                                                         <h4 class="text-primary">Pengaturan Akun</h4>
-                                                        <form action="/user-update-profile" method="POST">
+                                                        <form action="/user-update-profile" method="POST" enctype="multipart/form-data">
                                                             @csrf
-                                                            <div class="form-row mb-3 d-flex gap-4">
+                                                            <div class="form-row mb-3 d-flex gap-2">
                                                                 <div class="form-group col-md-6 mb-3">
                                                                     <label>Nama</label>
                                                                     <input name="nama" type="text" placeholder="nama kamu" class="form-control" value="{{ auth()->user()->nama }}">
@@ -248,6 +248,11 @@
                                                                     <input name="alamat" type="tel" placeholder="no telepon kamu" class="form-control" value="{{ auth()->user()->alamat }}">
                                                                     <small class="text-danger">@error('alamat') {{$message}} @enderror</small>
                                                                 </div>
+                                                            </div>
+                                                            <div class="form-group col-md-12">
+                                                                <label>Foto Profile</label>
+                                                                <input name="foto" type="file" class="form-control">
+                                                                <small class="text-danger">@error('foto') {{$message}} @enderror</small>
                                                             </div>
                                                             <button class="btn bg-primary text-white" type="submit"><i class="bi bi-arrow-clockwise"></i> Update</button>
                                                         </form>

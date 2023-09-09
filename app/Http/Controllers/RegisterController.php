@@ -48,14 +48,14 @@ class RegisterController extends Controller
         $nik = $request->nik;
         $digit = substr($nik, 0, 6);
         if ($digit != 327902) {
-            Session::flash('error', 'Kamu bukan masyarakat desa mulyasari dusun margaluyu rt-06 rw-08 | kota banjar');
+            Session::flash('error', 'Kamu bukan masyarakat Kota Banjar Jawabarat Pataruman');
             return back();
         }
 
 
         // siapkan data user untuk di store ke da;am databas 
         $data = [
-           'nama'=>$request->input('nama'),
+            'nama'=>$request->input('nama'),
             'nik'=>$request->input('nik'),
             'alamat'=>$request->input('alamat'),
             'email'=>$request->input('email'),

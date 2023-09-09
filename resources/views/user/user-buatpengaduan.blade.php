@@ -82,7 +82,7 @@
                     <p><small class="text-danger">@error('judul_pengaduan') {{ $message }} @enderror</small></p>
                     <div class="input-group mb-3">
                         <select class="form-select" name="kategori" id="inputGroupSelect02" >
-                          <option selected>--Pilih Kategori Pengaduan--</option>      
+                          <option selected value="">--Pilih Kategori Pengaduan--</option>      
                             @foreach ($kategoriPengaduan as $kategori)
                                 <option value="{{ $kategori->id }}">{{ $kategori->kategori }}</option>  
                             @endforeach

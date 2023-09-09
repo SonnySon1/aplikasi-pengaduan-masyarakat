@@ -45,7 +45,7 @@
     <header id="header" class="header fixed-top" data-scrollto-offset="0">
         <div class="container-fluid d-flex align-items-center justify-content-between">
 
-            <a href="index.html" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
+            <a href="/" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
                 <!-- <img src="assetsusers/img/logo.png" alt=""> -->
                 <h1>APM<span>.</span></h1>
@@ -55,7 +55,7 @@
                 <ul>
                     <li><a class="nav-link scrollto" href="/pengaduanku#pengaduanku">Pengaduanku</a></li>
                     <li><a class="nav-link scrollto" href="/buat-pengaduan#buatpengaduan">Buat Pengaduan</a></li>
-                    <li><a class="nav-link scrollto" href="index.html#contact">Profile</a></li>
+                    <li><a class="nav-link scrollto" href="/profile-user#profile">Profile</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle d-none"></i>
             </nav><!-- .navbar -->
@@ -103,7 +103,7 @@
                         @foreach ($dataTanggapan as $tanggapan)                            
                             <div class="d-flex mt-3">
                                 <div>
-                                    <img src='{{ asset("photos/profile-photo/".$tanggapan->user->foto) }}' width="40" class="rounded-5" alt="">
+                                    <img src='{{ asset("photos/profile-photo/".$tanggapan->user->foto) }}' style="min-width: 35px; max-width: 35px; min-height: 35px; max-height: 35px;" class="rounded-5" alt="">
                                 </div>
                                 <div class="ms-2">
                                     @if ($tanggapan->user->role == "admin")

@@ -19,9 +19,9 @@
         <ul class="list-unstyled">
             <li>
                 @auth
-                    <form action="/signoput" method="POST">
+                    <form action="/signout" method="POST">
                         @csrf
-                        <button  class="btn-getstarted scrollto rounded-5">Logout</button>
+                        <button  class="btn-getstarted scrollto rounded-5">Sign-Out</button>
                     </form>
                 @else
                 <a class="color-black" href="{{ route('auth.login') }}">Login</a>
