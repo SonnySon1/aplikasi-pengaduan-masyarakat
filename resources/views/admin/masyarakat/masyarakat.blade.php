@@ -54,13 +54,14 @@
                                                     <td>{{ $no+1 }}</td>
                                                     <td>{{ $masyarakat->nik }}</td>
                                                     <td>{{ $masyarakat->nama }}</td>
-                                                    <td>{{ $masyarakat->alamat }}</td>
+                                                    <td>{{ Str::limit($masyarakat->alamat, 50)}}</td>
                                                     <td>
                                                         @php
                                                             $masyarakat_i_encrypt = Crypt::encrypt($masyarakat->id);
                                                         @endphp
                                                         <a href="/masyarakat-edit/{{ $masyarakat_i_encrypt }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil text-white"></i></a>
                                                         <a href="/masyarakat-detail/{{ $masyarakat_i_encrypt }}" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
+                                                        <a href="/masyarakat-delete/{{ $masyarakat_i_encrypt }}" class="btn btn-danger btn-sm"><i class="bi bi-trash3"></i></a>
                                                     </td>
                                                 </tr>
                                             @endforeach

@@ -102,4 +102,17 @@ class PetugasController extends Controller
         $dataPetugas = User::find($petugas_i_decrypt);
         return view('admin.petugas.petugas-detail', compact('dataPetugas'));
     }
+
+    public function destroy($petugas){
+        try {
+            $petugas_i_decrypt = Crypt::decrypt($petugas);
+        } catch (DecryptException $e) {
+            abort(404);
+        }
+
+        $datapetugas = User::find($petugas_i_decrypt);
+        $datapetugas->delete();
+
+        return redirect('/petugas');
+    }
 }

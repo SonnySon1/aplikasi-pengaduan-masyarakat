@@ -96,4 +96,17 @@ class MasyarakatController extends Controller
 
         return view('admin.masyarakat.masyarakat-detail', compact('dataMasyarakat'));
     }
+
+    public function destroy($masyarakat){
+        try {
+            $masyarakat_i_decrypt = Crypt::decrypt($masyarakat);
+        } catch (DecryptException $e) {
+            abort(404);
+        }
+
+        $dataMasyarakat = User::find($masyarakat_i_decrypt);
+        $dataMasyarakat->delete();
+
+        return redirect('/masyarakat');
+    }
 }

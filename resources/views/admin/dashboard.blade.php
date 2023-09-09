@@ -107,7 +107,7 @@
                                                 <tr>
                                                     <td>{{ $no+1 }}</td>
                                                     <td>{{ $laporan->tgl_pengaduan }}</td>
-                                                    <td>{{ $laporan->judul_pengaduan }}</td>
+                                                    <td>{{ Str::limit($laporan->judul_pengaduan, 50)}}</td>
                                                     <td>{{ $laporan->kategori->kategori }}</td>
                                                     @php
                                                         $laporan_i_crypt = Crypt::encrypt($laporan->id)

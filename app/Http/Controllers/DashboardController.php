@@ -28,4 +28,10 @@ class DashboardController extends Controller
 
         return redirect('/login');
     }
+    
+    public function signout(Request $request){
+        $request->session()->invalidate(); 
+        $request->session()->regenerate();
+        return redirect('/');
+    }
 }

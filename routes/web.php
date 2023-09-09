@@ -58,7 +58,7 @@ Route::middleware(['adminandpetugas'])->group(function(){
 
         // dashboard Admin and petugas
         Route::get('/dashboard', [DashboardController::class, 'index']);
-        Route::post('/signoput', [PengaduankuController::class, 'signout']);
+        Route::get('/signoput-staff', [DashboardController::class, 'signout']);
 
         // profile 
         Route::get('/profile', [ProfileController::class, 'index']);
@@ -90,6 +90,7 @@ Route::middleware('admin')->group(function(){
     Route::get('/masyarakat-edit/{masyarakat}', [MasyarakatController::class, 'masyarakat_edit']);
     Route::post('/masyarakat-update/{masyarakat}', [MasyarakatController::class, 'update']);
     Route::get('/masyarakat-detail/{masyarakat}', [MasyarakatController::class, 'show']);
+    Route::get('/masyarakat-delete/{masyarakat}', [MasyarakatController::class, 'destroy']);
 
     // petugas Admin
     Route::get('/petugas', [PetugasController::class, 'index']);
@@ -98,6 +99,7 @@ Route::middleware('admin')->group(function(){
     Route::get('/petugas-edit/{petugas}', [PetugasController::class, 'petugas_edit']);
     Route::post('/petugas-update/{petugas}', [PetugasController::class, 'update']);
     Route::get('/petugas-detail/{petugas}', [PetugasController::class, 'show']);
+    Route::get('/petugas-delete/{petugas}', [PetugasController::class, 'destroy']);
 
     // kategori Admin
     Route::get('/kategori', [KategoriController::class, 'index']);
