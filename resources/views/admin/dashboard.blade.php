@@ -32,7 +32,7 @@
 
                 <div class="row">
                     <div class="col-lg-3 col-sm-6">
-                        <a href="masyarakat.html">
+                        <a href="/masyarakat">
                             <div class="card text-center">
                                     <div class="stat-icon d-inline-block">
                                         <i class="bi bi-people-fill text-success"></i>
@@ -45,7 +45,7 @@
                         </a>
                     </div>
                     <div class="col-lg-3 col-sm-6">
-                        <a href="kategori.html">
+                        <a href="/kategori">
                             <div class="card text-center">
                                     <div class="stat-icon d-inline-block">
                                         <i class="fa-solid fa-book text-warning"></i>
@@ -58,7 +58,7 @@
                         </a>
                     </div>
                     <div class="col-lg-3 col-sm-6">
-                        <a href="laporanmasuk.html">
+                        <a href="/laporan-selesai">
                             <div class="card text-center">
                                 <div class="stat-icon d-inline-block">
                                     <i class="bi bi-envelope-check text-danger"></i>
@@ -71,7 +71,7 @@
                         </a>
                     </div>
                     <div class="col-lg-3 col-sm-6">
-                        <a href="laporanmasuk.html">
+                        <a href="/laporanmasuk">
                         <div class="card text-center">
                                 <div class="stat-icon d-inline-block">
                                     <i class="bi bi-envelope-exclamation text-success"></i>

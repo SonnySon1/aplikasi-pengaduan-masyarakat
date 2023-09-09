@@ -103,7 +103,11 @@
                         @foreach ($dataTanggapan as $tanggapan)                            
                             <div class="d-flex mt-3">
                                 <div>
-                                    <img src='{{ asset("photos/profile-photo/".$tanggapan->user->foto) }}' style="min-width: 35px; max-width: 35px; min-height: 35px; max-height: 35px;" class="rounded-5" alt="">
+                                    @if ($tanggapan->user->is_google_user)
+                                        <img src='{{ $tanggapan->user->foto}}' style="min-width: 35px; max-width: 35px; min-height: 35px; max-height: 35px;" class="rounded-5" alt="">
+                                    @else
+                                        <img src='{{ asset("photos/profile-photo/".$tanggapan->user->foto) }}' style="min-width: 35px; max-width: 35px; min-height: 35px; max-height: 35px;" class="rounded-5" alt="">
+                                    @endif
                                 </div>
                                 <div class="ms-2">
                                     @if ($tanggapan->user->role == "admin")
