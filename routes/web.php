@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LaporanprosesController;
@@ -32,6 +33,8 @@ Route::post('/signout', [LoginController::class, 'signout']);
 // auth
 Route::middleware('guest')->group(function(){
     Route::get('/login', [LoginController::class, 'login_view'])->name('auth.login');
+    Route::get('/auth/google', [GoogleController::class, 'redirectToGoogle']);
+    Route::get('/auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
     Route::post('/login', [LoginController::class, 'login'])->name('auth.user.login');
     Route::get('/register', [RegisterController::class, 'register_view'])->name('auth.register');
     Route::post('/register', [RegisterController::class, 'register'])->name('auth.user.register');

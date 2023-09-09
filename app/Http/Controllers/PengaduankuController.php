@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Session;
 use Symfony\Component\VarDumper\VarDumper;
 use Illuminate\Contracts\Encryption\DecryptException;
 
@@ -104,7 +105,15 @@ class PengaduankuController extends Controller
                         'jenis_kelamin'  => 'required',
                         'no_telepon'  => 'required',
                     ]);
-            
+                    
+                $nik = $request->nik;
+                $digit = substr($nik, 0, 6);
+                if ($digit != 327902) {
+                        Session::flash('error', 'Kamu bukan masyarakat Kota Banjar Jawabarat Pataruman');
+                        return back();
+                }
+
+
                     $data = [
                         'nama'=>$request->input('nama'),
                          'nik'=>$request->input('nik'),

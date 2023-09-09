@@ -82,7 +82,11 @@
                                 <div class="photo-content">
                                     <div class="cover-photo"></div>
                                     <div class="profile-photo">
-                                        <img src="{{ asset('photos/profile-photo/'.auth()->user()->foto ) }}"  class="img-fluid rounded-circle profile-img-user" class="img-fluid" style="min-width: 150px; min-height: 150px; max-width: 150px; max-height: 150px; border-radius: 100px"  alt="">
+                                        @if (auth()->user()->is_google_user)
+                                            <img src="{{ auth()->user()->foto}}"  class="img-fluid rounded-circle profile-img-user" class="img-fluid" style="min-width: 150px; min-height: 150px; max-width: 150px; max-height: 150px; border-radius: 100px"  alt="">
+                                        @else
+                                            <img src="{{ asset('photos/profile-photo/'.auth()->user()->foto ) }}"  class="img-fluid rounded-circle profile-img-user" class="img-fluid" style="min-width: 150px; min-height: 150px; max-width: 150px; max-height: 150px; border-radius: 100px"  alt="">
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="profile-info">
@@ -121,13 +125,13 @@
                                 <div class="profile-tab">
                                     <div class="custom-tab-1">
                                         <ul class="nav nav-tabs">
-                                            <li class="nav-item"><a href="#about-us" data-toggle="tab" class="nav-link active show"><i class="bi bi-people-fill"></i></a>
+                                            <li class="nav-item"><a href="#about-us" data-toggle="tab" class="nav-link "><i class="bi bi-people-fill"></i></a>
                                             </li>
-                                            <li class="nav-item"><a href="#profile-settings" data-toggle="tab" class="nav-link"><i class="bi bi-gear-fill"></i></i></a>
+                                            <li class="nav-item"><a href="#profile-settings" data-toggle="tab" class="nav-link active show"><i class="bi bi-gear-fill"></i></i></a>
                                             </li>
                                         </ul>
                                         <div class="tab-content">
-                                            <div id="about-us" class="tab-pane fade active show">
+                                            <div id="about-us" class="tab-pane fade">
                                                 <div class="profile-about-us">
                                                     <div class="pt-4 border-bottom-1 pb-4">
                                                         <h4 class="text-primary">Tentang Kami</h4>
@@ -206,7 +210,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div id="profile-settings" class="tab-pane fade">
+                                            <div id="profile-settings" class="tab-pane fade  active show">
                                                 <div class="pt-3">
                                                     <div class="settings-form">
                                                         <h4 class="text-primary">Pengaturan Akun</h4>
@@ -222,6 +226,7 @@
                                                                     <label>Nik</label>
                                                                     <input name="nik" type="number" placeholder="masukan nik" class="form-control" value="{{ auth()->user()->nik }}">
                                                                     <small class="text-danger">@error('nik') {{$message}} @enderror</small>
+                                                                    <small class="text-danger">@if (Session('error')) {{ Session('error') }} @endif</small>
                                                                 </div>
                                                             </div>
                                                             <div class="form-row mb-3">
@@ -245,16 +250,18 @@
                                                             <div class="form-row mb-3">
                                                                 <div class="form-group col-md-12">
                                                                     <label>Alamat</label>
-                                                                    <input name="alamat" type="tel" placeholder="no telepon kamu" class="form-control" value="{{ auth()->user()->alamat }}">
+                                                                    <input name="alamat" type="tel" placeholder="alamat kamu" class="form-control" value="{{ auth()->user()->alamat }}">
                                                                     <small class="text-danger">@error('alamat') {{$message}} @enderror</small>
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group col-md-12">
-                                                                <label>Foto Profile</label>
-                                                                <input name="foto" type="file" class="form-control">
-                                                                <small class="text-danger">@error('foto') {{$message}} @enderror</small>
-                                                            </div>
-                                                            <button class="btn bg-primary text-white" type="submit"><i class="bi bi-arrow-clockwise"></i> Update</button>
+                                                            @if (!auth()->user()->is_google_user)
+                                                                <div class="form-group col-md-12">
+                                                                    <label>Foto Profile</label>
+                                                                    <input name="foto" type="file" class="form-control">
+                                                                    <small class="text-danger">@error('foto') {{$message}} @enderror</small>
+                                                                </div>
+                                                            @endif
+                                                            <button class="btn bg-primary text-white mt-3" type="submit"><i class="bi bi-arrow-clockwise"></i> Update</button>
                                                         </form>
                                                     </div>
                                                 </div>

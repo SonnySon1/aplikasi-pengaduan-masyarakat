@@ -17,14 +17,15 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->unsignedBigInteger('nik')->nullable();
-            $table->text('alamat');
+            $table->text('alamat')->nullable();
             $table->text('jenis_kelamin')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->string('no_telepon')->unique();
+            $table->string('password')->nullable();
+            $table->string('no_telepon')->unique()->nullable();
             $table->enum('role', ['masyarakat', 'petugas', 'admin'])->default('masyarakat');
             $table->string('foto')->nullable();
+            $table->boolean('is_google_user')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

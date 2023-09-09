@@ -41,8 +41,16 @@ class LoginController extends Controller
             }
           
         }else{
-            session()->flash('error', 'Email / Password Salah');
-            return back();
+            $dataUser = User::where('email', $request->email)->first();
+
+            if ($dataUser->is_google_user) {
+                session()->flash('error', 'pengguna ini mendaftar dengan Google');
+                return back();
+            } else {
+                session()->flash('error', 'email atau password salah');
+                return back();
+            }
+
         }
     }
 

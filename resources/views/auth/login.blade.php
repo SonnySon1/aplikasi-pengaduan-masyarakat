@@ -75,7 +75,7 @@
                     </div>
                     <div class="mb-4">
                         <img src="assetsusers/img//au/google.png" class="logo-google-login" width="20" alt="">
-                        <a href="" class="fs-6 w-100 btn btn-login-google">Continue with Google</a>
+                        <a href="/auth/google" class="fs-6 w-100 btn btn-login-google">Continue with Google</a>
                     </div>
                     <div class="text-center" style="font-size: 12px;">
                         <p>don't have account? <a href="{{route('auth.register')}}"><strong>create</strong></a></p>

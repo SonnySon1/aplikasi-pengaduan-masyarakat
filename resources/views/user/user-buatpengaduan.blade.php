@@ -74,6 +74,11 @@
             <div class="container mt-5">
                 <h1>Buat Pengaduan</h1>
                 <div><span class="text-primary">PengaduanKu</span> / Buat Pengaduan</div>
+            
+                @if (auth()->user()->nik == NULL || auth()->user()->alamat == NULL || auth()->user()->jenis_kelamin == NULL || auth()->user()->no_telepon == NULL)
+                    <p class="mt-5"><i class="bi bi-exclamation-circle-fill text-danger"></i> Harap lengkapi <b><a href="/profile-user#profile" class="text-danger">Biodata</a></b> untuk membuat sebuah pengdaunga atau laporan</p>
+                @endif
+
                 <form action="/storepengaduan" class="mt-5" method="POST" enctype="multipart/form-data" autocomplete="off"> 
                     @csrf
                     <div class="input-group "> 
@@ -99,9 +104,18 @@
                     </div>
                     <p><small class="text-danger">@error('foto') {{ $message }} @enderror</small></p>
 
-                    <div class="input-group mb-3"> 
-                        <button class="btn bg-primary color-white  rounded-5">Kirim Pengaduan</button>
-                    </div>
+                    @if (auth()->user()->nik == NULL || auth()->user()->alamat == NULL || auth()->user()->jenis_kelamin == NULL || auth()->user()->no_telepon == NULL)
+                        <div class="input-group mb-3"> 
+                            <button class="btn bg-primary color-white  rounded-5 opacity-50" disabled>Kirim Pengaduan <i class="bi bi-lock-fill"></i></button>
+                        </div>
+                        @else
+                        <div class="input-group mb-3"> 
+                            <button class="btn bg-primary color-white  rounded-5">Kirim Pengaduan</button>
+                        </div>
+                    @endif
+                     
+
+
                 </form>
             </div>
             </div>
