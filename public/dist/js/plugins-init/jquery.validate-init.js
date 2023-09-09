@@ -59,16 +59,16 @@ jQuery(".form-valide").validate({
         "val-terms": {
             required: !0
         },
-        "val-bulan": {
+        "val_bulan": {
             required: !0
         },
-        "val-bulan2": {
+        "val_bulan2": {
             required: !0
         },
-        "val-tahun": {
+        "val_tahun": {
             required: !0
         },
-        "val-status": {
+        "val_status": {
             required: !0
         },
     },
@@ -80,16 +80,16 @@ jQuery(".form-valide").validate({
         "val_kategori": {
             required: "Mohon isi kategori",
         },
-        "val-bulan": {
+        "val_bulan": {
             required: "Mohon pilih bulan",
         },
-        "val-bulan2": {
+        "val_bulan2": {
             required: "Mohon pilih bulan222",
         },
-        "val-tahun": {
+        "val_tahun": {
             required: "Mohon pilih tahun",
         },
-        "val-status": {
+        "val_status": {
             required: "Mohon pilih status",
         },
         "val_email": "mohon isi alamat email",
@@ -131,18 +131,18 @@ jQuery(".form-valide").validate({
 
 jQuery(".form-valide-laporan-l-periode").validate({
     rules:{
-        "val-bulan2": {
+        "val_bulan2": {
             required: !0
         },
-        "val-tahun2": {
+        "val_tahun2": {
             required: !0
         },
     },
     messages:{
-        "val-bulan2": {
+        "val_bulan2": {
             required: "Mohon pilih bulan",
         },
-        "val-tahun2": {
+        "val_tahun2": {
             required: "Mohon pilih tahun",
         },
     },

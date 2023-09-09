@@ -11,6 +11,7 @@ use App\Http\Controllers\PengaduankuController;
 use App\Http\Controllers\PetugasController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -52,6 +53,9 @@ Route::middleware('masyarakat')->group(function(){
 
 // admin and petugas
 Route::middleware(['adminandpetugas'])->group(function(){
+
+      
+
         // dashboard Admin and petugas
         Route::get('/dashboard', [DashboardController::class, 'index']);
         Route::post('/signoput', [PengaduankuController::class, 'signout']);
@@ -104,8 +108,9 @@ Route::middleware('admin')->group(function(){
     Route::post('/kategori-update/{kategori}', [KategoriController::class, 'update']);
     Route::get('/kategori-detail/{kategori}', [KategoriController::class, 'show']);
 
-    // report
-    Route::view('/generate-report', 'admin.report.generate-report');
-
-    
+    // report admin
+    Route::get('/generate-report', [ReportController::class, 'index']);
+    Route::post('/generate-report-periode', [ReportController::class, 'report_periode_show']);
+    Route::post('/generate-report-rekap', [ReportController::class, 'report_rekap_show']);
+    Route::post('/generate-report-periode', [ReportController::class, 'report_periode_show']);
 });
