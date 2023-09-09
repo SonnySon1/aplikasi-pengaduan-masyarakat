@@ -42,7 +42,7 @@
                                     @php
                                         $masyarakat_i_cryprt = Crypt::encrypt($dataMasyarakat->id)
                                     @endphp
-                                    <form class="form-valide" action="/masyarakat-update/{{ $masyarakat_i_cryprt }}" method="post">
+                                    <form class="form-valide" action="/masyarakat-update/{{ $masyarakat_i_cryprt }}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="row">
                                             <div class="col-xl-6">
@@ -53,6 +53,9 @@
                                                     <div class="col-lg-12">
                                                         <input type="text" class="form-control" id="val_nik" name="val_nik" placeholder="Masukan NIK.." value="{{ $dataMasyarakat->nik }}">
                                                         <small class="text-danger">@error('val_nik') {{$message}} @enderror</small>
+                                                        @if (Session('error'))                                                    
+                                                            <small class="text-danger">{{Session('error')}}</small>
+                                                        @endif
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -97,6 +100,7 @@
                                                     </div>
                                                 </div>
                                                 
+                                                @if (!$dataMasyarakat->is_google_user)
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label" for="val_email">Email <span
                                                             class="text-danger">*</span>
@@ -114,6 +118,17 @@
                                                         <input type="text" class="form-control" id="val_password" name="val_password" placeholder="Masukan Password" value="{{ $dataMasyarakat->password }}" disabled>
                                                     </div>
                                                 </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="val_foto">Foto <span
+                                                                class="text-danger">*</span>
+                                                        </label>
+                                                        <div class="col-lg-12">
+                                                            <input type="file" class="form-control" id="val_foto" name="val_foto">
+                                                            <small class="text-danger">@error('val_foto') {{$message}} @enderror</small>
+                                                        </div>
+                                                    </div>
+                                                @endif
+                                                
                                             </div>
                                         </div>
                                             <a href="/masyarakat" class="btn btn-outline-warning text-warning"><i class="bi bi-backspace"></i>Kembali</a>

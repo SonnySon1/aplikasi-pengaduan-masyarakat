@@ -40,7 +40,7 @@
                                     @php
                                         $petugas_i_cryprt = Crypt::encrypt($dataPetugas->id)
                                     @endphp
-                                    <form class="form-valide" action="/petugas-update/{{ $petugas_i_cryprt }}" method="post" autocomplete="off">
+                                    <form class="form-valide" action="/petugas-update/{{ $petugas_i_cryprt }}" method="post" autocomplete="off" enctype="multipart/form-data">
                                         @csrf
                                         <div class="row">
                                             <div class="col-xl-6">
@@ -51,6 +51,9 @@
                                                      <div class="col-lg-12">
                                                         <input type="text" class="form-control" id="val_nik" name="val_nik" placeholder="Masukan NIK.." autofocus value="{{ $dataPetugas->nik }}">
                                                         <small class="text-danger">@error('val_nik') {{$message}} @enderror</small>
+                                                        @if (Session('error'))                                                    
+                                                        <small class="text-danger">{{Session('error')}}</small>
+                                                    @endif
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -82,6 +85,15 @@
                                                     <div class="col-lg-12">
                                                         <input type="tel" class="form-control" id="val_notelepon" name="val_notelepon" placeholder="Masukan No Telepon.." value="{{ $dataPetugas->no_telepon }}">
                                                         <small class="text-danger">@error('val_notelepon') {{$message}} @enderror</small>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-form-label" for="val_foto">Foto
+                                                        <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="file" class="form-control" id="val_foto" name="val_foto" placeholder="Masukan No Telepon..">
+                                                        <small class="text-danger">@error('val_foto') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>
                                             </div>

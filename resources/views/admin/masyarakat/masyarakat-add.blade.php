@@ -39,7 +39,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-validation">
-                                    <form class="form-valide" action="/masyarakat/store" method="post">
+                                    <form class="form-valide" action="/masyarakat/store" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="row">
                                             <div class="col-xl-6">
@@ -50,6 +50,9 @@
                                                     <div class="col-lg-12">
                                                         <input type="text" class="form-control" id="val_nik" name="val_nik" placeholder="Masukan NIK..">
                                                         <small class="text-danger">@error('val_nik') {{$message}} @enderror</small>
+                                                        @if (Session('error'))                                                    
+                                                            <small class="text-danger">{{Session('error')}}</small>
+                                                        @endif
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -111,6 +114,15 @@
                                                     <div class="col-lg-12">
                                                         <input type="text" class="form-control" id="val_password" name="val_password" placeholder="Masukan Password">
                                                         <small class="text-danger">@error('val_password') {{$message}} @enderror</small>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-form-label" for="val_foto">Foto <span
+                                                            class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="file" class="form-control" id="val_foto" name="val_foto">
+                                                        <small class="text-danger">@error('val_foto') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>
                                             </div>

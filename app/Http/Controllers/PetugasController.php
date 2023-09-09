@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Contracts\Encryption\DecryptException;
 
 class PetugasController extends Controller
 {
@@ -27,8 +28,21 @@ class PetugasController extends Controller
             "val_email"         => "required|unique:users,email",
             "val_password"      => "required",
             "val_notelepon"     => "required|unique:users,no_telepon",
-            "val_jabatan"       => "required"
+            "val_jabatan"       => "required",
+            "val_foto"          => "required|mimes:png,jpg,webp,pdf,png,jpeg"
         ]);
+
+        $nik = $request->val_nik;
+        $digit = substr($nik, 0, 6);
+        if ($digit != 327902) {
+                Session::flash('error', 'Kamu bukan masyarakat Kota Banjar Jawabarat Pataruman');
+                return back();
+        }
+        
+        $file_foto = $request->file('val_foto');
+        $ekstensi_foto = $file_foto->extension();
+        $nama_foto = date('dmyhis').'.'.$ekstensi_foto;
+        $file_foto->move(public_path('photos/profile-photo'), $nama_foto);
         
         $data = [
             "nama"          => $request ->val_nama,
@@ -38,6 +52,7 @@ class PetugasController extends Controller
             "email"         => $request ->val_email,
             "password"      => bcrypt($request->val_password),
             "no_telepon"    =>$request  ->val_notelepon,
+            "foto"          =>$nama_foto,
             "role"          =>$request  ->val_jabatan,
         ];
 
@@ -76,6 +91,13 @@ class PetugasController extends Controller
             "val_jabatan"       => "required"
         ]);
 
+        $nik = $request->val_nik;
+        $digit = substr($nik, 0, 6);
+        if ($digit != 327902) {
+                Session::flash('error', 'Kamu bukan masyarakat Kota Banjar Jawabarat Pataruman');
+                return back();
+        }
+
         $data = [
             "nama"          => $request ->val_nama,
             "nik"           => $request ->val_nik,
@@ -86,6 +108,22 @@ class PetugasController extends Controller
             "no_telepon"    =>$request  ->val_notelepon,
             "role"          =>$request  ->val_jabatan,
         ];
+
+        if ($request->hasFile('val_foto')) {
+            $request->validate([
+                'foto' => 'mimes:png,jpg,webp,pdf,png,jpeg'
+            ]);
+            
+            $file_foto = $request->file('val_foto');
+            $ekstensi_foto = $file_foto->extension();
+            $nama_foto = date('dmyhis').'.'.$ekstensi_foto;
+            $file_foto->move(public_path('photos/profile-photo'), $nama_foto);
+
+            $data = [
+                'foto' => $nama_foto
+            ];
+         }
+         
 
         $dataPetugas = User::find($petugas_i_decrypt);
         $dataPetugas->update($data);

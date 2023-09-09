@@ -16,7 +16,6 @@ jQuery(".form-valide").validate({
         },
         "val_password": {
             required: !0,
-            minlength: 5
         },
         "val_nama": {
             required: !0,

@@ -17,7 +17,13 @@ class KategoriSeeder extends Seeder
     {
         Kategori::create([
             'kategori'      =>'Infrastruktur',
-            'deskripsi'     =>'Deskripsi Tentang kategori yang berkaitan dengan infrastruktur'
+            'deskripsi'     =>'<p><strong>Seuah Kategori yang Bersangkutan dengan infrastruktur adalah</strong></p>
+                                <ol>
+                                    <li><strong>Transportasi:</strong> Kategori ini mencakup infrastruktur yang terkait dengan transportasi, seperti jalan raya, jembatan, bandara, pelabuhan, stasiun kereta, dan sistem transportasi umum.</li>
+                                    <li><strong>Energi:</strong> Kategori ini mencakup infrastruktur yang berhubungan dengan penyediaan energi, seperti pembangkit listrik, jaringan distribusi listrik, pipa gas, dan fasilitas penyimpanan energi.</li>
+                                    <li><strong>Telekomunikasi:</strong> Kategori ini mencakup infrastruktur yang terkait dengan komunikasi, seperti jaringan telepon, jaringan internet, dan menara pemancar.</li>
+                                    <li><strong>Pendidikan:</strong> Infrastruktur pendidikan meliputi sekolah, perguruan tinggi, perpustakaan, laboratorium, dan fasilitas lain yang mendukung sistem pendidikan.</li>
+                                </ol>'
         ]);
         
         Kategori::create([

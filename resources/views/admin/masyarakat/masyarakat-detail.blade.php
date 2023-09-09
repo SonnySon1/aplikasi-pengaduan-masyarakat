@@ -38,7 +38,11 @@
                                 <div class="photo-content">
                                     <div class="cover-photo"></div>
                                     <div class="profile-photo">
-                                        <img src="{{ asset('photos/profile-photo/'.$dataMasyarakat->foto ) }}" class="img-fluid rounded-circle" alt="">
+                                        @if ($dataMasyarakat->is_google_user)
+                                            <img src="{{ $dataMasyarakat->foto }}" class="img-fluid rounded-circle" alt="">
+                                        @else
+                                            <img src="{{ asset('photos/profile-photo/'.$dataMasyarakat->foto ) }}" class="img-fluid rounded-circle" alt="">
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="profile-info">

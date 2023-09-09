@@ -33,25 +33,40 @@ class UserSeeder extends Seeder
        $photoRandom = rand(0, 9);
        $photo = $photoProfile[$photoRandom];
 
+        // admin
         User::create([
-            "nama"  => "eko",
-            "nik"   => "123123",
-            "alamat"    => "Bandung",
-            "email" => "eko@gmail.com",
-            "password" => bcrypt('123'),
-            "no_telepon"    => "1231231",
-            "foto"    => $photo,
-            "role" => "admin"
+            "nama"      => "eko",
+            "nik"       => "3279021009060001",
+            "alamat"    => "Banjar",
+            "email"     => "eko@gmail.com",
+            "password"  => bcrypt('123'),
+            "no_telepon"=> "08989978927",
+            "foto"      => $photo,
+            "role"      => "admin"
         ]);
+        
+        // petugas
         User::create([
-            "nama" => "soni",
-            "nik"=>"123123123",
-            "alamat"=>"Banjar",
-            "email"=>"soni@gmail.com",
-            "password"=> bcrypt("123"),
-            "foto"=> $photo,
-            "no_telepon"=>"089899587003",
+            "nama"      => "jidan",
+            "nik"       => "3279020208050002",
+            "alamat"    => "Banjar",
+            "email"     => "jidan@gmail.com",
+            "password"  => bcrypt('123'),
+            "no_telepon"=> "089277382612",
+            "foto"      => $photo,
+            "role"      => "petugas"
         ]);
+
+        // masyarakat
+        // User::create([
+        //     "nama"      => "soni",
+        //     "nik"       => "3279020102070003",
+        //     "alamat"    => "Banjar",
+        //     "email"     => "soni@gmail.com",
+        //     "password"  => bcrypt("123"),
+        //     "foto"      => $photo,
+        //     "no_telepon"=> "089899587003",
+        // ]);
 
     }
 }

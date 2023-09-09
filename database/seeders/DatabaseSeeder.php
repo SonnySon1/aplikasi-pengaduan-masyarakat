@@ -24,12 +24,12 @@ class DatabaseSeeder extends Seeder
         // ]);
 
 
-        User::factory(10)->create();
+        // User::factory(10)->create();
         $this->call([
             UserSeeder::class,
             KategoriSeeder::class,
         ]);
-        Pengaduan::factory(200)->create();
+        // Pengaduan::factory(200)->create();
 
     }
 }
