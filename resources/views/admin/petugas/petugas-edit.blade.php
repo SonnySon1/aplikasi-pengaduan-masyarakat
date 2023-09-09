@@ -40,7 +40,7 @@
                                     @php
                                         $petugas_i_cryprt = Crypt::encrypt($dataPetugas->id)
                                     @endphp
-                                    <form class="form-valide" action="/petugas-update/{{ $petugas_i_cryprt }}" method="post" autocomplete="off" enctype="multipart/form-data">
+                                    <form class="form-valide" action="/petugas-update/{{ $petugas_i_cryprt }}" method="post" autocomplete="off" enctype="multipart/form-data" autocomplete="off">
                                         @csrf
                                         <div class="row">
                                             <div class="col-xl-6">
@@ -122,7 +122,7 @@
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val_password" name="val_password" placeholder="Masukan Password" value="{{ $dataPetugas->password }}" >
+                                                        <input type="password" class="form-control" id="val_password" name="val_password" placeholder="Masukan Password" value="{{ $dataPetugas->password }}" >
                                                         <small class="text-danger">@error('val_password') {{$message}} @enderror</small>
                                                     </div>
                                                 </div>

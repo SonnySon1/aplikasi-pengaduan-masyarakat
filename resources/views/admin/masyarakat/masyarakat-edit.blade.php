@@ -42,7 +42,7 @@
                                     @php
                                         $masyarakat_i_cryprt = Crypt::encrypt($dataMasyarakat->id)
                                     @endphp
-                                    <form class="form-valide" action="/masyarakat-update/{{ $masyarakat_i_cryprt }}" method="post" enctype="multipart/form-data">
+                                    <form class="form-valide" action="/masyarakat-update/{{ $masyarakat_i_cryprt }}" method="post" enctype="multipart/form-data" autocomplete="off">
                                         @csrf
                                         <div class="row">
                                             <div class="col-xl-6">
@@ -115,7 +115,7 @@
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" id="val_password" name="val_password" placeholder="Masukan Password" value="{{ $dataMasyarakat->password }}" disabled>
+                                                        <input type="password" class="form-control" id="val_password" name="val_password" placeholder="Masukan Password" value="{{ $dataMasyarakat->password }}" disabled>
                                                     </div>
                                                 </div>
                                                     <div class="form-group row">

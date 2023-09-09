@@ -40,7 +40,7 @@
                         </div>
                         <div class="card-body">
                             <div class="form-validation">
-                                <form class="form-valide" action="/kategori-store" method="post">
+                                <form class="form-valide" action="/kategori-store" method="post" autocomplete="off">
                                     @csrf
                                     <div class="row">
                                         <div class="w-100">

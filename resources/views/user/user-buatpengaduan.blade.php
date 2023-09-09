@@ -76,7 +76,7 @@
                 <div><span class="text-primary">PengaduanKu</span> / Buat Pengaduan</div>
             
                 @if (auth()->user()->nik == NULL || auth()->user()->alamat == NULL || auth()->user()->jenis_kelamin == NULL || auth()->user()->no_telepon == NULL)
-                    <p class="mt-5"><i class="bi bi-exclamation-circle-fill text-danger"></i> Harap lengkapi <b><a href="/profile-user#profile" class="text-danger">Biodata</a></b> untuk membuat sebuah pengdaunga atau laporan</p>
+                    <p class="mt-5"><i class="bi bi-exclamation-circle-fill text-danger"></i> Harap lengkapi <b><a href="/profile-user#profile" class="text-danger">Biodata</a></b> untuk membuat sebuah pengaduan atau laporan</p>
                 @endif
 
                 <form action="/storepengaduan" class="mt-5" method="POST" enctype="multipart/form-data" autocomplete="off"> 

@@ -67,3 +67,17 @@ input[type="number"] {
     top: 90px;
     margin-left: 50px;
 }
+
+@media print{
+
+    .non_print {
+        display: none;
+    }
+
+    .print{
+        position: relative;
+        right: 280px;
+    }
+
+
+}

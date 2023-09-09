@@ -174,7 +174,7 @@
                                                 <div class="pt-3">
                                                     <div class="settings-form">
                                                         <h4 class="text-primary">Pengaturan Akun</h4>
-                                                        <form action="/update-profile" method="POST" enctype="multipart/form-data">
+                                                        <form action="/update-profile" method="POST" enctype="multipart/form-data" autocomplete="off">
                                                             @csrf
                                                             <div class="form-row">
                                                                 <div class="form-group col-md-6">

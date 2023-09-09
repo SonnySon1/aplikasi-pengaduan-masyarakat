@@ -50,7 +50,7 @@
                 <div class="card-body">
                 <h5 class="card-title fw-bold">Login</h5>
                 <h6 class="card-subtitle mb-2 text-body-secondary mb-5">Login dan ajukan pengaduan atau keluhanmu</h6>
-                    <form action="{{route('auth.user.login')}}" method="post" >
+                    <form action="{{route('auth.user.login')}}" method="post" autocomplete="off" >
                         @csrf
                         <div class="mb-4">
                             <input name="email" type="email" class="w-100 text-field-shadow" placeholder="Email" value="{{ Session('email') }}">

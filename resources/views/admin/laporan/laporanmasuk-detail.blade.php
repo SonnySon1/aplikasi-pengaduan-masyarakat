@@ -136,7 +136,7 @@
                                                 <form action="/tanggapan-store/{{ $datalaporan_i_encrypt }}" method="POST" class="mt-2">
                                                     @csrf
                                                     <div class="d-flex">
-                                                        <input type="text" name="tanggapan" class="w-100">
+                                                        <input type="text" name="tanggapan" class="w-100" autocomplete="off">
                                                         <button class="btn btn-danger">Submit</button>
                                                     </div>
                                                 </form>

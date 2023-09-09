@@ -45,7 +45,7 @@
                 <div class="card-body">
                 <h5 class="card-title fw-bold mb-3">Register</h5>
                 <h6 class="card-subtitle mb-2 text-body-secondary mb-5">Satu langkah, perubahan nyata</h6>
-                    <form action="{{route('auth.user.register')}}" method="POST">
+                    <form action="{{route('auth.user.register')}}" method="POST" autocomplete="off">
                         @csrf
                         <div class="mb-4">
                             <input name="nama" id="nama" type="text" class="w-100 text-field-shadow" autocomplete="off" placeholder="Nama" value="{{ old('nama') }}">

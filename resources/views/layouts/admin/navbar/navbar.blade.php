@@ -1,8 +1,6 @@
-<div class="nav-header">
-    <a href="index.html" class="brand-logo">
-        <img class="logo-abbr" src="{{ asset('dist/images/logo.png') }}" alt="">
-        <img class="logo-compact" src="{{ asset('dist/images/logo-text.png') }}" alt="">
-        <img class="brand-title" src="{{ asset('dist/images/logo-text.png') }}" alt="">
+<div class="nav-header non_print">
+    <a href="#" class="brand-logo">
+        APM
     </a>
 
     <div class="nav-control">
@@ -12,7 +10,7 @@
     </div>
 </div>
 
-<div class="header">
+<div class="header ">
     <div class="header-content">
         <nav class="navbar navbar-expand">
             <div class="collapse navbar-collapse justify-content-between">

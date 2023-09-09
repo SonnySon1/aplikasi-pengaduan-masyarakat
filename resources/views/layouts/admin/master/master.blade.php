@@ -128,6 +128,13 @@
   });
 </script>
 
+<script type="text/javascript">
+    // Fungsi untuk mencetak layar
+    function printPage() {
+        window.print();
+    }
+</script>
+
 <!--Scripts-->
  <!-- Required vendors -->
  <script src="{{ asset('dist/vendor/global/global.min.js') }}"></script>

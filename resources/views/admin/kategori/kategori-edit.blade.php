@@ -43,7 +43,7 @@
                                 @php
                                     $kategori_i_encrypt = Crypt::encrypt($dataKategori->id)
                                 @endphp
-                                <form class="form-valide" action="/kategori-update/{{ $kategori_i_encrypt }}" method="post">
+                                <form class="form-valide" action="/kategori-update/{{ $kategori_i_encrypt }}" method="post" autocomplete="off">
                                     @csrf
                                     <div class="row">
                                         <div class="w-100">

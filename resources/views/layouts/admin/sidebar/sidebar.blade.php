@@ -1,4 +1,4 @@
-<div class="quixnav">
+<div class="quixnav non_print">
     <div class="quixnav-scroll">
         <ul class="metismenu" id="menu">
             <li class="nav-label first">Master Data</li>
