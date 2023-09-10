@@ -89,7 +89,7 @@
                         @foreach ($dataPengaduan as $pengaduan)                            
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $pengaduan->judul_pengaduan }}</td>
+                                <td>{{ Str::limit($pengaduan->judul_pengaduan, 50) }}</td>
                                 <td>{{ $pengaduan->kategori->kategori }}</td>
                                 <td>{{ $pengaduan->status }}</td>
                                 @php
