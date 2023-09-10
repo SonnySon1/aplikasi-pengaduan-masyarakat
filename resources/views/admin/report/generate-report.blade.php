@@ -79,7 +79,7 @@
                                                             <option value="new">New</option>
                                                             <option value="accepted">Accepted</option>
                                                             <option value="rejected">Rejected</option>
-                                                            <option value="rejected">Process</option>
+                                                            <option value="process">Process</option>
                                                             <option value="finished">Finished</option>
                                                 </select>
                                             </div>

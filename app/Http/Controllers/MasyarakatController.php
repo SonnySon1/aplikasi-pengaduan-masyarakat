@@ -93,7 +93,6 @@ class MasyarakatController extends Controller
             "val_nik"           => "required",
             "val_alamat"        => "required",
             "val_jeniskelamin"  => "required",
-            "val_email"         => "required",
             "val_notelepon"     => "required",
         ]);
 
@@ -109,7 +108,6 @@ class MasyarakatController extends Controller
             "nik"           => $request ->val_nik,
             "alamat"        => $request ->val_alamat,
             "jenis_kelamin" => $request ->val_jeniskelamin,
-            "email"         => $request ->val_email,
             "no_telepon"    =>$request  ->val_notelepon,
         ];
 
