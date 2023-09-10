@@ -58,15 +58,15 @@ class UserSeeder extends Seeder
         ]);
 
         // masyarakat
-        // User::create([
-        //     "nama"      => "soni",
-        //     "nik"       => "3279020102070003",
-        //     "alamat"    => "Banjar",
-        //     "email"     => "soni@gmail.com",
-        //     "password"  => bcrypt("123"),
-        //     "foto"      => $photo,
-        //     "no_telepon"=> "089899587003",
-        // ]);
+        User::create([
+            "nama"      => "soni",
+            "nik"       => "3279020102070003",
+            "alamat"    => "Banjar",
+            "email"     => "soni@gmail.com",
+            "password"  => bcrypt("123"),
+            "foto"      => $photo,
+            "no_telepon"=> "089899587003",
+        ]);
 
     }
 }

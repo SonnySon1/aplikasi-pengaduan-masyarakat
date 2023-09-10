@@ -39,9 +39,9 @@
                                     <div class="cover-photo"></div>
                                     <div class="profile-photo">
                                         @if ($dataMasyarakat->is_google_user)
-                                            <img src="{{ $dataMasyarakat->foto }}" class="img-fluid rounded-circle" alt="">
+                                            <img src="{{ $dataMasyarakat->foto }}" class="img-fluid" style="min-width: 150px; min-height: 150px; max-width: 150px; max-height: 150px; border-radius: 100px" alt="">
                                         @else
-                                            <img src="{{ asset('photos/profile-photo/'.$dataMasyarakat->foto ) }}" class="img-fluid rounded-circle" alt="">
+                                            <img src="{{ asset('photos/profile-photo/'.$dataMasyarakat->foto ) }}" class="img-fluid" style="min-width: 150px; min-height: 150px; max-width: 150px; max-height: 150px; border-radius: 100px" alt="">
                                         @endif
                                     </div>
                                 </div>

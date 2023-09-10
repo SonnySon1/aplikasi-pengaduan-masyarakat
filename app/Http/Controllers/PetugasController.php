@@ -10,15 +10,18 @@ use Illuminate\Contracts\Encryption\DecryptException;
 
 class PetugasController extends Controller
 {
+    // index view petugas --admin
     public function index(){
         $dataPetugas = User::whereIn('role', ['petugas', 'admin'])->latest('created_at')->get();
         return view('admin.petugas.petugas', compact('dataPetugas'));
     }
 
+    // petugas add view --admin
     public function petugas_add(){
         return view('admin.petugas.petugas-add');
     }
 
+    // store add value petugas --admin
     public function store(Request $request){
         $request->validate([
             "val_nama"          => "required",
@@ -61,6 +64,7 @@ class PetugasController extends Controller
     }
 
 
+    // edit petugas view --admin
     public function petugas_edit($petugas){
         try {
             $petugas_i_decrypt = Crypt::decrypt($petugas);
@@ -73,6 +77,7 @@ class PetugasController extends Controller
         return view('admin.petugas.petugas-edit', compact('dataPetugas'));
     }
 
+    // store edit petugas --admin
     public function update(Request $request, $petugas){
         try {
             $petugas_i_decrypt = Crypt::decrypt($petugas);
@@ -130,6 +135,7 @@ class PetugasController extends Controller
         return redirect('/petugas');
     }
 
+    // petugas detail --admin
     public function show($petugas) {
         try {
             $petugas_i_decrypt = Crypt::decrypt($petugas);
@@ -141,6 +147,8 @@ class PetugasController extends Controller
         return view('admin.petugas.petugas-detail', compact('dataPetugas'));
     }
 
+
+    // delete petugas --admin
     public function destroy($petugas){
         try {
             $petugas_i_decrypt = Crypt::decrypt($petugas);

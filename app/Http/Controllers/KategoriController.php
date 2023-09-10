@@ -12,15 +12,18 @@ use Symfony\Component\VarDumper\VarDumper;
 
 class KategoriController extends Controller
 {
+    // category index admin
     public function index(){
         $dataKategori = Kategori::latest('created_at')->get();
         return view('admin.kategori.kategori', compact('dataKategori'));
     }
     
+    // view add kategori
     public function kategori_add(){
         return view('admin.kategori.kategori-add');
     }
     
+    // store value category update
     public function store(Request $request){
         $request->validate([
             'val_kategori'      => 'required|unique:kategori,kategori',
@@ -35,7 +38,7 @@ class KategoriController extends Controller
         
     }
 
-
+// delete kategori
     public function destroy($dataKategori){
         try {
             $kategori_i_decrypt = Crypt::decrypt($dataKategori);
@@ -48,6 +51,7 @@ class KategoriController extends Controller
         return redirect('/kategori');
     }
 
+    // view update kategori
     public function kategori_edit($kategori){
         try {
             $kategori_i_decrypt = Crypt::decrypt($kategori);
@@ -59,6 +63,7 @@ class KategoriController extends Controller
         return view('admin.kategori.kategori-edit', compact('dataKategori'));
     }
 
+    // store value update kategori
     public function update(Request $request, $kategori){
         try {
             $kategori_i_decrypt = Crypt::decrypt($kategori);
@@ -82,6 +87,7 @@ class KategoriController extends Controller
     }
     
 
+    // detail kategori
     public function show($kategori){
         try {
             $kategori_i_decrypt = Crypt::decrypt($kategori);

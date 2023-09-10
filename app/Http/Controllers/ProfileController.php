@@ -8,10 +8,13 @@ use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
+
+    // index profile --admin
     public function index(){
         return view('admin.profile.profile');
     }
 
+    // update store profile --admin
     public function update(Request $request){
         $request->validate([
             'nama'  => 'required',

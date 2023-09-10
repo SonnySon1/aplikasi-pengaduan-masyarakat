@@ -16,20 +16,20 @@ use Illuminate\Contracts\Encryption\DecryptException;
 
 class PengaduankuController extends Controller
 {
-        // halaman index
+        // view halaman index
                 public function index(){
                         $dataPengaduan = Pengaduan::with(['kategori', 'user'])->where('user_id', auth()->user()->id)->get();
                         return view('user.user-pengaduan', compact('dataPengaduan'));
                 }
 
-        // buat pengaduan
+        // view buat pengaduan
                 public function buatpengaduan(){
                         // nilai kategori
                         $kategoriPengaduan = Kategori::all();
                         return view('user.user-buatpengaduan', compact('kategoriPengaduan'));
         }
 
-        // storepengaduan
+        // store pengaduan
                 public function storepengaduan(Request $request){
                         $request->validate([
                                 'judul_pengaduan'   => 'required',
@@ -55,7 +55,7 @@ class PengaduankuController extends Controller
                         return redirect('/pengaduanku');
                 }
 
-        // show
+        // detail pengaduan view
         public function show($pengaduan) {
                 try {
                         $pengaduan_i_decrypt = Crypt::decrypt($pengaduan);
@@ -71,6 +71,7 @@ class PengaduankuController extends Controller
                 return view('user.user-pengaduandetail', compact('dataPengaduan', 'dataTanggapan', 'dataShow'));
         }
 
+        // store  value tanggapan
         public function store_tanggapan(Request $request, $laporan){
                 try {
                         $laporan_i_decrypt = Crypt::decrypt($laporan);
@@ -90,6 +91,7 @@ class PengaduankuController extends Controller
                 return redirect()->back();
         }
 
+        // profile show view
         public function profile(){
                 $dataShow = [
                         'title' => 'Profile By '.auth()->user()->nama,
@@ -97,6 +99,8 @@ class PengaduankuController extends Controller
                 return view('user.user-profile', compact('dataShow'));
         }
 
+
+        // update profile
         public function update_profile(Request $request){
                 $request->validate([
                         'nama'  => 'required',

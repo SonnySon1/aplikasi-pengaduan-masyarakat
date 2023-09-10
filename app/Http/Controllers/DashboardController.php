@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
+    // dashboard
     public function index(){
         $laporanMasuk = Pengaduan::with('kategori')->where('status', 'new')->latest('tgl_pengaduan')->get();
         $laporanBaru = Pengaduan::where('status', 'new')->get();
@@ -20,6 +21,7 @@ class DashboardController extends Controller
         return view('admin.dashboard', compact('laporanMasuk', 'laporanBaru', 'laporan', 'kategori', 'masyarakat'));
     }
 
+    // signout staf 1
     public function signout_staf(Request $request){
         Auth::logout();
         $request->session()->invalidate();
@@ -29,6 +31,7 @@ class DashboardController extends Controller
         return redirect('/login');
     }
     
+    // signout staf dan masyarakat
     public function signout(Request $request){
         $request->session()->invalidate(); 
         $request->session()->regenerate();

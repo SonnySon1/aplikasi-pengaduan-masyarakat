@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class LaporanprosesController extends Controller
 {
+    // laporan dalam proses
     public function  index(){
         $dataLaporan = Pengaduan::with(['user', 'kategori'])->whereIn('status', ['accepted', 'process'])->latest('tgl_pengaduan')->get();
         $dataKategori = Kategori::all();

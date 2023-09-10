@@ -9,10 +9,12 @@ use Laravel\Socialite\Facades\Socialite;
 
 class GoogleController extends Controller
 {
+    // redirect google login
     public function redirectToGoogle(){
         return Socialite::driver('google')->redirect();
     }
     
+    // callback google login
     public function handleGoogleCallback(Request $request){
         try {
             $user = Socialite::driver('google')->stateless()->user();

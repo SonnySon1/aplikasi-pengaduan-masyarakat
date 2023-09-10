@@ -38,7 +38,7 @@
                                 <div class="photo-content">
                                     <div class="cover-photo"></div>
                                     <div class="profile-photo">
-                                        <img src="{{ asset('photos/profile-photo/'.$dataPetugas->foto ) }}" class="img-fluid rounded-circle" alt="">
+                                        <img src="{{ asset('photos/profile-photo/'.$dataPetugas->foto ) }}" class="img-fluid" style="min-width: 150px; min-height: 150px; max-width: 150px; max-height: 150px; border-radius: 100px"  alt="">
                                     </div>
                                 </div>
                                 <div class="profile-info">

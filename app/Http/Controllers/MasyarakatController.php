@@ -10,15 +10,18 @@ use Illuminate\Contracts\Encryption\DecryptException;
 
 class MasyarakatController extends Controller
 {
+    // index view masyarakat di admin
     public function index(){
         $dataMasyarakat = User::where('role', 'masyarakat')->latest('created_at')->get();
         return view('admin.masyarakat.masyarakat', compact('dataMasyarakat'));
     }
 
+    // view add masyarakat
     public function masyarakat_add(){
             return view('admin.masyarakat.masyarakat-add');
     }
 
+    // store value masyarakat di admin
     public function store(Request $request){
         $request->validate([
             "val_nama"          => "required",

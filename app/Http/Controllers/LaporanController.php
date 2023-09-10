@@ -13,6 +13,7 @@ use PhpParser\Node\Expr\New_;
 
 class LaporanController extends Controller
 {
+    // laporan index view
     public function index(){
         $dataLaporan = Pengaduan::with(['user', 'kategori'])->where('status', 'new')->latest('tgl_pengaduan')->get();
         $dataKategori = Kategori::all();
@@ -23,6 +24,7 @@ class LaporanController extends Controller
         return view('admin.laporan.laporanmasuk', compact('dataLaporan', 'dataKategori', 'dataShow'));
     }
 
+    // detail pengaduan
     public function show($laporan){
         try {
             $laporan_i_crypt = Crypt::decrypt($laporan);
@@ -34,7 +36,7 @@ class LaporanController extends Controller
         return view('admin.laporan.laporanmasuk-detail', compact('dataLaporan', 'dataTanggapan'));
     }
 
-
+// update status store value
     public function update(Request $request, $id){
         $dataSatus = [
             "status" => $request->status
@@ -51,6 +53,7 @@ class LaporanController extends Controller
         }
     }
 
+    // value tanggapan store
     public function store(Request $request, $laporan){
             try {
                 $laporan_i_crypt = Crypt::decrypt($laporan); 
@@ -71,7 +74,7 @@ class LaporanController extends Controller
             return redirect()->back();
     }
 
-
+// filter by status
     public function filter_by_status(Request $request){
         $dataLaporan = Pengaduan::where('status', $request->filter)->get();
         return view('admin.laporan.laporanmasuk', compact('dataLaporan'));
