@@ -133,11 +133,12 @@
                                                 <p><i class="text-danger" style="font-size: 12px">Update Status Untuk Membuat Tanggapan</i></p>
                                                 <p style="font-size: 12px">Setelah melakukan sebuah <i class="text-danger">update status</i>,  kamu dapat memberikan tanggapan terkait laporan yang di kirim. Jika laporan di <i class="text-danger">accepted</i>  atau <i class="text-danger">process</i>, akan masuk ke halaman <b class="text-dark">Laporan Proses</b>. Akan tetapi jika laporan <i class="text-danger">finished</i> atau di <i class="text-danger">rejected</i> akan masuk ke halaman<b class="text-dark"> Laporan Selesai</b></p>
                                             @else
-                                                <form action="/tanggapan-store/{{ $datalaporan_i_encrypt }}" method="POST" class="mt-2">
+                                                <form action="/tanggapan-store/{{ $datalaporan_i_encrypt }}" method="POST" class="mt-2" autocomplete="off">
                                                     @csrf
+                                                    <small class="text-danger">@error('tanggapan') {{$message}} @enderror</small>
                                                     <div class="d-flex">
-                                                        <input type="text" name="tanggapan" class="w-100" autocomplete="off">
-                                                        <button class="btn btn-danger">Submit</button>
+                                                            <input type="text" name="tanggapan" class="w-100" autocomplete="off">
+                                                        <button class="btn btn-danger"><i class="bi bi-send-fill "></i></button>
                                                     </div>
                                                 </form>
                                             @endif

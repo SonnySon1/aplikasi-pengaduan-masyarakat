@@ -19,7 +19,6 @@ return new class extends Migration
             $table->foreignId('pengaduan_id')->references('id')->on('pengaduan')->onUpdate('cascade')->onDelete('cascade');
             $table->text('tanggapan');
             $table->timestamp('tgl_tanggapan');
-            $table->string('foto')->nullable(); 
             $table->timestamps();
         });
     }

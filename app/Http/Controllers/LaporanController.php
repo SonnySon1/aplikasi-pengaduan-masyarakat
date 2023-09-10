@@ -61,13 +61,17 @@ class LaporanController extends Controller
                 abort(404);
             }
 
+            $request->validate([
+                'tanggapan'=>'required'
+            ]);
+
+
             $dataPengaduan = Pengaduan::find($laporan_i_crypt);
 
             $data = [
                 'user_id'   => auth()->user()->id,
                 'pengaduan_id'  => $dataPengaduan->id,
                 'tanggapan' => $request->tanggapan,
-                'foto' => 'foto.jpg',
             ];
             
             Tanggapan::create($data);

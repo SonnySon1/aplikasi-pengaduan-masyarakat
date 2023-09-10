@@ -79,6 +79,10 @@ class PengaduankuController extends Controller
                         abort(404);
                 }
 
+                $request->validate([
+                        'tanggapan'=>'required'
+                ]);
+
                 $dataPengaduan = Pengaduan::find($laporan_i_decrypt);
 
                 $data = [

@@ -132,10 +132,11 @@
                         @if ($dataPengaduan->status == "new")
                             <p>Tidak dapat melakukan tanggapan sebelum laporan kamu di lihat <b><i class="text-danger">admin</i></b> atau <b><i class="text-warning">petugas</i></b></p>
                         @else
-                            <form action="/tanggapi-pengaduan/{{ $laporan_i_encrypt }}" method="POST">
+                            <form action="/tanggapi-pengaduan/{{ $laporan_i_encrypt }}" method="POST" autocomplete="off">
                                 @csrf
+                                <small class="text-danger">@error('tanggapan') {{$message}} @enderror</small>
                                 <div class="input-group mb-3">
-                                    <input type="text" name="tanggapan" class="form-control " placeholder="reply">
+                                        <input type="text" name="tanggapan" class="form-control " placeholder="reply">
                                     <button class="btn bg-primary text-white"><i class="bi bi-send-fill "></i></button>
                                 </div>
                             </form>
